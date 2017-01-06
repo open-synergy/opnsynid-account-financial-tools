@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+       <record id="account_journal_view_form" model="ir.ui.view">
+            <field name="name">Account Journal Create Menu</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page
+                        string="Custom Menu"
+                        attrs="{'invisible': [('type', 'not in', ['bank','cash'])]}"
+                        groups="base.group_erp_manager"
+                    >
+                        <group name="grp_custom_menu">
+                            <button 
+                                name="%(account_journal_bank_cash_create_menu_action)d"
+                                type="action" 
+                                string="Create Menu"
+                                attrs="{'invisible': [('window_action_id', '!=', False), ('menu_id', '!=', False)]}"
+                            /> 
+                            <button 
+                                name="button_reset_menu"
+                                type="object"
+                                string="Reset Menu"
+                                attrs="{'invisible': [('window_action_id', '=', False), ('menu_id', '=', False)]}"
+                            />
+                            <field name="window_action_id"/>
+                            <field name="menu_id"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+       </record>
+    </data>
+</openerp>
+
