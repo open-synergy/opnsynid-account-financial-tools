@@ -7,9 +7,9 @@
             <field name="inherit_id" ref="account.view_account_journal_form"/>
             <field name="arch" type="xml">
                 <xpath expr="//notebook" position="inside">
-                    <page string="Bank Statement Policy" attrs="{'invisible': [('type','&lt;&gt;','bank')]}">
+                    <page name="page_bank_policy" string="Bank Statement Policy" attrs="{'invisible': [('type','&lt;&gt;','bank')]}">
                     </page>
-                    <page string="Cash Register Policy" attrs="{'invisible': [('type','&lt;&gt;','cash')]}">
+                    <page name="page_cash_policy" string="Cash Register Policy" attrs="{'invisible': [('type','&lt;&gt;','cash')]}">
                     </page>
                 </xpath>
             </field>
