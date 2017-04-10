@@ -3,6 +3,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from openerp import models, fields, api
+from openerp.tools.translate import _
+from openerp.exceptions import Warning as UserError
 from lxml import etree
 import base64
 
@@ -38,11 +40,19 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
 
         invoice = obj_invoice.browse(invoice_ids)
 
+        strWarning = _(
+            'You have to define a branch code!\n'
+            'For more information, please contact administrator.'
+        )
+
+        if not invoice.company_id.accurate_branch_code:
+            raise UserError(strWarning)
+
         # Create Element ROOT
         root = etree.Element("NMEXML", {
-            "EximID": "",
+            "ACCOUNTANTCOPYID": "",
             "BranchCode": invoice.company_id.accurate_branch_code,
-            "ACCOUNTANTCOPYID": ""
+            "EximID": "",
         })
         # Create Element CHILD ROOT
         child_root = etree.SubElement(root, "TRANSACTIONS", {
@@ -50,11 +60,75 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
         })
         # Create Element SUB CHILD ROOT
         sub_child_root = etree.SubElement(child_root, "PURCHASEINVOICE", {
-            "operation": "Add",
-            "REQUESTID": ""
+            "REQUESTID": "",
+            "operation": "Add"
         })
         # Create Element account.invoice
         etree.SubElement(sub_child_root, "TRANSACTIONID")
+
+        # Create Element account.invoice
+        for invoice_line in invoice.invoice_line:
+            # Create Element ROOT account.invoice.line
+            line_root = etree.SubElement(sub_child_root, "ITEMLINE", {
+                "operation": "Add",
+            })
+            key_id = etree.SubElement(line_root, "KeyID")
+            key_id.text = "%s" % (invoice_line.id or '')
+
+            item_no = etree.SubElement(line_root, "ITEMNO")
+            item_no.text = "%s" % (invoice_line.product_id.code or '')
+
+            quantity = etree.SubElement(line_root, "QUANTITY")
+            quantity.text = "%s" % (invoice_line.quantity or '')
+
+            item_unit = etree.SubElement(line_root, "ITEMUNIT")
+            item_unit.text = "%s" % (invoice_line.uos_id.name or '')
+
+            unit_ratio = etree.SubElement(line_root, "UNITRATIO")
+            unit_ratio.text = "%s" % (invoice_line.uos_id.factor or '')
+
+            etree.SubElement(line_root, "ITEMRESERVED1")
+
+            etree.SubElement(line_root, "ITEMRESERVED2")
+
+            etree.SubElement(line_root, "ITEMRESERVED3")
+
+            etree.SubElement(line_root, "ITEMRESERVED4")
+
+            etree.SubElement(line_root, "ITEMRESERVED5")
+
+            etree.SubElement(line_root, "ITEMRESERVED6")
+
+            etree.SubElement(line_root, "ITEMRESERVED7")
+
+            etree.SubElement(line_root, "ITEMRESERVED8")
+
+            etree.SubElement(line_root, "ITEMRESERVED9")
+
+            etree.SubElement(line_root, "ITEMRESERVED10")
+
+            item_mov_desc =\
+                etree.SubElement(line_root, "ITEMOVDESC")
+            item_mov_desc.text =\
+                "%s" % (invoice_line.name or '')
+
+            unit_price =\
+                etree.SubElement(line_root, "UNITPRICE")
+            unit_price.text = "%s" % (invoice_line.price_unit or '')
+
+            item_disc_pc =\
+                etree.SubElement(line_root, "ITEMDISCPC")
+            item_disc_pc.text = "%s" % (invoice_line.discount or '')
+
+            etree.SubElement(line_root, "TAXCODES")
+
+            etree.SubElement(line_root, "POSEQ")
+
+            etree.SubElement(line_root, "BRUTOUNITPRICE")
+
+            etree.SubElement(line_root, "WAREHOUSEID")
+
+            etree.SubElement(line_root, "QTYCONTROL")
 
         invoice_no = etree.SubElement(sub_child_root, "INVOICENO")
         invoice_no.text = "%s" % (invoice.supplier_invoice_number or '')
@@ -138,67 +212,6 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
         etree.SubElement(sub_child_root, "LOCKED_BY")
 
         etree.SubElement(sub_child_root, "LOCKED_TIME")
-
-        # Create Element account.invoice
-        for invoice_line in invoice.invoice_line:
-            # Create Element ROOT account.invoice.line
-            line_root = etree.SubElement(sub_child_root, "ITEMLINE", {
-                "operation": "Add",
-            })
-            key_id = etree.SubElement(line_root, "KeyID")
-            key_id.text = "%s" % (invoice_line.id or '')
-
-            item_no = etree.SubElement(line_root, "ITEMNO")
-            item_no.text = "%s" % (invoice_line.product_id.code or '')
-
-            quantity = etree.SubElement(line_root, "QUANTITY")
-            quantity.text = "%s" % (invoice_line.quantity or '')
-
-            item_unit = etree.SubElement(line_root, "ITEMUNIT")
-            item_unit.text = "%s" % (invoice_line.uos_id.name or '')
-
-            unit_ratio = etree.SubElement(line_root, "UNITRATIO")
-            unit_ratio.text = "%s" % (invoice_line.uos_id.factor or '')
-
-            etree.SubElement(line_root, "ITEMRESERVED1")
-
-            etree.SubElement(line_root, "ITEMRESERVED2")
-
-            etree.SubElement(line_root, "ITEMRESERVED3")
-
-            etree.SubElement(line_root, "ITEMRESERVED4")
-
-            etree.SubElement(line_root, "ITEMRESERVED5")
-
-            etree.SubElement(line_root, "ITEMRESERVED6")
-
-            etree.SubElement(line_root, "ITEMRESERVED7")
-
-            etree.SubElement(line_root, "ITEMRESERVED8")
-
-            etree.SubElement(line_root, "ITEMRESERVED9")
-
-            etree.SubElement(line_root, "ITEMRESERVED10")
-
-            etree.SubElement(line_root, "ITEMOVDESC")
-
-            unit_price =\
-                etree.SubElement(line_root, "UNITPRICE")
-            unit_price.text = "%s" % (invoice_line.price_unit or '')
-
-            item_disc_pc =\
-                etree.SubElement(line_root, "ITEMDISCPC")
-            item_disc_pc.text = "%s" % (invoice_line.discount or '')
-
-            etree.SubElement(line_root, "TAXCODES")
-
-            etree.SubElement(line_root, "POSEQ")
-
-            etree.SubElement(line_root, "BRUTOUNITPRICE")
-
-            etree.SubElement(line_root, "WAREHOUSEID")
-
-            etree.SubElement(line_root, "QTYCONTROL")
 
         data_xml = etree.tostring(root)
         vals = {
