@@ -12,6 +12,7 @@
                             name="%(supplier_invoice_export_to_accurate_action)d"
                             type="action" 
                             string="Export To Accurate"
+                            states="proforma2,open,paid"
                         /> 
                     </xpath>
                 </data>
