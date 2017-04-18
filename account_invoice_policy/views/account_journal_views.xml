@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="account_journal_view_form" model="ir.ui.view">
+            <field name="name">Account Journal Policy Form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Policy" groups="base.group_system">
+                        <group name="grp_policy_order" string="Account Invoice Workflow Button Policy" colspan="4" col="2">
+                            <field name="open_group_ids" widget="many2many_tags"/>
+                            <field name="refund_group_ids" widget="many2many_tags"/>
+                            <field name="cancel_group_ids" widget="many2many_tags"/>
+                            <field name="set_to_draft_group_ids" widget="many2many_tags"/>
+                            <field name="re_open_group_ids" widget="many2many_tags"/>
+                            <field name="send_email_group_ids" widget="many2many_tags" attrs="{'invisible': [('type', '=', 'in_invoice')]}"/>
+                            <field name="proforma_group_ids" widget="many2many_tags" attrs="{'invisible': [('type', '=', 'in_invoice')]}"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

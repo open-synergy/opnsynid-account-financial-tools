@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="account_invoice_supplier_view_form" model="ir.ui.view">
+            <field name="name">Account Invoice Supplier Form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//notebook" position="inside">
+                        <page name="page_supplier_invoice_policy" string="Policy" groups="base.group_system">
+                            <group name="grp_supplier_invoice_policy">
+                                <field name="open_ok"/>
+                                <field name="refund_ok"/>
+                                <field name="cancel_ok"/>
+                                <field name="set_to_draft_ok"/>
+                                <field name="re_open_ok"/>
+                            </group>
+                        </page>
+                    </xpath>
+
+                    <xpath expr="//button[@name='invoice_open']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','not in', ['draft', 'proforma2']),('open_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='%(account.action_account_invoice_refund)d']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','not in', ['open', 'paid']),('refund_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='invoice_cancel']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','not in', ['draft', 'proforma2']),('cancel_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='action_cancel_draft']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','=', 'cancel'),('set_to_draft_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='%(account.action_account_state_open)d']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|', '|', ('state','&lt;&gt;','paid'), ('reconciled', '=', True),('re_open_ok','=',False)]}
+                        </attribute>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                </data>
+            </field>
+        </record>
+
+        <record id="account_invoice_view_form" model="ir.ui.view">
+            <field name="name">Account Invoice Form</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//notebook" position="inside">
+                        <page name="page_supplier_invoice_policy" string="Policy" groups="base.group_system">
+                            <group name="grp_supplier_invoice_policy">
+                                <field name="open_ok"/>
+                                <field name="refund_ok"/>
+                                <field name="cancel_ok"/>
+                                <field name="set_to_draft_ok"/>
+                                <field name="re_open_ok"/>
+                                <field name="send_email_ok"/>
+                                <field name="proforma_ok"/>
+                            </group>
+                        </page>
+                    </xpath>
+
+                    <xpath expr="//button[@name='action_invoice_sent'][1]" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|', '|', ('sent','=',True), ('state', '!=', 'open'), ('send_email_ok', '=', False)]}
+                        </attribute>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='action_invoice_sent'][2]" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|', '|', ('sent','=',False), ('state', '!=', 'open'), ('send_email_ok', '=', False)]}
+                        </attribute>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='invoice_open'][1]" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','!=','draft'),('open_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='invoice_open'][2]" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','!=','proforma2'),('open_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='invoice_proforma2']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','!=','draft'),('proforma_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='%(account.action_account_invoice_refund)d']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','not in', ['open', 'proforma2', 'paid']),('refund_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='invoice_cancel']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','not in', ['draft', 'proforma2', 'open']),('cancel_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='action_cancel_draft']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','!=', 'cancel'),('set_to_draft_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='%(account.action_account_state_open)d']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|', '|', ('state','&lt;&gt;','paid'), ('reconciled', '=', True),('re_open_ok','=',False)]}
+                        </attribute>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>
