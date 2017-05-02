@@ -52,7 +52,7 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
         root = etree.Element("NMEXML", {
             "ACCOUNTANTCOPYID": "",
             "BranchCode": invoice.company_id.accurate_branch_code,
-            "EximID": "",
+            "EximID": "%s" % (invoice.id or ''),
         })
         # Create Element CHILD ROOT
         child_root = etree.SubElement(root, "TRANSACTIONS", {
@@ -60,7 +60,7 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
         })
         # Create Element SUB CHILD ROOT
         sub_child_root = etree.SubElement(child_root, "PURCHASEINVOICE", {
-            "REQUESTID": "",
+            "REQUESTID": "1",
             "operation": "Add"
         })
         # Create Element account.invoice
@@ -124,35 +124,55 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
 
             etree.SubElement(line_root, "POSEQ")
 
-            etree.SubElement(line_root, "BRUTOUNITPRICE")
+            bruto_unit_price =\
+                etree.SubElement(line_root, "BRUTOUNITPRICE")
+            subtotal = invoice_line.price_subtotal
+            qty = invoice_line.quantity
+            bruto_unit_price.text =\
+                "%s" % ((subtotal/qty) or '')
 
-            etree.SubElement(line_root, "WAREHOUSEID")
+            WH1 =\
+                etree.SubElement(line_root, "WAREHOUSEID")
+            WH1.text = "%s" % ("CENTRE" or '')
 
             etree.SubElement(line_root, "QTYCONTROL")
 
         invoice_no = etree.SubElement(sub_child_root, "INVOICENO")
-        invoice_no.text = "%s" % (invoice.supplier_invoice_number or '')
+        invoice_no.text = "%s" % (invoice.number or '')
 
         invoice_date = etree.SubElement(sub_child_root, "INVOICEDATE")
         invoice_date.text = "%s" % (invoice.date_invoice or '')
 
-        etree.SubElement(sub_child_root, "TAX1ID")
+        tax1ID =\
+            etree.SubElement(sub_child_root, "TAX1ID")
 
-        etree.SubElement(sub_child_root, "TAX1CODE")
+        tax1Code =\
+            etree.SubElement(sub_child_root, "TAX1CODE")
+        if invoice.tax_line:
+            tax1ID.text = "T"
+            tax1Code.text = "T"
 
         etree.SubElement(sub_child_root, "TAX2CODE")
 
-        etree.SubElement(sub_child_root, "TAX1RATE")
+        tax1rate =\
+            etree.SubElement(sub_child_root, "TAX1RATE")
+        tax1rate.text = "10"
 
-        etree.SubElement(sub_child_root, "TAX2RATE")
+        tax2rate =\
+            etree.SubElement(sub_child_root, "TAX2RATE")
+        tax2rate.text = "0"
 
         etree.SubElement(sub_child_root, "RATE")
 
         etree.SubElement(sub_child_root, "INCLUSIVETAX")
 
-        etree.SubElement(sub_child_root, "INVOICEISTAXABLE")
+        invtaxable=\
+            etree.SubElement(sub_child_root, "INVOICEISTAXABLE")
+        invtaxable.text = "1"
 
-        etree.SubElement(sub_child_root, "CASHDISCOUNT")
+        cashdisc =\
+            etree.SubElement(sub_child_root, "CASHDISCOUNT")
+        cashdisc.text = "0"
 
         etree.SubElement(sub_child_root, "CASHDISCPC")
 
@@ -162,7 +182,12 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
 
         terms_id =\
             etree.SubElement(sub_child_root, "TERMSID")
-        terms_id.text = "%s" % (invoice.payment_term.name or '')
+        if invoice.payment_term:
+            data_termsid = invoice.payment_term.accurate_termsid
+        else:
+            data_termsid = "COD"
+        terms_id.text =\
+            "%s" % (data_termsid or '')
 
         etree.SubElement(sub_child_root, "FOB")
 
@@ -170,7 +195,9 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
             etree.SubElement(sub_child_root, "PURCHASEORDERNO")
         purchase_order_no.text = "%s" % (invoice.origin or '')
 
-        etree.SubElement(sub_child_root, "WAREHOUSEID")
+        WH2 =\
+            etree.SubElement(sub_child_root, "WAREHOUSEID")
+        WH2.text = "CENTRE"
 
         description = etree.SubElement(sub_child_root, "DESCRIPTION")
         description.text = "%s" % (invoice.name or '')
@@ -199,9 +226,13 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
 
         etree.SubElement(sub_child_root, "SHIPVENDID")
 
-        etree.SubElement(sub_child_root, "INVTAXNO1")
+        invtaxno1 =\
+            etree.SubElement(sub_child_root, "INVTAXNO1")
+        invtaxno1.text = "000"
 
-        etree.SubElement(sub_child_root, "INVTAXNO2")
+        invtaxno2 =\
+            etree.SubElement(sub_child_root, "INVTAXNO2")
+        invtaxno2.text = "000"
 
         etree.SubElement(sub_child_root, "SSPDATE")
 
