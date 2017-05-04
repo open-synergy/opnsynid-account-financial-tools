@@ -160,11 +160,15 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
 
         tax2rate =\
             etree.SubElement(sub_child_root, "TAX2RATE")
-        tax2rate.text = "0"
+        tax2rate.text = "1"
 
-        etree.SubElement(sub_child_root, "RATE")
+        rate =\
+            etree.SubElement(sub_child_root, "RATE")
+        rate.text = "1"
 
-        etree.SubElement(sub_child_root, "INCLUSIVETAX")
+        inclusivetax =\
+            etree.SubElement(sub_child_root, "INCLUSIVETAX")
+        inclusivetax.text = "0"
 
         invtaxable=\
             etree.SubElement(sub_child_root, "INVOICEISTAXABLE")
@@ -209,7 +213,7 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
 
         fiscal_rate =\
             etree.SubElement(sub_child_root, "FISCALRATE")
-        fiscal_rate.text = "%s" % ('0')
+        fiscal_rate.text = "%s" % ('1')
 
         etree.SubElement(sub_child_root, "INVFROMPR")
 
@@ -219,7 +223,9 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
         vendor_id = etree.SubElement(sub_child_root, "VENDORID")
         vendor_id.text = "%s" % (invoice.partner_id.ref or '')
 
-        etree.SubElement(sub_child_root, "SEQUENCENO")
+        sequenceno =\
+            etree.SubElement(sub_child_root, "SEQUENCENO")
+        sequenceno.text = "000"
 
         ap_account = etree.SubElement(sub_child_root, "APACCOUNT")
         ap_account.text = "%s" % (invoice.account_id.code or '')
