@@ -170,7 +170,7 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
             etree.SubElement(sub_child_root, "INCLUSIVETAX")
         inclusivetax.text = "0"
 
-        invtaxable=\
+        invtaxable =\
             etree.SubElement(sub_child_root, "INVOICEISTAXABLE")
         invtaxable.text = "1"
 
