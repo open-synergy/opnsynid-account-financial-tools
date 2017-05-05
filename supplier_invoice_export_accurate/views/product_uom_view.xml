@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="product_uom_view_form">
+            <field name="name">Product Uom - Accurate Information</field>
+            <field name="model">product.uom</field>
+            <field name="inherit_id" ref="product.product_uom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="accurate_uom_code"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
