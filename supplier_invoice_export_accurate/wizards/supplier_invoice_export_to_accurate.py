@@ -82,7 +82,7 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
             quantity.text = "%s" % (invoice_line.quantity or '')
 
             item_unit = etree.SubElement(line_root, "ITEMUNIT")
-            item_unit.text = "%s" % (invoice_line.uos_id.name or '')
+            item_unit.text = "%s" % (invoice_line.uos_id.accurate_uom_code or '')
 
             unit_ratio = etree.SubElement(line_root, "UNITRATIO")
             unit_ratio.text = "%s" % (invoice_line.uos_id.factor or '')
@@ -221,7 +221,7 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
         tax_date.text = "%s" % (invoice.date_invoice or '')
 
         vendor_id = etree.SubElement(sub_child_root, "VENDORID")
-        vendor_id.text = "%s" % (invoice.partner_id.ref or '')
+        vendor_id.text = "%s" % (invoice.commercial_partner_id.ref or '')
 
         sequenceno =\
             etree.SubElement(sub_child_root, "SEQUENCENO")
