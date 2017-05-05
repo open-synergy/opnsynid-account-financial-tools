@@ -4,3 +4,4 @@
 
 from . import res_company
 from . import account_payment_term
+from . import product_uom

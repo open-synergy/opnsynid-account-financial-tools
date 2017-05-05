@@ -14,6 +14,7 @@
         "views/res_company_view.xml",
         "views/supplier_invoice_export_to_accurate.xml",
         "views/account_invoice_views.xml",
-        "views/account_payment_term_view.xml"
+        "views/account_payment_term_view.xml",
+        "views/product_uom_view.xml"
     ],
 }
