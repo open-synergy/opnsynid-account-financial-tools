@@ -225,7 +225,7 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
 
         sequenceno =\
             etree.SubElement(sub_child_root, "SEQUENCENO")
-        sequenceno.text = "000"
+        sequenceno.text = "%s" % (invoice.number or '')
 
         ap_account = etree.SubElement(sub_child_root, "APACCOUNT")
         ap_account.text = "%s" % (invoice.account_id.code or '')
