@@ -120,7 +120,10 @@ class SupplierInvoiceExportToAccurate(models.TransientModel):
                 etree.SubElement(line_root, "ITEMDISCPC")
             item_disc_pc.text = "%s" % (invoice_line.discount or '')
 
-            etree.SubElement(line_root, "TAXCODES")
+            tax_codes =\
+                etree.SubElement(line_root, "TAXCODES")
+            if invoice_line.invoice_line_tax_id:
+                tax_codes.text = "T"
 
             etree.SubElement(line_root, "POSEQ")
 
