@@ -1,22 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-        <record id="account_journal_view_form" model="ir.ui.view">
-            <field name="name">Inherit : Account Journal Bank Cash Policy Form</field>
-            <field name="model">account.journal</field>
-            <field name="inherit_id" ref="account_bank_statement_policy.account_journal_view_form"/>
-            <field name="arch" type="xml">
-                <xpath expr="//notebook//page[@name='page_bank_policy']" position="inside">
-                    <group name="grp_bank_policy" string="Allowed To Reconcile Open Move Line">
-                        <field name="allowed_group_bank_ids" nolabel="1"/>
-                    </group>
-                </xpath>
-                <xpath expr="//notebook//page[@name='page_cash_policy']" position="inside">
-                    <group name="grp_cash_policy" string="Allowed To Reconcile Open Move Line">
-                        <field name="allowed_group_cash_ids" nolabel="1"/>
-                    </group>
-                </xpath>
-            </field>
-        </record>
-    </data>
-</openerp>
+<odoo>
+    <record id="account_journal_view_form" model="ir.ui.view">
+        <field name="name">Inherit : Account Journal Bank Cash Policy Form</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account_bank_statement_policy.account_journal_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook//page[@name='page_bank_policy']" position="inside">
+                <group name="grp_bank_policy" string="Allowed To Reconcile Open Move Line">
+                    <field name="allowed_group_bank_ids" nolabel="1"/>
+                </group>
+            </xpath>
+            <xpath expr="//notebook//page[@name='page_cash_policy']" position="inside">
+                <group name="grp_cash_policy" string="Allowed To Reconcile Open Move Line">
+                    <field name="allowed_group_cash_ids" nolabel="1"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
