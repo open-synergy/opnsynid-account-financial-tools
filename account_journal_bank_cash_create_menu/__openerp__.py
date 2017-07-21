@@ -9,7 +9,7 @@
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
     "license": "AGPL-3",
-    "installable": True,
+    "installable": False,
     "depends": ["account"],
     "data": [
         "views/account_journal_bank_cash_create_menu.xml",

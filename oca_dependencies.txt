@@ -12,4 +12,4 @@
 # sale-workflow https://github.com/OCA/sale-workflow
 #
 # To provide both the URL and a branch, use:
-account-financial-tools https://github.com/OCA/account-financial-tools 8.0
+account-financial-tools https://github.com/OCA/account-financial-tools 9.0
