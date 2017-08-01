@@ -15,19 +15,26 @@ class TestReconcilation(TransactionCase):
         self.obj_bank_stmt_line = self.env['account.bank.statement.line']
         self.obj_invoice = self.env['account.invoice']
         self.obj_invoice_line = self.env['account.invoice.line']
+        self.obj_journal = self.env['account.journal']
+        self.obj_account = self.env['account.account']
 
         # Data
         self.data_bnk_stmt = self.env.ref(
             'account.demo_bank_statement_1')
-        self.data_journal = self.env.ref(
-            'account.bank_journal')
-        self.data_journal_cash = self.env.ref(
-            'account.cash_journal')
-        self.data_journal_no_bankcash = self.env.ref(
-            'account.miscellaneous_journal')
+        self.data_journal = self.obj_journal.search(
+            [('type', '=', 'bank')]
+        )[0]
+        self.data_journal_cash = self.obj_journal.search(
+            [('type', '=', 'cash')]
+        )[0]
+        self.data_journal_no_bankcash = self.obj_journal.search(
+            [('type', '=', 'general')]
+        )[0]
         self.partner_1 = self.env.ref('base.res_partner_1')
         self.partner_2 = self.env.ref('base.res_partner_2')
-        self.account = self.env.ref('account.a_recv')
+        self.account = self.obj_account.search(
+            [('internal_type', '=', 'receivable')]
+        )[0]
         self.product_1 = self.env.ref('product.product_product_3')
         self.product_2 = self.env.ref('product.product_product_4')
         self.curr = self.env.ref('base.IDR')
@@ -51,6 +58,7 @@ class TestReconcilation(TransactionCase):
             'date_invoice': time.strftime('%Y')+'-07-01'
         })
         self.obj_invoice_line.create({
+            'account_id': self.account.id,
             'product_id': self.product_1.id,
             'quantity': 1,
             'price_unit': 1000000,
@@ -70,6 +78,7 @@ class TestReconcilation(TransactionCase):
             'date_invoice': time.strftime('%Y')+'-07-01'
         })
         self.obj_invoice_line.create({
+            'account_id': self.account.id,
             'product_id': self.product_2.id,
             'quantity': 1,
             'price_unit': 50000000,
@@ -115,8 +124,7 @@ class TestReconcilation(TransactionCase):
     def test_reconciliation_bank(self):
         # Test User No Group, Account Journal No Group
         for st_line in self.data_bnk_stmt.line_ids:
-            result = self.obj_bank_stmt_line.get_move_lines_for_reconciliation(
-                st_line=st_line)
+            result = st_line.get_move_lines_for_reconciliation_widget()
             self.assertNotEqual(result, [])
 
         # Insert Group to Account Jounal
@@ -125,16 +133,14 @@ class TestReconcilation(TransactionCase):
 
         # Test User No Group, Account Journal Has Group
         for st_line in self.data_bnk_stmt.line_ids:
-            result = self.obj_bank_stmt_line.get_move_lines_for_reconciliation(
-                st_line=st_line)
+            result = st_line.get_move_lines_for_reconciliation_widget()
             self.assertEqual(result, [])
 
         # Test User Has Group, Account Journal Has Group
         user = self.env.user
         user.groups_id = [(6, 0, self.group.ids)]
         for st_line in self.data_bnk_stmt.line_ids:
-            result = self.obj_bank_stmt_line.get_move_lines_for_reconciliation(
-                st_line=st_line)
+            result = st_line.get_move_lines_for_reconciliation_widget()
             self.assertNotEqual(result, [])
 
     def test_reconciliation_cash(self):
@@ -147,8 +153,7 @@ class TestReconcilation(TransactionCase):
 
         # Test User No Group, Account Journal No Group
         for st_line in bank_stmt_id.line_ids:
-            result = self.obj_bank_stmt_line.get_move_lines_for_reconciliation(
-                st_line=st_line)
+            result = st_line.get_move_lines_for_reconciliation_widget()
             self.assertNotEqual(result, [])
 
         # Insert Group to Account Jounal
@@ -157,16 +162,14 @@ class TestReconcilation(TransactionCase):
 
         # Test User No Group, Account Journal Has Group
         for st_line in bank_stmt_id.line_ids:
-            result = self.obj_bank_stmt_line.get_move_lines_for_reconciliation(
-                st_line=st_line)
+            result = st_line.get_move_lines_for_reconciliation_widget()
             self.assertEqual(result, [])
 
         # Test User Has Group, Account Journal Has Group
         user = self.env.user
         user.groups_id = [(6, 0, self.group.ids)]
         for st_line in bank_stmt_id.line_ids:
-            result = self.obj_bank_stmt_line.get_move_lines_for_reconciliation(
-                st_line=st_line)
+            result = st_line.get_move_lines_for_reconciliation_widget()
             self.assertNotEqual(result, [])
 
     def test_reconciliation_no_bankcash(self):
@@ -179,8 +182,7 @@ class TestReconcilation(TransactionCase):
 
         # Test User No Group, Account Journal No Group
         for st_line in bank_stmt_id.line_ids:
-            result = self.obj_bank_stmt_line.get_move_lines_for_reconciliation(
-                st_line=st_line)
+            result = st_line.get_move_lines_for_reconciliation_widget()
             self.assertNotEqual(result, [])
 
         # Insert Group to Account Jounal
@@ -189,14 +191,12 @@ class TestReconcilation(TransactionCase):
 
         # Test User No Group, Account Journal Has Group
         for st_line in bank_stmt_id.line_ids:
-            result = self.obj_bank_stmt_line.get_move_lines_for_reconciliation(
-                st_line=st_line)
+            result = st_line.get_move_lines_for_reconciliation_widget()
             self.assertNotEqual(result, [])
 
         # Test User Has Group, Account Journal Has Group
         user = self.env.user
         user.groups_id = [(6, 0, self.group.ids)]
         for st_line in bank_stmt_id.line_ids:
-            result = self.obj_bank_stmt_line.get_move_lines_for_reconciliation(
-                st_line=st_line)
+            result = st_line.get_move_lines_for_reconciliation_widget()
             self.assertNotEqual(result, [])

@@ -31,20 +31,18 @@ class AccountBankStatementLine(models.Model):
         else:
             return True
 
-    def get_move_lines_for_reconciliation(
-        self, cr, uid, st_line, excluded_ids=None,
-        str=False, offset=0, limit=None, count=False,
-        additional_domain=None, context=None
+    @api.multi
+    def get_move_lines_for_reconciliation_widget(
+        self, excluded_ids=None, str=False,
+        offset=0, limit=None
     ):
-
         res = super(
             AccountBankStatementLine, self
-        ).get_move_lines_for_reconciliation(
-            cr, uid, st_line, excluded_ids=None,
-            str=False, offset=0, limit=None, count=False,
-            additional_domain=None, context=None
+        ).get_move_lines_for_reconciliation_widget(
+            excluded_ids=None, str=False,
+            offset=0, limit=None
         )
-        if st_line._check_group():
+        if self._check_group():
             return res
         else:
             return []
