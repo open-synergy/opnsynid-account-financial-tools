@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# © 2016 OpenSynergy Indonesia
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2017 OpenSynergy Indonesia
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields, api
 
@@ -86,7 +86,10 @@ class AccountJournalBankCashCreateMenu(models.TransientModel):
     @api.model
     def _create_menu(self, journal, window_action):
         obj_ir_ui_menu = self.env['ir.ui.menu']
-        bankandcash_menu = self.env.ref('account.menu_finance_bank_and_cash')
+        bankandcash_menu =\
+            self.env.ref(
+                'account_journal_bank_cash_create_menu.menu_bank_and_cash'
+            )
 
         if not self.parent_menu_id:
             parent_id = bankandcash_menu.id

@@ -14,20 +14,20 @@ Installation
 
 To install this module, you need to:
 
-1.  Clone the branch 8.0 of the repository https://github.com/open-synergy/opnsynid-accounting
+1.  Clone the branch 9.0 of the repository https://github.com/open-synergy/opnsynid-accounting
 2.  Add the path to this repository in your configuration (addons-path)
 3.  Update the module list
-4.  Go to menu *Setting -> Modules -> Local Modules*
+4.  Go to menu *Apps -> Apps*
 5.  Search For *Account Journal - Bank and Cash Create Menu*
 6.  Install the module
 
 Usage
 =====
 To use this module, you need to:
-    #. Go to menu *Invoicing -> Configuration -> Journals -> Journals
+    #. Go to menu *Invoicing/Accounting -> Configuration -> Accounting -> Journals
     #. Search journal with type is Bank or Cash
     #. Select one record on the list or create a new record
-    #. On bottom of form, klik a button named *Create Menu*
+    #. On bottom of form, click a button named *Create Menu* on tab "Custom Menu"
 
 Credits
 =======
