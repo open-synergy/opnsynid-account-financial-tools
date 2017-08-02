@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-# © 2016 OpenSynergy Indonesia
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# Copyright 2017 OpenSynergy Indonesia
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp.tests.common import TransactionCase
 
@@ -15,8 +15,9 @@ class TestBaseCreateMenu(TransactionCase):
             self.env['account.journal']
 
         # Data
-        self.bank_journal =\
-            self.env.ref('account.bank_journal')
+        self.bank_journal = self.obj_journal.search(
+            [('type', '=', 'bank')]
+        )[0]
         self.search_bank_view =\
             self.env.ref('account.view_bank_statement_search')
         self.tree_bank_view =\
