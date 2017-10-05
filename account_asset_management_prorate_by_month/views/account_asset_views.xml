@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="account_asset_view_form" model="ir.ui.view">
+    <field name="name">Prorate by Month</field>
+    <field name="model">account.asset.asset</field>
+    <field name="inherit_id" ref="account_asset_management.view_account_asset_asset_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='prorata']" position="after">
+            <field name="prorate_by_month"/>
+            <field name="date_min_prorate"/>
+        </xpath>
+    </field>
+</record>
+
+</data>
+</openerp>
