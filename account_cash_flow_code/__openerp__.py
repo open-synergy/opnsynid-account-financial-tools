@@ -2,7 +2,7 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
-    "name": "Account - Cash Flow Code",
+    "name": "Cash Flow Code",
     "version": "8.0.1.0.0",
     "category": "Accounting",
     "website": "https://opensynergy-indonesia.com",

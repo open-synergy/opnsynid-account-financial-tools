@@ -22,14 +22,12 @@
             <field name="model">account.cash_flow_code</field>
             <field name="arch" type="xml">
                 <form string="Cash Flow Code">
-                    <sheet>
-                        <group col="4">
-                            <field name="name"/>
-                            <field name="active"/>
-                            <field name="type"/>
-                            <field name="description"/>
-                        </group>
-                    </sheet>
+                    <group name="group_1" colspan="4" col="2">
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="type"/>
+                        <field name="description"/>
+                    </group>
                 </form>
             </field>
         </record>
@@ -50,7 +48,7 @@
         <menuitem
             id="account_cash_flow_code_menu"
             name="Cash Flow Code"
-            parent="account.menu_finance_configuration"
+            parent="account.account_account_menu"
             action="account_cash_flow_code_action"
             sequence="15"
             />
