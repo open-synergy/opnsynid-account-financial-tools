@@ -17,5 +17,17 @@
             </field>
         </record>
 
+        <record id="account_move_line_view_search" model="ir.ui.view">
+            <field name="name">Inherit Search: Cash Flow Code</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group" position="inside">
+                    <filter name="grp_indirect" string="Indirect Cash Flow" context="{'group_by': 'indirect_cash_flow_id'}"/>
+                    <filter name="grp_direct" string="Direct Cash Flow" context="{'group_by': 'direct_cash_flow_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </openerp>
