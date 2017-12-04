@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+
+        <record id="account_move_line_view_tree" model="ir.ui.view">
+            <field name="name">Inherit Tree: Cash Flow Code</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='account_id']" position="after">
+                    <field name="direct_cash_flow_id"/>
+                    <field name="indirect_cash_flow_id"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
