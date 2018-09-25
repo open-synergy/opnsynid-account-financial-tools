@@ -24,10 +24,11 @@ To install this module, you need to:
 Usage
 =====
 To use this module, you need to:
-    #. Go to menu *Invoicing -> Configuration -> Journals -> Journals
-    #. Search journal with type is Bank or Cash
-    #. Select one record on the list or create a new record
-    #. On bottom of form, klik a button named *Create Menu*
+
+1. Go to menu *Invoicing -> Configuration -> Journals -> Journals*
+2. Search journal with type is Bank or Cash
+3. Select one record on the list or create a new record
+4. On bottom of form, klik a button named *Create Menu*
 
 Credits
 =======
