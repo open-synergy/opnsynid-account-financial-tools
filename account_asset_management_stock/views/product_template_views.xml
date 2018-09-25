@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="product_template_view_form" model="ir.ui.view">
+    <field name="name">Asset - Stock Integration</field>
+    <field name="model">product.template</field>
+    <field name="inherit_id" ref="account.product_template_form_view"/>
+    <field name="arch" type="xml">
+        <xpath expr="//group[@name='properties']" position="before">
+            <group name="asset_categ" colspan="4" col="2" string="Fixed Asset">
+                <field name="asset_category_id"/>
+                <field name="fixed_asset_salvage_value_computation"/>
+                <field name="fixed_asset_salvage_value"/>
+            </group>
+        </xpath>
+    </field>
+</record>
+
+</data>
+</openerp>
