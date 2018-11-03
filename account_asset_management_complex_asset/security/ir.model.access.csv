@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+account_complex_asset_installation_employee,account.complex_asset_installation - Employee,model_account_complex_asset_installation,base.group_user,1,1,1,1
+account_complex_asset_removal_employee,account.complex_asset_removal - Employee,model_account_complex_asset_removal,base.group_user,1,1,1,1
