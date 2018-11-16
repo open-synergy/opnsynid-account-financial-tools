@@ -170,7 +170,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
     )
     depreciated_amount = fields.Float(
         string="Depreciated Value",
-        required=True,
+        required=False,
         readonly=True,
     )
     gain_loss_amount = fields.Float(
@@ -245,9 +245,10 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         string="Exchange Journal",
         comodel_name="account.journal",
         readonly=True,
+        required=True,
         states={
             "draft": [
-                ("readonly", False),
+                ("readonly", False)
             ],
         },
     )
@@ -255,9 +256,10 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         string="Disposal Journal",
         comodel_name="account.journal",
         readonly=True,
+        required=True,
         states={
             "draft": [
-                ("readonly", False),
+                ("readonly", False)
             ],
         },
     )
@@ -265,9 +267,10 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         string="Gain Journal",
         comodel_name="account.journal",
         readonly=True,
+        required=True,
         states={
             "draft": [
-                ("readonly", False),
+                ("readonly", False)
             ],
         },
     )
@@ -276,6 +279,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         comodel_name="account.account",
         ondelete="restrict",
         readonly=True,
+        required=True,
         states={
             "draft": [
                 ("readonly", False),
@@ -287,6 +291,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         comodel_name="account.account",
         ondelete="restrict",
         readonly=True,
+        required=True,
         states={
             "draft": [
                 ("readonly", False),
@@ -298,6 +303,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         comodel_name="account.account",
         ondelete="restrict",
         readonly=True,
+        required=True,
         states={
             "draft": [
                 ("readonly", False),
@@ -309,6 +315,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         comodel_name="account.account",
         ondelete="restrict",
         readonly=True,
+        required=True,
         states={
             "draft": [
                 ("readonly", False),
@@ -320,6 +327,7 @@ class FixedAssetRetirementCommon(models.AbstractModel):
         comodel_name="account.account",
         ondelete="restrict",
         readonly=True,
+        required=True,
         states={
             "draft": [
                 ("readonly", False),
