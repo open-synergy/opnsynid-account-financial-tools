@@ -515,25 +515,25 @@ def _compute_year_amount(self, residual_amount):
             _("Illegal value %s in asset.method.") % self.method)
 
 
-@api.multi
-def _get_fy_duration_factor(self, entry, firstyear):
+@api.model
+def _get_fy_duration_factor(self, entry, asset, firstyear):
     """
     localization: override this method to change the logic used to
     calculate the impact of extended/shortened fiscal years
     """
     duration_factor = 1.0
     fy_id = entry["fy_id"]
-    if self.prorata:
+    if asset.prorata:
         if firstyear:
             depreciation_date_start = datetime.strptime(
-                self.date_start, "%Y-%m-%d")
+                asset.date_start, "%Y-%m-%d")
             fy_date_stop = entry["date_stop"]
             first_fy_asset_days = \
                 (fy_date_stop - depreciation_date_start).days + 1
             if fy_id:
-                first_fy_duration = self._get_fy_duration(
+                first_fy_duration = asset._get_fy_duration(
                     fy_id, option="days")
-                first_fy_year_factor = self._get_fy_duration(
+                first_fy_year_factor = asset._get_fy_duration(
                     fy_id, option="years")
                 duration_factor = \
                     float(first_fy_asset_days) / first_fy_duration \
@@ -545,10 +545,10 @@ def _get_fy_duration_factor(self, entry, firstyear):
                 duration_factor = \
                     float(first_fy_asset_days) / first_fy_duration
         elif fy_id:
-            duration_factor = self._get_fy_duration(
+            duration_factor = asset._get_fy_duration(
                 fy_id, option="years")
     elif fy_id:
-        fy_months = self._get_fy_duration(
+        fy_months = asset._get_fy_duration(
             fy_id, option="months")
         duration_factor = float(fy_months) / 12
     return duration_factor
