@@ -31,11 +31,11 @@ def _compute_depreciation(self):
             lines = asset.depreciation_line_ids.filtered(
                 lambda l: l.type in ("depreciate", "remove") and
                 (l.init_entry or l.move_check))
-            value_depreciated = sum([l.amount for l in lines])
+            value_depreciated = sum([l.amount for l in lines]) + \
+                asset._get_additional_depreciated_value()
             asset.value_residual = \
                 asset._get_asset_value() - value_depreciated
-            asset.value_depreciated = value_depreciated + \
-                asset._get_additional_depreciated_value()
+            asset.value_depreciated = value_depreciated
         else:
             asset.value_residual = 0.0
             asset.value_depreciated = 0.0
