@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="account_asset_config_setting_view_form" model="ir.ui.view">
+    <field name="name">account.asset.config_setting form</field>
+    <field name="model">account.asset.config_setting</field>
+    <field name="inherit_id" ref="account_asset_management_config_page.account_asset_config_setting_view_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//group[@name='feature_group']" position="after">
+            <separator string="Asset Improvement"/>
+            <group name="asset_improvement_config">
+                <label for="id" string="General"/>
+                <div>
+                    <div>
+                        <label for="id" string="Sequence" class="oe_inline"/>
+                        <field name="asset_improvement_sequence_id" class="oe_inline" domain="[('code','=','account.asset.improvement')]"/>
+                    </div>
+                </div>
+            </group>
+            <group name="asset_improvement_group_config">
+                <label for="id" string="Allowed Groups"/>
+                <div>
+                    <div>
+                        <label for="id" string="To Confirm" class="oe_inline"/>
+                        <field name="asset_improvement_confirm_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <label for="id" string="To Open" class="oe_inline"/>
+                        <field name="asset_improvement_open_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <label for="id" string="To Validate" class="oe_inline"/>
+                        <field name="asset_improvement_valid_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <label for="id" string="To Cancel" class="oe_inline"/>
+                        <field name="asset_improvement_cancel_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <label for="id" string="To Restart" class="oe_inline"/>
+                        <field name="asset_improvement_restart_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                    </div>
+                </div>
+            </group>
+        </xpath>
+    </field>
+</record>
+
+</data>
+</openerp>
