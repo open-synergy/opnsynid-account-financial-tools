@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Fixed Asset Improvement",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.0.1",
     "category": "Accounting & Finance",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",

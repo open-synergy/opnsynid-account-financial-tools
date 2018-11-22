@@ -12,11 +12,11 @@ class FixedAssetImprovement(models.Model):
 
     @api.model
     def _default_company_id(self):
-        return self.env.user.company_id.id
+        return self.env.user.company_id
 
     @api.model
     def _default_currency_id(self):
-        return self.env.user.company_id.currency_id.id
+        return self.env.user.company_id.currency_id
 
     @api.model
     def _default_date_improvement(self):
