@@ -299,7 +299,7 @@ def _compute_depreciation_table(self):
             else:
                 firstyear = i == 0 and True or False
                 fy_factor = self._get_fy_duration_factor(
-                    entry, firstyear)
+                    entry, self, firstyear)
                 fy_amount = year_amount * fy_factor
             if asset_sign * (fy_amount - fy_residual_amount) > 0:
                 fy_amount = fy_residual_amount
