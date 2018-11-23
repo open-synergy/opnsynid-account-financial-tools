@@ -12,4 +12,6 @@ class AccountAsset(models.Model):
     def _prepare_posted_lines_domain(self):
         _super = super(AccountAsset, self)
         result = _super._prepare_posted_lines_domain()
-        return result + [("subtype_id", "=", False)]
+        result.insert(0, "&")
+        result.append(("subtype_id", "=", False))
+        return result
