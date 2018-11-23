@@ -64,21 +64,14 @@ def compute_depreciation_board(self):
     for asset in self:
         if asset.value_residual == 0.0:
             continue
-        domain = [
-            ("asset_id", "=", asset.id),
-            ("type", "=", "depreciate"),
-            "|", ("move_check", "=", True), ("init_entry", "=", True)]
+        domain = asset._prepare_posted_lines_domain()
         posted_lines = line_obj.search(
             domain, order="line_date desc")
         if (len(posted_lines) > 0):
             last_line = posted_lines[0]
         else:
             last_line = line_obj
-        domain = [
-            ("asset_id", "=", asset.id),
-            ("type", "=", "depreciate"),
-            ("move_id", "=", False),
-            ("init_entry", "=", False)]
+        domain = asset._prepare_old_lines_domain()
         old_lines = line_obj.search(domain)
         if old_lines:
             old_lines.unlink()

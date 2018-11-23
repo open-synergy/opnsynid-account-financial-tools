@@ -100,3 +100,20 @@ class AccountAsset(models.Model):
             line_dates.append(line_date)
 
         return line_dates
+
+    @api.multi
+    def _prepare_posted_lines_domain(self):
+        return [
+            ("asset_id", "=", self.id),
+            ("type", "=", "depreciate"),
+            "|", ("move_check", "=", True), ("init_entry", "=", True),
+        ]
+
+    @api.multi
+    def _prepare_old_lines_domain(self):
+        return [
+            ("asset_id", "=", self.id),
+            ("type", "=", "depreciate"),
+            ("move_id", "=", False),
+            ("init_entry", "=", False),
+        ]
