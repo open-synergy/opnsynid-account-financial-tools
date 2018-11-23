@@ -469,6 +469,9 @@ class FixedAssetImprovement(models.Model):
     @api.multi
     def _prepare_depreciation_line(self, acc_move):
         self.ensure_one()
+        subtype = self.env.ref(
+            "account_asset_management_capital_improvement."
+            "depr_line_subtype_improvement")
         return {
             "name": self.name,
             "previous_id": self._get_previous_depreciation_line_id(),
@@ -477,6 +480,7 @@ class FixedAssetImprovement(models.Model):
             "type": "depreciate",
             "move_id": acc_move.id,
             "amount": -1.0 * self.improvement_amount,
+            "subtype_id": subtype.id,
         }
 
     @api.multi
