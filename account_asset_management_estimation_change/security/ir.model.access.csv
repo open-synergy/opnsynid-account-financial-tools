@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+account_asset_useful_life_employee,account.asset_change_estimation_useful_life - All Employee,model_account_asset_change_estimation_useful_life,base.group_user,1,1,1,1
+account_asset_salvage_employee,account.asset_change_estimation_salvage - All Employee,model_account_asset_change_estimation_salvage,base.group_user,1,1,1,1
