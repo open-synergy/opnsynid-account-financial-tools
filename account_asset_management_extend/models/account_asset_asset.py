@@ -104,9 +104,12 @@ class AccountAsset(models.Model):
     @api.multi
     def _prepare_posted_lines_domain(self):
         return [
+            "&",
+            "&",
+            "|", ("move_check", "=", True),
+            ("init_entry", "=", True),
             ("asset_id", "=", self.id),
             ("type", "=", "depreciate"),
-            "|", ("move_check", "=", True), ("init_entry", "=", True),
         ]
 
     @api.multi
