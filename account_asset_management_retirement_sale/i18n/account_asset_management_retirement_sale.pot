@@ -1,0 +1,368 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_asset_management_retirement_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-24 14:29+0000\n"
+"PO-Revision-Date: 2018-11-24 14:29+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,name:0
+msgid "# Document"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,accumulated_depreciation_account_id:0
+msgid "Accumulated Depreciation Account"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,acquisition_price:0
+msgid "Acquisition Price"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,asset_id:0
+msgid "Asset"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,asset_account_id:0
+msgid "Asset Account"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: model:ir.actions.act_window,name:account_asset_management_retirement_sale.account_asset_retirement_sale_action
+msgid "Asset Retirement by Sale"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: selection:account.asset_retirement_sale,disposal_acc_move_creation:0
+#: selection:account.asset_retirement_sale,exchange_acc_move_creation:0
+#: selection:account.asset_retirement_sale,gain_acc_move_creation:0
+msgid "Automatic"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,open_ok:0
+msgid "Can Open"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,valid_ok:0
+msgid "Can Validate"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: selection:account.asset_retirement_sale,state:0
+msgid "Cancel"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,cancelled_user_id:0
+msgid "Cancellation By"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,cancelled_date:0
+msgid "Cancellation Date"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,confirmed_user_id:0
+msgid "Confirmation By"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,confirmed_date:0
+msgid "Confirmation Date"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,currency_id:0
+msgid "Currency"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: help:account.asset_retirement_sale,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,depreciated_amount:0
+msgid "Depreciated Value"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,disposal_acc_move_creation:0
+msgid "Disposal Acc. Move Creation"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,disposal_acc_move_id:0
+msgid "Disposal Account Move"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,disposal_journal_id:0
+msgid "Disposal Journal"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,date_disposition:0
+msgid "Disposition Date"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,disposition_price:0
+msgid "Disposition Price"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: selection:account.asset_retirement_sale,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,exchange_acc_move_creation:0
+msgid "Exchange Acc. Move Creation"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,exchange_account_id:0
+msgid "Exchange Account"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,exchange_acc_move_id:0
+msgid "Exchange Account Move"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,exchange_journal_id:0
+msgid "Exchange Journal"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: model:ir.model,name:account_asset_management_retirement_sale.model_account_asset_retirement_sale
+msgid "Fixed Asset Retirement by Sale"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,gain_account_id:0
+msgid "Gain Account"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,gain_journal_id:0
+msgid "Gain Journal"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,gain_acc_move_creation:0
+msgid "Gain/Loss Acc. Move Creation"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,gain_acc_move_id:0
+msgid "Gain/Loss Account Move"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,gain_loss_amount:0
+msgid "Gain/Loss Amount"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: help:account.asset_retirement_sale,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,id:0
+msgid "ID"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: help:account.asset_retirement_sale,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,loss_account_id:0
+msgid "Loss Account"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: selection:account.asset_retirement_sale,disposal_acc_move_creation:0
+#: selection:account.asset_retirement_sale,exchange_acc_move_creation:0
+#: selection:account.asset_retirement_sale,gain_acc_move_creation:0
+msgid "Manual Selection"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: help:account.asset_retirement_sale,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,note:0
+msgid "Note"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: selection:account.asset_retirement_sale,state:0
+msgid "On Progress"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,opened_user_id:0
+msgid "Open By"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,opened_date:0
+msgid "Opened Date"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,partner_id:0
+msgid "Partner"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,period_id:0
+msgid "Period"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: model:ir.ui.menu,name:account_asset_management_retirement_sale.account_asset_retirement_sale_menu
+msgid "Retirement by Sale"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,state:0
+msgid "State"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,type_id:0
+msgid "Type"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: selection:account.asset_retirement_sale,state:0
+msgid "Valid"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,validated_user_id:0
+msgid "Validation By"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: field:account.asset_retirement_sale,validated_date:0
+msgid "Validation Date"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: selection:account.asset_retirement_sale,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: account_asset_management_retirement_sale
+#: selection:account.asset_retirement_sale,disposal_acc_move_creation:0
+#: selection:account.asset_retirement_sale,exchange_acc_move_creation:0
+#: selection:account.asset_retirement_sale,gain_acc_move_creation:0
+msgid "Workflow"
+msgstr ""
+
