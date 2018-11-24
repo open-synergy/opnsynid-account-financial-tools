@@ -1,0 +1,215 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_asset_management_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-24 14:33+0000\n"
+"PO-Revision-Date: 2018-11-24 14:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_asset_management_stock
+#: model:ir.model,name:account_asset_management_stock.model_account_asset_asset
+msgid "Asset"
+msgstr "Asset"
+
+#. module: account_asset_management_stock
+#: field:stock.create_fixed_asset_from_lot_detail,asset_category_id:0
+msgid "Asset Category"
+msgstr "Asset Category"
+
+#. module: account_asset_management_stock
+#: view:stock.create_fixed_asset_from_lot:account_asset_management_stock.stock_create_fixed_asset_from_lot_view_form
+#: view:stock.link_fixed_asset_to_lot:account_asset_management_stock.stock_link_fixed_asset_to_lot_view_form
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: account_asset_management_stock
+#: model:ir.model,name:account_asset_management_stock.model_stock_create_fixed_asset_from_lot
+msgid "Create Fixed Asset From Lot"
+msgstr "Create Fixed Asset From Lot"
+
+#. module: account_asset_management_stock
+#: model:ir.model,name:account_asset_management_stock.model_stock_create_fixed_asset_from_lot_detail
+msgid "Create Fixed Asset From Lot Detail"
+msgstr "Create Fixed Asset From Lot Detail"
+
+#. module: account_asset_management_stock
+#: view:stock.create_fixed_asset_from_lot:account_asset_management_stock.stock_create_fixed_asset_from_lot_view_form
+msgid "Create Fixed Assets"
+msgstr "Create Fixed Assets"
+
+#. module: account_asset_management_stock
+#: model:ir.actions.act_window,name:account_asset_management_stock.stock_create_fixed_asset_from_lot_action
+#: model:ir.actions.act_window,name:account_asset_management_stock.stock_link_fixed_asset_to_lot_action
+msgid "Create Fixed Assets From Lot"
+msgstr "Create Fixed Assets From Lot"
+
+#. module: account_asset_management_stock
+#: view:stock.link_fixed_asset_to_lot:account_asset_management_stock.stock_link_fixed_asset_to_lot_view_form
+msgid "Create Link"
+msgstr "Create Link"
+
+#. module: account_asset_management_stock
+#: field:stock.create_fixed_asset_from_lot,create_uid:0
+#: field:stock.create_fixed_asset_from_lot_detail,create_uid:0
+#: field:stock.link_fixed_asset_to_lot,create_uid:0
+#: field:stock.link_fixed_asset_to_lot_detail,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: account_asset_management_stock
+#: field:stock.create_fixed_asset_from_lot,create_date:0
+#: field:stock.create_fixed_asset_from_lot_detail,create_date:0
+#: field:stock.link_fixed_asset_to_lot,create_date:0
+#: field:stock.link_fixed_asset_to_lot_detail,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: account_asset_management_stock
+#: field:product.template,asset_category_id:0
+msgid "Default Asset Category"
+msgstr "Default Asset Category"
+
+#. module: account_asset_management_stock
+#: field:stock.create_fixed_asset_from_lot,display_name:0
+#: field:stock.create_fixed_asset_from_lot_detail,display_name:0
+#: field:stock.link_fixed_asset_to_lot,display_name:0
+#: field:stock.link_fixed_asset_to_lot_detail,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: account_asset_management_stock
+#: field:stock.create_fixed_asset_from_lot_detail,exception_message:0
+msgid "Error Message"
+msgstr "Error Message"
+
+#. module: account_asset_management_stock
+#: view:product.template:account_asset_management_stock.product_template_view_form
+#: field:stock.link_fixed_asset_to_lot_detail,asset_id:0
+#: view:stock.production.lot:account_asset_management_stock.stock_production_lot_view_form
+#: field:stock.production.lot,asset_id:0
+msgid "Fixed Asset"
+msgstr "Fixed Asset"
+
+#. module: account_asset_management_stock
+#: field:product.template,fixed_asset_salvage_value:0
+msgid "Fixed Asset Salvage Value"
+msgstr "Fixed Asset Salvage Value"
+
+#. module: account_asset_management_stock
+#: field:product.template,fixed_asset_salvage_value_computation:0
+msgid "Fixed Asset Salvage Value Computation"
+msgstr "Fixed Asset Salvage Value Computation"
+
+#. module: account_asset_management_stock
+#: selection:product.template,fixed_asset_salvage_value_computation:0
+msgid "Fixed Value"
+msgstr "Fixed Value"
+
+#. module: account_asset_management_stock
+#: field:stock.create_fixed_asset_from_lot,id:0
+#: field:stock.create_fixed_asset_from_lot_detail,id:0
+#: field:stock.link_fixed_asset_to_lot,id:0
+#: field:stock.link_fixed_asset_to_lot_detail,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: account_asset_management_stock
+#: field:stock.create_fixed_asset_from_lot_detail,stock_move_id:0
+msgid "Initial Stock Move"
+msgstr "Initial Stock Move"
+
+#. module: account_asset_management_stock
+#: field:stock.create_fixed_asset_from_lot,__last_update:0
+#: field:stock.create_fixed_asset_from_lot_detail,__last_update:0
+#: field:stock.link_fixed_asset_to_lot,__last_update:0
+#: field:stock.link_fixed_asset_to_lot_detail,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: account_asset_management_stock
+#: field:stock.create_fixed_asset_from_lot,write_uid:0
+#: field:stock.create_fixed_asset_from_lot_detail,write_uid:0
+#: field:stock.link_fixed_asset_to_lot,write_uid:0
+#: field:stock.link_fixed_asset_to_lot_detail,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: account_asset_management_stock
+#: field:stock.create_fixed_asset_from_lot,write_date:0
+#: field:stock.create_fixed_asset_from_lot_detail,write_date:0
+#: field:stock.link_fixed_asset_to_lot,write_date:0
+#: field:stock.link_fixed_asset_to_lot_detail,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: account_asset_management_stock
+#: model:ir.model,name:account_asset_management_stock.model_stock_link_fixed_asset_to_lot
+msgid "Link Fixed Asset To Lot"
+msgstr "Link Fixed Asset To Lot"
+
+#. module: account_asset_management_stock
+#: model:ir.model,name:account_asset_management_stock.model_stock_link_fixed_asset_to_lot_detail
+msgid "Link Fixed Asset To Lot Detail"
+msgstr "Link Fixed Asset To Lot Detail"
+
+#. module: account_asset_management_stock
+#: model:ir.model,name:account_asset_management_stock.model_stock_production_lot
+msgid "Lot/Serial"
+msgstr "Lot/Serial"
+
+#. module: account_asset_management_stock
+#: field:stock.create_fixed_asset_from_lot_detail,parent_id:0
+msgid "Parent Asset"
+msgstr "Parent Asset"
+
+#. module: account_asset_management_stock
+#: selection:product.template,fixed_asset_salvage_value_computation:0
+msgid "Percentage from Acquiring Cost"
+msgstr "Percentage from Acquiring Cost"
+
+#. module: account_asset_management_stock
+#: field:account.asset.asset,product_id:0
+#: field:stock.link_fixed_asset_to_lot_detail,product_id:0
+msgid "Product"
+msgstr "Product"
+
+#. module: account_asset_management_stock
+#: model:ir.model,name:account_asset_management_stock.model_product_template
+msgid "Product Template"
+msgstr "Produk Template"
+
+#. module: account_asset_management_stock
+#: field:account.asset.asset,lot_id:0
+#: field:stock.create_fixed_asset_from_lot,detail_ids:0
+#: field:stock.create_fixed_asset_from_lot_detail,lot_id:0
+#: field:stock.link_fixed_asset_to_lot,detail_ids:0
+#: field:stock.link_fixed_asset_to_lot_detail,lot_id:0
+msgid "Serial Number"
+msgstr "Serial Number"
+
+#. module: account_asset_management_stock
+#: view:account.asset.asset:account_asset_management_stock.account_asset_view_form
+msgid "Stock"
+msgstr "Stock"
+
+#. module: account_asset_management_stock
+#: field:stock.create_fixed_asset_from_lot_detail,wizard_id:0
+#: field:stock.link_fixed_asset_to_lot_detail,wizard_id:0
+msgid "Wizard"
+msgstr "Wizard"
+
+#. module: account_asset_management_stock
+#: view:stock.create_fixed_asset_from_lot:account_asset_management_stock.stock_create_fixed_asset_from_lot_view_form
+#: view:stock.link_fixed_asset_to_lot:account_asset_management_stock.stock_link_fixed_asset_to_lot_view_form
+msgid "or"
+msgstr "or"
+
