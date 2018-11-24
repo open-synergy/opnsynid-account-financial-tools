@@ -1,0 +1,531 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_asset_management_complex_asset
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-24 13:51+0000\n"
+"PO-Revision-Date: 2018-11-24 13:51+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,name:0
+#: field:account.complex_asset_movement_common,name:0
+#: field:account.complex_asset_removal,name:0
+msgid "# Order"
+msgstr "# Order"
+
+#. module: account_asset_management_complex_asset
+#: selection:account.complex_asset_installation,movement_type:0
+#: selection:account.complex_asset_movement_common,movement_type:0
+#: selection:account.complex_asset_removal,movement_type:0
+msgid "Add Asset to Parent Asset"
+msgstr "Add Asset to Parent Asset"
+
+#. module: account_asset_management_complex_asset
+#: view:account.asset.config_setting:account_asset_management_complex_asset.account_asset_config_setting_view_form
+msgid "Allowed Groups"
+msgstr "Allowed Groups"
+
+#. module: account_asset_management_complex_asset
+#: field:account.asset.config_setting,complex_asset_installation_cancel_grp_ids:0
+#: field:res.company,complex_asset_installation_cancel_grp_ids:0
+msgid "Allowed To Cancel Complex Asset Installation"
+msgstr "Allowed To Cancel Complex Asset Installation"
+
+#. module: account_asset_management_complex_asset
+#: field:account.asset.config_setting,complex_asset_removal_cancel_grp_ids:0
+#: field:res.company,complex_asset_removal_cancel_grp_ids:0
+msgid "Allowed To Cancel Complex Asset Removal"
+msgstr "Allowed To Cancel Complex Asset Removal"
+
+#. module: account_asset_management_complex_asset
+#: field:account.asset.config_setting,complex_asset_installation_confirm_grp_ids:0
+#: field:res.company,complex_asset_installation_confirm_grp_ids:0
+msgid "Allowed To Confirm Complex Asset Installation"
+msgstr "Allowed To Confirm Complex Asset Installation"
+
+#. module: account_asset_management_complex_asset
+#: field:account.asset.config_setting,complex_asset_removal_confirm_grp_ids:0
+#: field:res.company,complex_asset_removal_confirm_grp_ids:0
+msgid "Allowed To Confirm Complex Asset Removal"
+msgstr "Allowed To Confirm Complex Asset Removal"
+
+#. module: account_asset_management_complex_asset
+#: field:account.asset.config_setting,complex_asset_installation_restart_grp_ids:0
+#: field:res.company,complex_asset_installation_restart_grp_ids:0
+msgid "Allowed To Restart Complex Asset Installation"
+msgstr "Allowed To Restart Complex Asset Installation"
+
+#. module: account_asset_management_complex_asset
+#: field:account.asset.config_setting,complex_asset_removal_restart_grp_ids:0
+#: field:res.company,complex_asset_removal_restart_grp_ids:0
+msgid "Allowed To Restart Complex Asset Removal"
+msgstr "Allowed To Restart Complex Asset Removal"
+
+#. module: account_asset_management_complex_asset
+#: field:account.asset.config_setting,complex_asset_installation_valid_grp_ids:0
+#: field:res.company,complex_asset_installation_valid_grp_ids:0
+msgid "Allowed To Validate Complex Asset Installation"
+msgstr "Allowed To Validate Complex Asset Installation"
+
+#. module: account_asset_management_complex_asset
+#: field:account.asset.config_setting,complex_asset_removal_valid_grp_ids:0
+#: field:res.company,complex_asset_removal_valid_grp_ids:0
+msgid "Allowed To Validate Complex Asset Removal"
+msgstr "Allowed To Validate Complex Asset Removal"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,asset_id:0
+#: field:account.complex_asset_movement_common,asset_id:0
+#: field:account.complex_asset_removal,asset_id:0
+msgid "Asset"
+msgstr "Asset"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,cancel_ok:0
+#: field:account.complex_asset_movement_common,cancel_ok:0
+#: field:account.complex_asset_removal,cancel_ok:0
+msgid "Can Cancel"
+msgstr "Can Cancel"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,confirm_ok:0
+#: field:account.complex_asset_movement_common,confirm_ok:0
+#: field:account.complex_asset_removal,confirm_ok:0
+msgid "Can Confirm"
+msgstr "Can Confirm"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,restart_ok:0
+#: field:account.complex_asset_movement_common,restart_ok:0
+#: field:account.complex_asset_removal,restart_ok:0
+msgid "Can Restart"
+msgstr "Can Restart"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,valid_ok:0
+#: field:account.complex_asset_movement_common,valid_ok:0
+#: field:account.complex_asset_removal,valid_ok:0
+msgid "Can Validate"
+msgstr "Can Validate"
+
+#. module: account_asset_management_complex_asset
+#: selection:account.complex_asset_installation,state:0
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_form
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_search
+#: selection:account.complex_asset_movement_common,state:0
+#: selection:account.complex_asset_removal,state:0
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_form
+msgid "Cancellation"
+msgstr "Cancellation"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,cancelled_user_id:0
+#: field:account.complex_asset_movement_common,cancelled_user_id:0
+#: field:account.complex_asset_removal,cancelled_user_id:0
+msgid "Cancellation By"
+msgstr "Cancellation By"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,cancelled_date:0
+#: field:account.complex_asset_movement_common,cancelled_date:0
+#: field:account.complex_asset_removal,cancelled_date:0
+msgid "Cancellation Date"
+msgstr "Cancellation Date"
+
+#. module: account_asset_management_complex_asset
+#: model:ir.model,name:account_asset_management_complex_asset.model_account_complex_asset_installation
+#: model:ir.model,name:account_asset_management_complex_asset.model_account_complex_asset_movement_common
+#: model:ir.model,name:account_asset_management_complex_asset.model_account_complex_asset_removal
+msgid "Common Object For Complex Fixed Asset Movement"
+msgstr "Common Object For Complex Fixed Asset Movement"
+
+#. module: account_asset_management_complex_asset
+#: model:ir.model,name:account_asset_management_complex_asset.model_res_company
+msgid "Companies"
+msgstr "Companies"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,company_id:0
+#: field:account.complex_asset_movement_common,company_id:0
+#: field:account.complex_asset_removal,company_id:0
+msgid "Company"
+msgstr "Company"
+
+#. module: account_asset_management_complex_asset
+#: model:ir.ui.menu,name:account_asset_management_complex_asset.account_complex_asset_root_menu
+msgid "Complex Asset"
+msgstr "Complex Asset"
+
+#. module: account_asset_management_complex_asset
+#: view:account.asset.config_setting:account_asset_management_complex_asset.account_asset_config_setting_view_form
+#: view:account.complex_asset_installation:account_asset_management_complex_asset.account_complex_asset_installation_view_search
+#: model:ir.actions.act_window,name:account_asset_management_complex_asset.account_complex_asset_installation_action
+msgid "Complex Asset Installation"
+msgstr "Complex Asset Installation"
+
+#. module: account_asset_management_complex_asset
+#: field:account.asset.config_setting,complex_asset_installation_sequence_id:0
+#: field:res.company,complex_asset_installation_sequence_id:0
+msgid "Complex Asset Installation Sequence"
+msgstr "Complex Asset Installation Sequence"
+
+#. module: account_asset_management_complex_asset
+#: view:account.asset.config_setting:account_asset_management_complex_asset.account_asset_config_setting_view_form
+#: view:account.complex_asset_removal:account_asset_management_complex_asset.account_complex_asset_removal_view_search
+#: model:ir.actions.act_window,name:account_asset_management_complex_asset.account_complex_asset_removal_action
+msgid "Complex Asset Removal"
+msgstr "Complex Asset Removal"
+
+#. module: account_asset_management_complex_asset
+#: field:account.asset.config_setting,complex_asset_removal_sequence_id:0
+#: field:res.company,complex_asset_removal_sequence_id:0
+msgid "Complex Asset Removal Sequence"
+msgstr "Complex Asset Removal Sequence"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_form
+msgid "Confirm"
+msgstr "Confirm"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_form
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,confirmed_user_id:0
+#: field:account.complex_asset_movement_common,confirmed_user_id:0
+#: field:account.complex_asset_removal,confirmed_user_id:0
+msgid "Confirmation By"
+msgstr "Confirmation By"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,confirmed_date:0
+#: field:account.complex_asset_movement_common,confirmed_date:0
+#: field:account.complex_asset_removal,confirmed_date:0
+msgid "Confirmation Date"
+msgstr "Confirmation Date"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,create_uid:0
+#: field:account.complex_asset_removal,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,create_date:0
+#: field:account.complex_asset_removal,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,date:0
+#: field:account.complex_asset_movement_common,date:0
+#: field:account.complex_asset_removal,date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_search
+msgid "Date by Day"
+msgstr "Date by Day"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_search
+msgid "Date by Month"
+msgstr "Date by Month"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_search
+msgid "Date by Year"
+msgstr "Date by Year"
+
+#. module: account_asset_management_complex_asset
+#: help:account.complex_asset_installation,message_last_post:0
+#: help:account.complex_asset_movement_common,message_last_post:0
+#: help:account.complex_asset_removal,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,display_name:0
+#: field:account.complex_asset_movement_common,display_name:0
+#: field:account.complex_asset_removal,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: account_asset_management_complex_asset
+#: selection:account.complex_asset_installation,state:0
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_search
+#: selection:account.complex_asset_movement_common,state:0
+#: selection:account.complex_asset_removal,state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,message_follower_ids:0
+#: field:account.complex_asset_movement_common,message_follower_ids:0
+#: field:account.complex_asset_removal,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
+
+#. module: account_asset_management_complex_asset
+#: view:account.asset.config_setting:account_asset_management_complex_asset.account_asset_config_setting_view_form
+msgid "General"
+msgstr "General"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_search
+msgid "Group By.."
+msgstr "Group By.."
+
+#. module: account_asset_management_complex_asset
+#: help:account.complex_asset_installation,message_summary:0
+#: help:account.complex_asset_movement_common,message_summary:0
+#: help:account.complex_asset_removal,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,id:0
+#: field:account.complex_asset_movement_common,id:0
+#: field:account.complex_asset_removal,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: account_asset_management_complex_asset
+#: help:account.complex_asset_installation,message_unread:0
+#: help:account.complex_asset_movement_common,message_unread:0
+#: help:account.complex_asset_removal,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,parent_asset_id:0
+msgid "Install Asset On"
+msgstr "Install Asset On"
+
+#. module: account_asset_management_complex_asset
+#: model:ir.ui.menu,name:account_asset_management_complex_asset.account_complex_asset_installation_menu
+msgid "Installation"
+msgstr "Installation"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,message_is_follower:0
+#: field:account.complex_asset_movement_common,message_is_follower:0
+#: field:account.complex_asset_removal,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,message_last_post:0
+#: field:account.complex_asset_movement_common,message_last_post:0
+#: field:account.complex_asset_removal,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,__last_update:0
+#: field:account.complex_asset_movement_common,__last_update:0
+#: field:account.complex_asset_removal,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,write_uid:0
+#: field:account.complex_asset_removal,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,write_date:0
+#: field:account.complex_asset_removal,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_form
+msgid "Log"
+msgstr "Log"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,message_ids:0
+#: field:account.complex_asset_movement_common,message_ids:0
+#: field:account.complex_asset_removal,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: account_asset_management_complex_asset
+#: help:account.complex_asset_installation,message_ids:0
+#: help:account.complex_asset_movement_common,message_ids:0
+#: help:account.complex_asset_removal,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,movement_type:0
+#: field:account.complex_asset_movement_common,movement_type:0
+#: field:account.complex_asset_removal,movement_type:0
+msgid "Movement Type"
+msgstr "Movement Type"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,note:0
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_form
+#: field:account.complex_asset_movement_common,note:0
+#: field:account.complex_asset_removal,note:0
+msgid "Note"
+msgstr "Note"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_movement_common,parent_asset_id:0
+msgid "Parent Asset"
+msgstr "Parent Asset"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_form
+msgid "Policy"
+msgstr "Policy"
+
+#. module: account_asset_management_complex_asset
+#: model:ir.ui.menu,name:account_asset_management_complex_asset.account_complex_asset_removal_menu
+msgid "Removal"
+msgstr "Removal"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_removal,parent_asset_id:0
+msgid "Remove Asset From"
+msgstr "Remove Asset From"
+
+#. module: account_asset_management_complex_asset
+#: selection:account.complex_asset_installation,movement_type:0
+#: selection:account.complex_asset_movement_common,movement_type:0
+#: selection:account.complex_asset_removal,movement_type:0
+msgid "Remove Asset From Parent Asset"
+msgstr "Remove Asset From Parent Asset"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_form
+msgid "Restart"
+msgstr "Restart"
+
+#. module: account_asset_management_complex_asset
+#: view:account.asset.config_setting:account_asset_management_complex_asset.account_asset_config_setting_view_form
+msgid "Sequence"
+msgstr "Sequence"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,state:0
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_search
+#: field:account.complex_asset_movement_common,state:0
+#: field:account.complex_asset_removal,state:0
+msgid "State"
+msgstr "State"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,message_summary:0
+#: field:account.complex_asset_movement_common,message_summary:0
+#: field:account.complex_asset_removal,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: account_asset_management_complex_asset
+#: view:account.asset.config_setting:account_asset_management_complex_asset.account_asset_config_setting_view_form
+msgid "To Cancel"
+msgstr "To Cancel"
+
+#. module: account_asset_management_complex_asset
+#: view:account.asset.config_setting:account_asset_management_complex_asset.account_asset_config_setting_view_form
+msgid "To Confirm"
+msgstr "To Confirm"
+
+#. module: account_asset_management_complex_asset
+#: view:account.asset.config_setting:account_asset_management_complex_asset.account_asset_config_setting_view_form
+msgid "To Restart"
+msgstr "To Restart"
+
+#. module: account_asset_management_complex_asset
+#: view:account.asset.config_setting:account_asset_management_complex_asset.account_asset_config_setting_view_form
+msgid "To Validate"
+msgstr "To Validate"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,message_unread:0
+#: field:account.complex_asset_movement_common,message_unread:0
+#: field:account.complex_asset_removal,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: account_asset_management_complex_asset
+#: selection:account.complex_asset_installation,state:0
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_form
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_search
+#: selection:account.complex_asset_movement_common,state:0
+#: selection:account.complex_asset_removal,state:0
+msgid "Valid"
+msgstr "Valid"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_form
+msgid "Validation"
+msgstr "Validation"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,validated_user_id:0
+#: field:account.complex_asset_movement_common,validated_user_id:0
+#: field:account.complex_asset_removal,validated_user_id:0
+msgid "Validation By"
+msgstr "Validation By"
+
+#. module: account_asset_management_complex_asset
+#: field:account.complex_asset_installation,validated_date:0
+#: field:account.complex_asset_movement_common,validated_date:0
+#: field:account.complex_asset_removal,validated_date:0
+msgid "Validation Date"
+msgstr "Validation Date"
+
+#. module: account_asset_management_complex_asset
+#: selection:account.complex_asset_installation,state:0
+#: view:account.complex_asset_movement_common:account_asset_management_complex_asset.account_complex_asset_movement_common_view_search
+#: selection:account.complex_asset_movement_common,state:0
+#: selection:account.complex_asset_removal,state:0
+msgid "Waiting for Approval"
+msgstr "Waiting for Approval"
+
+#. module: account_asset_management_complex_asset
+#: code:addons/account_asset_management_complex_asset/models/account_complex_asset_movement.py:294
+#, python-format
+msgid "You can only delete data on draft state"
+msgstr "You can only delete data on draft state"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_removal:account_asset_management_complex_asset.account_complex_asset_removal_view_form
+msgid "[\n"
+"                ('parent_id', '!=', False)\n"
+"                ]"
+msgstr "[\n"
+"                ('parent_id', '!=', False)\n"
+"                ]"
+
+#. module: account_asset_management_complex_asset
+#: view:account.complex_asset_installation:account_asset_management_complex_asset.account_complex_asset_installation_view_form
+msgid "[\n"
+"                ('parent_id', '=', False)\n"
+"                ]"
+msgstr "[\n"
+"                ('parent_id', '=', False)\n"
+"                ]"
+
