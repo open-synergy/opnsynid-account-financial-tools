@@ -1,0 +1,525 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_asset_management_retirement_common
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-24 14:28+0000\n"
+"PO-Revision-Date: 2018-11-24 14:28+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,name:0
+msgid "# Document"
+msgstr "# Document"
+
+#. module: account_asset_management_retirement_common
+#: model:ir.model,name:account_asset_management_retirement_common.model_account_asset_retirement_common
+msgid "Abstract Model for Fixed Asset Retirement"
+msgstr "Abstract Model for Fixed Asset Retirement"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+msgid "Accounting Entry"
+msgstr "Accounting Entry"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,accumulated_depreciation_account_id:0
+msgid "Accumulated Depreciation Account"
+msgstr "Accumulated Depreciation Account"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,acquisition_price:0
+msgid "Acquisition Price"
+msgstr "Acquisition Price"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,active:0
+msgid "Active"
+msgstr "Active"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,set_disposition_price:0
+msgid "Allow To Set Disposition Price"
+msgstr "Allow To Set Disposition Price"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,asset_retirement_cancel_grp_ids:0
+msgid "Allowed To Cancel Asset Retirement"
+msgstr "Allowed To Cancel Asset Retirement"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,asset_retirement_confirm_grp_ids:0
+msgid "Allowed To Confirm Asset Retirement"
+msgstr "Allowed To Confirm Asset Retirement"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,asset_retirement_open_grp_ids:0
+msgid "Allowed To Open Asset Retirement"
+msgstr "Allowed To Open Asset Retirement"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,asset_retirement_restart_grp_ids:0
+msgid "Allowed To Restart Asset Retirement"
+msgstr "Allowed To Restart Asset Retirement"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,asset_retirement_valid_grp_ids:0
+msgid "Allowed To Validate Asset Retirement"
+msgstr "Allowed To Validate Asset Retirement"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+msgid "Approve"
+msgstr "Approve"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,asset_id:0
+msgid "Asset"
+msgstr "Asset"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,asset_account_id:0
+msgid "Asset Account"
+msgstr "Asset Account"
+
+#. module: account_asset_management_retirement_common
+#: model:ir.actions.act_window,name:account_asset_management_retirement_common.account_asset_retirement_type_action
+#: model:ir.ui.menu,name:account_asset_management_retirement_common.account_asset_retirement_type_menu
+msgid "Asset Retirement Type"
+msgstr "Asset Retirement Type"
+
+#. module: account_asset_management_retirement_common
+#: selection:account.asset_retirement_common,disposal_acc_move_creation:0
+#: selection:account.asset_retirement_common,exchange_acc_move_creation:0
+#: selection:account.asset_retirement_common,gain_acc_move_creation:0
+msgid "Automatic"
+msgstr "Automatic"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,cancel_ok:0
+msgid "Can Cancel"
+msgstr "Can Cancel"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,confirm_ok:0
+msgid "Can Confirm"
+msgstr "Can Confirm"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,open_ok:0
+msgid "Can Open"
+msgstr "Can Open"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,restart_ok:0
+msgid "Can Restart"
+msgstr "Can Restart"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,valid_ok:0
+msgid "Can Validate"
+msgstr "Can Validate"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
+#: selection:account.asset_retirement_common,state:0
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+msgid "Cancellation"
+msgstr "Cancellation"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,cancelled_user_id:0
+msgid "Cancellation By"
+msgstr "Cancellation By"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,cancelled_date:0
+msgid "Cancellation Date"
+msgstr "Cancellation Date"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,code:0
+msgid "Code"
+msgstr "Code"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,company_id:0
+msgid "Company"
+msgstr "Company"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+msgid "Confirm"
+msgstr "Confirm"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,confirmed_user_id:0
+msgid "Confirmation By"
+msgstr "Confirmation By"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,confirmed_date:0
+msgid "Confirmation Date"
+msgstr "Confirmation Date"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,currency_id:0
+msgid "Currency"
+msgstr "Currency"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
+msgid "Date by Day"
+msgstr "Date by Day"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
+msgid "Date by Month"
+msgstr "Date by Month"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
+msgid "Date by Year"
+msgstr "Date by Year"
+
+#. module: account_asset_management_retirement_common
+#: help:account.asset_retirement_common,message_last_post:0
+#: help:account.asset_retirement_type,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,depreciated_amount:0
+msgid "Depreciated Value"
+msgstr "Depreciated Value"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,display_name:0
+#: field:account.asset_retirement_type,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,disposal_acc_move_creation:0
+msgid "Disposal Acc. Move Creation"
+msgstr "Disposal Acc. Move Creation"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,disposal_acc_move_id:0
+msgid "Disposal Account Move"
+msgstr "Disposal Account Move"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,disposal_journal_id:0
+#: field:account.asset_retirement_type,disposal_journal_id:0
+msgid "Disposal Journal"
+msgstr "Disposal Journal"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,date_disposition:0
+msgid "Disposition Date"
+msgstr "Disposition Date"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,disposition_price:0
+msgid "Disposition Price"
+msgstr "Disposition Price"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
+#: selection:account.asset_retirement_common,state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,exchange_acc_move_creation:0
+msgid "Exchange Acc. Move Creation"
+msgstr "Exchange Acc. Move Creation"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,exchange_account_id:0
+#: field:account.asset_retirement_type,exchange_account_id:0
+msgid "Exchange Account"
+msgstr "Exchange Account"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,exchange_acc_move_id:0
+msgid "Exchange Account Move"
+msgstr "Exchange Account Move"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,exchange_journal_id:0
+#: field:account.asset_retirement_type,exchange_journal_id:0
+msgid "Exchange Journal"
+msgstr "Exchange Journal"
+
+#. module: account_asset_management_retirement_common
+#: model:ir.model,name:account_asset_management_retirement_common.model_account_asset_retirement_type
+msgid "Fixed Asset Retirement Type"
+msgstr "Fixed Asset Retirement Type"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,message_follower_ids:0
+#: field:account.asset_retirement_type,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,gain_account_id:0
+#: field:account.asset_retirement_type,gain_account_id:0
+msgid "Gain Account"
+msgstr "Gain Account"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,gain_journal_id:0
+#: field:account.asset_retirement_type,gain_journal_id:0
+msgid "Gain Journal"
+msgstr "Gain Journal"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,gain_acc_move_creation:0
+msgid "Gain/Loss Acc. Move Creation"
+msgstr "Gain/Loss Acc. Move Creation"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,gain_acc_move_id:0
+msgid "Gain/Loss Account Move"
+msgstr "Gain/Loss Account Move"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,gain_loss_amount:0
+msgid "Gain/Loss Amount"
+msgstr "Gain/Loss Amount"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_type:account_asset_management_retirement_common.account_asset_retirement_type_view_form
+msgid "General Configuration"
+msgstr "General Configuration"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
+msgid "Group By.."
+msgstr "Group By.."
+
+#. module: account_asset_management_retirement_common
+#: help:account.asset_retirement_common,message_summary:0
+#: help:account.asset_retirement_type,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,id:0
+#: field:account.asset_retirement_type,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: account_asset_management_retirement_common
+#: help:account.asset_retirement_common,message_unread:0
+#: help:account.asset_retirement_type,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,message_is_follower:0
+#: field:account.asset_retirement_type,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,message_last_post:0
+#: field:account.asset_retirement_type,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,__last_update:0
+#: field:account.asset_retirement_type,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+msgid "Log"
+msgstr "Log"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,loss_account_id:0
+#: field:account.asset_retirement_type,loss_account_id:0
+msgid "Loss Account"
+msgstr "Loss Account"
+
+#. module: account_asset_management_retirement_common
+#: selection:account.asset_retirement_common,disposal_acc_move_creation:0
+#: selection:account.asset_retirement_common,exchange_acc_move_creation:0
+#: selection:account.asset_retirement_common,gain_acc_move_creation:0
+msgid "Manual Selection"
+msgstr "Manual Selection"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,message_ids:0
+#: field:account.asset_retirement_type,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: account_asset_management_retirement_common
+#: help:account.asset_retirement_common,message_ids:0
+#: help:account.asset_retirement_type,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+#: field:account.asset_retirement_common,note:0
+#: view:account.asset_retirement_type:account_asset_management_retirement_common.account_asset_retirement_type_view_form
+#: field:account.asset_retirement_type,note:0
+msgid "Note"
+msgstr "Note"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
+#: selection:account.asset_retirement_common,state:0
+msgid "On Progress"
+msgstr "On Progress"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,opened_user_id:0
+msgid "Open By"
+msgstr "Open By"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,opened_date:0
+msgid "Opened Date"
+msgstr "Opened Date"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,period_id:0
+msgid "Period"
+msgstr "Period"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+#: view:account.asset_retirement_type:account_asset_management_retirement_common.account_asset_retirement_type_view_form
+msgid "Policy"
+msgstr "Policy"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+msgid "Restart"
+msgstr "Restart"
+
+#. module: account_asset_management_retirement_common
+#: model:ir.ui.menu,name:account_asset_management_retirement_common.account_asset_retirement_root_menu
+msgid "Retirement"
+msgstr "Retirement"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,name:0
+msgid "Retirement Type"
+msgstr "Retirement Type"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_type,sequence_id:0
+msgid "Sequence"
+msgstr "Sequence"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
+#: field:account.asset_retirement_common,state:0
+msgid "State"
+msgstr "State"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,message_summary:0
+#: field:account.asset_retirement_type,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,type_id:0
+msgid "Type"
+msgstr "Type"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,message_unread:0
+#: field:account.asset_retirement_type,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
+#: selection:account.asset_retirement_common,state:0
+msgid "Valid"
+msgstr "Valid"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+msgid "Validation"
+msgstr "Validation"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,validated_user_id:0
+msgid "Validation By"
+msgstr "Validation By"
+
+#. module: account_asset_management_retirement_common
+#: field:account.asset_retirement_common,validated_date:0
+msgid "Validation Date"
+msgstr "Validation Date"
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
+#: selection:account.asset_retirement_common,state:0
+msgid "Waiting for Approval"
+msgstr "Waiting for Approval"
+
+#. module: account_asset_management_retirement_common
+#: selection:account.asset_retirement_common,disposal_acc_move_creation:0
+#: selection:account.asset_retirement_common,exchange_acc_move_creation:0
+#: selection:account.asset_retirement_common,gain_acc_move_creation:0
+msgid "Workflow"
+msgstr "Workflow"
+
