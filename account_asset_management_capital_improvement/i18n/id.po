@@ -1,0 +1,447 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_asset_management_capital_improvement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-24 13:46+0000\n"
+"PO-Revision-Date: 2018-11-24 13:46+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,acc_move_creation:0
+msgid "Acc. Move Creation"
+msgstr "Acc. Move Creation"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,acc_move_id:0
+msgid "Account Move"
+msgstr "Account Move"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_form
+msgid "Accounting Entry"
+msgstr "Accounting Entry"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,accumulated_depreciation_account_id:0
+msgid "Accumulated Depreciation Account"
+msgstr "Accumulated Depreciation Account"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset.config_setting:account_asset_management_capital_improvement.account_asset_config_setting_view_form
+msgid "Allowed Groups"
+msgstr "Allowed Groups"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset.config_setting,asset_improvement_cancel_grp_ids:0
+#: field:res.company,asset_improvement_cancel_grp_ids:0
+msgid "Allowed To Cancel Fixed Asset Improvement"
+msgstr "Allowed To Cancel Fixed Asset Improvement"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset.config_setting,asset_improvement_confirm_grp_ids:0
+#: field:res.company,asset_improvement_confirm_grp_ids:0
+msgid "Allowed To Confirm Fixed Asset Improvement"
+msgstr "Allowed To Confirm Fixed Asset Improvement"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset.config_setting,asset_improvement_restart_grp_ids:0
+#: field:res.company,asset_improvement_restart_grp_ids:0
+msgid "Allowed To Restart Fixed Asset Improvement"
+msgstr "Allowed To Restart Fixed Asset Improvement"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset.config_setting,asset_improvement_open_grp_ids:0
+#: field:res.company,asset_improvement_open_grp_ids:0
+msgid "Allowed To Start Fixed Asset Improvement"
+msgstr "Allowed To Start Fixed Asset Improvement"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset.config_setting,asset_improvement_valid_grp_ids:0
+#: field:res.company,asset_improvement_valid_grp_ids:0
+msgid "Allowed To Validate Fixed Asset Improvement"
+msgstr "Allowed To Validate Fixed Asset Improvement"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_form
+msgid "Approve"
+msgstr "Approve"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_search
+#: field:account.asset_improvement,asset_id:0
+#: model:ir.model,name:account_asset_management_capital_improvement.model_account_asset_asset
+msgid "Asset"
+msgstr "Asset"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset.config_setting:account_asset_management_capital_improvement.account_asset_config_setting_view_form
+#: model:ir.actions.act_window,name:account_asset_management_capital_improvement.account_asset_improvement_action
+msgid "Asset Improvement"
+msgstr "Asset Improvement"
+
+#. module: account_asset_management_capital_improvement
+#: model:ir.model,name:account_asset_management_capital_improvement.model_account_asset_category
+msgid "Asset category"
+msgstr "Asset category"
+
+#. module: account_asset_management_capital_improvement
+#: selection:account.asset_improvement,acc_move_creation:0
+msgid "Automatic"
+msgstr "Automatic"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,cancel_ok:0
+msgid "Can Cancel"
+msgstr "Can Cancel"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,confirm_ok:0
+msgid "Can Confirm"
+msgstr "Can Confirm"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,open_ok:0
+msgid "Can Open"
+msgstr "Can Open"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,restart_ok:0
+msgid "Can Restart"
+msgstr "Can Restart"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,valid_ok:0
+msgid "Can Validate"
+msgstr "Can Validate"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_form
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_search
+#: selection:account.asset_improvement,state:0
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_form
+msgid "Cancellation"
+msgstr "Cancellation"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,cancelled_user_id:0
+msgid "Cancellation By"
+msgstr "Cancellation By"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,cancelled_date:0
+msgid "Cancellation Date"
+msgstr "Cancellation Date"
+
+#. module: account_asset_management_capital_improvement
+#: model:ir.model,name:account_asset_management_capital_improvement.model_res_company
+msgid "Companies"
+msgstr "Perusahaan"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,company_id:0
+msgid "Company"
+msgstr "Company"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_form
+msgid "Confirm"
+msgstr "Confirm"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_form
+msgid "Confirmation"
+msgstr "Confirmation"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,confirmed_user_id:0
+msgid "Confirmation By"
+msgstr "Confirmation By"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,confirmed_date:0
+msgid "Confirmation Date"
+msgstr "Confirmation Date"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,currency_id:0
+msgid "Currency"
+msgstr "Currency"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_search
+msgid "Date by Day"
+msgstr "Date by Day"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_search
+msgid "Date by Month"
+msgstr "Date by Month"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_search
+msgid "Date by Year"
+msgstr "Date by Year"
+
+#. module: account_asset_management_capital_improvement
+#: help:account.asset_improvement,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,depreciation_line_id:0
+msgid "Depreciation Line"
+msgstr "Depreciation Line"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_search
+#: selection:account.asset_improvement,state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,exchange_account_id:0
+msgid "Exchange Account"
+msgstr "Exchange Account"
+
+#. module: account_asset_management_capital_improvement
+#: model:ir.model,name:account_asset_management_capital_improvement.model_account_asset_improvement
+msgid "Fixed Asset Improvement"
+msgstr "Fixed Asset Improvement"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset.config_setting,asset_improvement_sequence_id:0
+#: field:res.company,asset_improvement_sequence_id:0
+msgid "Fixed Asset Improvement Sequence"
+msgstr "Fixed Asset Improvement Sequence"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset.config_setting:account_asset_management_capital_improvement.account_asset_config_setting_view_form
+msgid "General"
+msgstr "General"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_search
+msgid "Group By.."
+msgstr "Group By.."
+
+#. module: account_asset_management_capital_improvement
+#: help:account.asset_improvement,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: account_asset_management_capital_improvement
+#: help:account.asset_improvement,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset.asset:account_asset_management_capital_improvement.account_asset_view_form
+#: field:account.asset.asset,improvement_ids:0
+#: model:ir.ui.menu,name:account_asset_management_capital_improvement.account_asset_improvement_menu
+msgid "Improvement"
+msgstr "Improvement"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,improvement_amount:0
+msgid "Improvement Amount"
+msgstr "Improvement Amount"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,date_improvement:0
+msgid "Improvement Date"
+msgstr "Improvement Date"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset.category,improvement_journal_id:0
+msgid "Improvement Journal"
+msgstr "Improvement Journal"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset.asset,amount_improvement:0
+msgid "Improvement Value"
+msgstr "Improvement Value"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,journal_id:0
+msgid "Journal"
+msgstr "Journal"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_form
+msgid "Log"
+msgstr "Log"
+
+#. module: account_asset_management_capital_improvement
+#: selection:account.asset_improvement,acc_move_creation:0
+msgid "Manual Selection"
+msgstr "Manual Selection"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: account_asset_management_capital_improvement
+#: help:account.asset_improvement,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_form
+#: field:account.asset_improvement,note:0
+msgid "Note"
+msgstr "Note"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_search
+#: selection:account.asset_improvement,state:0
+msgid "On Progress"
+msgstr "On Progress"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,opened_user_id:0
+msgid "Open By"
+msgstr "Open By"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,opened_date:0
+msgid "Opened Date"
+msgstr "Opened Date"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,period_id:0
+msgid "Period"
+msgstr "Period"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_form
+msgid "Policy"
+msgstr "Policy"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_form
+msgid "Restart"
+msgstr "Restart"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset.config_setting:account_asset_management_capital_improvement.account_asset_config_setting_view_form
+msgid "Sequence"
+msgstr "Sequence"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_search
+#: field:account.asset_improvement,state:0
+msgid "State"
+msgstr "State"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset.config_setting:account_asset_management_capital_improvement.account_asset_config_setting_view_form
+msgid "To Cancel"
+msgstr "To Cancel"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset.config_setting:account_asset_management_capital_improvement.account_asset_config_setting_view_form
+msgid "To Confirm"
+msgstr "To Confirm"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset.config_setting:account_asset_management_capital_improvement.account_asset_config_setting_view_form
+msgid "To Open"
+msgstr "To Open"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset.config_setting:account_asset_management_capital_improvement.account_asset_config_setting_view_form
+msgid "To Restart"
+msgstr "To Restart"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset.config_setting:account_asset_management_capital_improvement.account_asset_config_setting_view_form
+msgid "To Validate"
+msgstr "To Validate"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_form
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_search
+#: selection:account.asset_improvement,state:0
+msgid "Valid"
+msgstr "Valid"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_form
+msgid "Validation"
+msgstr "Validation"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,validated_user_id:0
+msgid "Validation By"
+msgstr "Validation By"
+
+#. module: account_asset_management_capital_improvement
+#: field:account.asset_improvement,validated_date:0
+msgid "Validation Date"
+msgstr "Validation Date"
+
+#. module: account_asset_management_capital_improvement
+#: view:account.asset_improvement:account_asset_management_capital_improvement.account_asset_improvement_view_search
+#: selection:account.asset_improvement,state:0
+msgid "Waiting for Approval"
+msgstr "Waiting for Approval"
+
+#. module: account_asset_management_capital_improvement
+#: selection:account.asset_improvement,acc_move_creation:0
+msgid "Workflow"
+msgstr "Workflow"
+
