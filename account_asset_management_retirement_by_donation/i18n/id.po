@@ -1,0 +1,368 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_asset_management_retirement_by_donation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-24 14:10+0000\n"
+"PO-Revision-Date: 2018-11-24 14:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,name:0
+msgid "# Document"
+msgstr "# Document"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,accumulated_depreciation_account_id:0
+msgid "Accumulated Depreciation Account"
+msgstr "Accumulated Depreciation Account"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,acquisition_price:0
+msgid "Acquisition Price"
+msgstr "Acquisition Price"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,asset_id:0
+msgid "Asset"
+msgstr "Asset"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,asset_account_id:0
+msgid "Asset Account"
+msgstr "Asset Account"
+
+#. module: account_asset_management_retirement_by_donation
+#: model:ir.actions.act_window,name:account_asset_management_retirement_by_donation.account_asset_retirement_donation_action
+msgid "Asset Retirement by Donation"
+msgstr "Asset Retirement by Donation"
+
+#. module: account_asset_management_retirement_by_donation
+#: selection:account.asset_retirement_donation,disposal_acc_move_creation:0
+#: selection:account.asset_retirement_donation,exchange_acc_move_creation:0
+#: selection:account.asset_retirement_donation,gain_acc_move_creation:0
+msgid "Automatic"
+msgstr "Automatic"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,cancel_ok:0
+msgid "Can Cancel"
+msgstr "Can Cancel"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,confirm_ok:0
+msgid "Can Confirm"
+msgstr "Can Confirm"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,open_ok:0
+msgid "Can Open"
+msgstr "Can Open"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,restart_ok:0
+msgid "Can Restart"
+msgstr "Can Restart"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,valid_ok:0
+msgid "Can Validate"
+msgstr "Can Validate"
+
+#. module: account_asset_management_retirement_by_donation
+#: selection:account.asset_retirement_donation,state:0
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,cancelled_user_id:0
+msgid "Cancellation By"
+msgstr "Cancellation By"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,cancelled_date:0
+msgid "Cancellation Date"
+msgstr "Cancellation Date"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,company_id:0
+msgid "Company"
+msgstr "Company"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,confirmed_user_id:0
+msgid "Confirmation By"
+msgstr "Confirmation By"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,confirmed_date:0
+msgid "Confirmation Date"
+msgstr "Confirmation Date"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,currency_id:0
+msgid "Currency"
+msgstr "Currency"
+
+#. module: account_asset_management_retirement_by_donation
+#: help:account.asset_retirement_donation,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr "Date of the last message posted on the record."
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,depreciated_amount:0
+msgid "Depreciated Value"
+msgstr "Depreciated Value"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,disposal_acc_move_creation:0
+msgid "Disposal Acc. Move Creation"
+msgstr "Disposal Acc. Move Creation"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,disposal_acc_move_id:0
+msgid "Disposal Account Move"
+msgstr "Disposal Account Move"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,disposal_journal_id:0
+msgid "Disposal Journal"
+msgstr "Disposal Journal"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,date_disposition:0
+msgid "Disposition Date"
+msgstr "Disposition Date"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,disposition_price:0
+msgid "Disposition Price"
+msgstr "Disposition Price"
+
+#. module: account_asset_management_retirement_by_donation
+#: selection:account.asset_retirement_donation,state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,exchange_acc_move_creation:0
+msgid "Exchange Acc. Move Creation"
+msgstr "Exchange Acc. Move Creation"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,exchange_account_id:0
+msgid "Exchange Account"
+msgstr "Exchange Account"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,exchange_acc_move_id:0
+msgid "Exchange Account Move"
+msgstr "Exchange Account Move"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,exchange_journal_id:0
+msgid "Exchange Journal"
+msgstr "Exchange Journal"
+
+#. module: account_asset_management_retirement_by_donation
+#: model:ir.model,name:account_asset_management_retirement_by_donation.model_account_asset_retirement_donation
+msgid "Fixed Asset Retirement by Donation"
+msgstr "Fixed Asset Retirement by Donation"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,message_follower_ids:0
+msgid "Followers"
+msgstr "Followers"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,gain_account_id:0
+msgid "Gain Account"
+msgstr "Gain Account"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,gain_journal_id:0
+msgid "Gain Journal"
+msgstr "Gain Journal"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,gain_acc_move_creation:0
+msgid "Gain/Loss Acc. Move Creation"
+msgstr "Gain/Loss Acc. Move Creation"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,gain_acc_move_id:0
+msgid "Gain/Loss Account Move"
+msgstr "Gain/Loss Account Move"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,gain_loss_amount:0
+msgid "Gain/Loss Amount"
+msgstr "Gain/Loss Amount"
+
+#. module: account_asset_management_retirement_by_donation
+#: help:account.asset_retirement_donation,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: account_asset_management_retirement_by_donation
+#: help:account.asset_retirement_donation,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr "If checked new messages require your attention."
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,message_is_follower:0
+msgid "Is a Follower"
+msgstr "Is a Follower"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,message_last_post:0
+msgid "Last Message Date"
+msgstr "Last Message Date"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,loss_account_id:0
+msgid "Loss Account"
+msgstr "Loss Account"
+
+#. module: account_asset_management_retirement_by_donation
+#: selection:account.asset_retirement_donation,disposal_acc_move_creation:0
+#: selection:account.asset_retirement_donation,exchange_acc_move_creation:0
+#: selection:account.asset_retirement_donation,gain_acc_move_creation:0
+msgid "Manual Selection"
+msgstr "Manual Selection"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,message_ids:0
+msgid "Messages"
+msgstr "Messages"
+
+#. module: account_asset_management_retirement_by_donation
+#: help:account.asset_retirement_donation,message_ids:0
+msgid "Messages and communication history"
+msgstr "Messages and communication history"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,note:0
+msgid "Note"
+msgstr "Note"
+
+#. module: account_asset_management_retirement_by_donation
+#: selection:account.asset_retirement_donation,state:0
+msgid "On Progress"
+msgstr "On Progress"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,opened_user_id:0
+msgid "Open By"
+msgstr "Open By"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,opened_date:0
+msgid "Opened Date"
+msgstr "Opened Date"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,partner_id:0
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,period_id:0
+msgid "Period"
+msgstr "Period"
+
+#. module: account_asset_management_retirement_by_donation
+#: model:ir.ui.menu,name:account_asset_management_retirement_by_donation.account_asset_retirement_donation_menu
+msgid "Retirement by Donation"
+msgstr "Retirement by Donation"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,state:0
+msgid "State"
+msgstr "State"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,message_summary:0
+msgid "Summary"
+msgstr "Summary"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,type_id:0
+msgid "Type"
+msgstr "Type"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,message_unread:0
+msgid "Unread Messages"
+msgstr "Unread Messages"
+
+#. module: account_asset_management_retirement_by_donation
+#: selection:account.asset_retirement_donation,state:0
+msgid "Valid"
+msgstr "Valid"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,validated_user_id:0
+msgid "Validation By"
+msgstr "Validation By"
+
+#. module: account_asset_management_retirement_by_donation
+#: field:account.asset_retirement_donation,validated_date:0
+msgid "Validation Date"
+msgstr "Validation Date"
+
+#. module: account_asset_management_retirement_by_donation
+#: selection:account.asset_retirement_donation,state:0
+msgid "Waiting for Approval"
+msgstr "Waiting for Approval"
+
+#. module: account_asset_management_retirement_by_donation
+#: selection:account.asset_retirement_donation,disposal_acc_move_creation:0
+#: selection:account.asset_retirement_donation,exchange_acc_move_creation:0
+#: selection:account.asset_retirement_donation,gain_acc_move_creation:0
+msgid "Workflow"
+msgstr "Workflow"
+
