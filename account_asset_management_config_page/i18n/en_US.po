@@ -1,0 +1,97 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_asset_management_config_page
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-24 13:54+0000\n"
+"PO-Revision-Date: 2018-11-24 13:54+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_asset_management_config_page
+#: view:account.asset.config_setting:account_asset_management_config_page.account_asset_config_setting_view_form
+msgid "Apply"
+msgstr "Apply"
+
+#. module: account_asset_management_config_page
+#: model:ir.actions.act_window,name:account_asset_management_config_page.account_asset_config_setting_action
+msgid "Asset Configuration"
+msgstr "Asset Configuration"
+
+#. module: account_asset_management_config_page
+#: view:account.asset.config_setting:account_asset_management_config_page.account_asset_config_setting_view_form
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: account_asset_management_config_page
+#: field:account.asset.config_setting,company_id:0
+msgid "Company"
+msgstr "Company"
+
+#. module: account_asset_management_config_page
+#: model:ir.ui.menu,name:account_asset_management_config_page.account_asset_config_setting_menu
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: account_asset_management_config_page
+#: field:account.asset.config_setting,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: account_asset_management_config_page
+#: field:account.asset.config_setting,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: account_asset_management_config_page
+#: field:account.asset.config_setting,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: account_asset_management_config_page
+#: view:account.asset.config_setting:account_asset_management_config_page.account_asset_config_setting_view_form
+msgid "Feature"
+msgstr "Feature"
+
+#. module: account_asset_management_config_page
+#: view:account.asset.config_setting:account_asset_management_config_page.account_asset_config_setting_view_form
+msgid "Feature & Integration"
+msgstr "Feature & Integration"
+
+#. module: account_asset_management_config_page
+#: field:account.asset.config_setting,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: account_asset_management_config_page
+#: view:account.asset.config_setting:account_asset_management_config_page.account_asset_config_setting_view_form
+msgid "Integration"
+msgstr "Integration"
+
+#. module: account_asset_management_config_page
+#: field:account.asset.config_setting,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: account_asset_management_config_page
+#: field:account.asset.config_setting,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: account_asset_management_config_page
+#: field:account.asset.config_setting,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: account_asset_management_config_page
+#: view:account.asset.config_setting:account_asset_management_config_page.account_asset_config_setting_view_form
+msgid "or"
+msgstr "or"
+
