@@ -1,0 +1,609 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_asset_management_impairment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-24 14:03+0000\n"
+"PO-Revision-Date: 2018-11-24 14:03+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,account_move_id:0
+#: field:account.asset.impairment_common,account_move_id:0
+#: field:account.asset.impairment_reversal,account_move_id:0
+msgid "# Accounting Entry"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,name:0
+#: field:account.asset.impairment_common,name:0
+#: field:account.asset.impairment_reversal,name:0
+msgid "# Document"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_form
+msgid "Accounting Entry"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.config_setting:account_asset_management_impairment.account_asset_config_setting_view_form
+msgid "Allowed Groups"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.config_setting,fixed_asset_impairment_cancel_grp_ids:0
+#: field:res.company,fixed_asset_impairment_cancel_grp_ids:0
+msgid "Allowed To Cancel Fixed Asset Impairment"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.config_setting,fixed_asset_impairment_reversal_cancel_grp_ids:0
+#: field:res.company,fixed_asset_impairment_reversal_cancel_grp_ids:0
+msgid "Allowed To Cancel Fixed Asset Impairment Reversal"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.config_setting,fixed_asset_impairment_confirm_grp_ids:0
+#: field:res.company,fixed_asset_impairment_confirm_grp_ids:0
+msgid "Allowed To Confirm Fixed Asset Impairment"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.config_setting,fixed_asset_impairment_reversal_confirm_grp_ids:0
+#: field:res.company,fixed_asset_impairment_reversal_confirm_grp_ids:0
+msgid "Allowed To Confirm Fixed Asset Impairment Reversal"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.config_setting,fixed_asset_impairment_restart_grp_ids:0
+#: field:res.company,fixed_asset_impairment_restart_grp_ids:0
+msgid "Allowed To Restart Fixed Asset Impairment"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.config_setting,fixed_asset_impairment_reversal_restart_grp_ids:0
+#: field:res.company,fixed_asset_impairment_reversal_restart_grp_ids:0
+msgid "Allowed To Restart Fixed Asset Impairment Reversal"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.config_setting,fixed_asset_impairment_valid_grp_ids:0
+#: field:res.company,fixed_asset_impairment_valid_grp_ids:0
+msgid "Allowed To Validate Fixed Asset Impairment"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.config_setting,fixed_asset_impairment_reversal_valid_grp_ids:0
+#: field:res.company,fixed_asset_impairment_reversal_valid_grp_ids:0
+msgid "Allowed To Validate Fixed Asset Impairment Reversal"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,asset_id:0
+#: field:account.asset.impairment_common,asset_id:0
+#: field:account.asset.impairment_reversal,asset_id:0
+#: model:ir.model,name:account_asset_management_impairment.model_account_asset_asset
+msgid "Asset"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.config_setting:account_asset_management_impairment.account_asset_config_setting_view_form
+#: model:ir.actions.act_window,name:account_asset_management_impairment.account_asset_impairment_action
+msgid "Asset Impairment"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: model:ir.actions.act_window,name:account_asset_management_impairment.account_asset_impairment_reversal_action
+msgid "Asset Impairment Reversal"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: model:ir.model,name:account_asset_management_impairment.model_account_asset_category
+msgid "Asset category"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,cancel_ok:0
+#: field:account.asset.impairment_common,cancel_ok:0
+#: field:account.asset.impairment_reversal,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,confirm_ok:0
+#: field:account.asset.impairment_common,confirm_ok:0
+#: field:account.asset.impairment_reversal,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,restart_ok:0
+#: field:account.asset.impairment_common,restart_ok:0
+#: field:account.asset.impairment_reversal,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,valid_ok:0
+#: field:account.asset.impairment_common,valid_ok:0
+#: field:account.asset.impairment_reversal,valid_ok:0
+msgid "Can Validate"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: code:addons/account_asset_management_impairment/models/account_asset_impairment_common.py:541
+#, python-format
+msgid "Can not impair asset before purchase date"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: selection:account.asset.impairment,state:0
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_form
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_search
+#: selection:account.asset.impairment_common,state:0
+#: selection:account.asset.impairment_reversal,state:0
+msgid "Cancel"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_form
+msgid "Cancellation"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,cancelled_user_id:0
+#: field:account.asset.impairment_common,cancelled_user_id:0
+#: field:account.asset.impairment_reversal,cancelled_user_id:0
+msgid "Cancellation By"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,cancelled_date:0
+#: field:account.asset.impairment_common,cancelled_date:0
+#: field:account.asset.impairment_reversal,cancelled_date:0
+msgid "Cancellation Date"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: model:ir.model,name:account_asset_management_impairment.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,company_id:0
+#: field:account.asset.impairment_common,company_id:0
+#: field:account.asset.impairment_reversal,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_form
+msgid "Confirmation"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,confirmed_user_id:0
+#: field:account.asset.impairment_common,confirmed_user_id:0
+#: field:account.asset.impairment_reversal,confirmed_user_id:0
+msgid "Confirmation By"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,confirmed_date:0
+#: field:account.asset.impairment_common,confirmed_date:0
+#: field:account.asset.impairment_reversal,confirmed_date:0
+msgid "Confirmation Date"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,account_contra_id:0
+#: field:account.asset.impairment_common,account_contra_id:0
+#: field:account.asset.impairment_reversal,account_contra_id:0
+msgid "Contra-Impairment Account"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,create_uid:0
+#: field:account.asset.impairment_reversal,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,create_date:0
+#: field:account.asset.impairment_reversal,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,currency_id:0
+#: field:account.asset.impairment_common,currency_id:0
+#: field:account.asset.impairment_reversal,currency_id:0
+msgid "Currency"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,date:0
+#: field:account.asset.impairment_common,date:0
+#: field:account.asset.impairment_reversal,date:0
+msgid "Date"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_search
+msgid "Date by Day"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_search
+msgid "Date by Month"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_search
+msgid "Date by Year"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: help:account.asset.impairment,message_last_post:0
+#: help:account.asset.impairment_common,message_last_post:0
+#: help:account.asset.impairment_reversal,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,display_name:0
+#: field:account.asset.impairment_common,display_name:0
+#: field:account.asset.impairment_reversal,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: selection:account.asset.impairment,state:0
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_search
+#: selection:account.asset.impairment_common,state:0
+#: selection:account.asset.impairment_reversal,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: model:ir.model,name:account_asset_management_impairment.model_account_asset_impairment
+msgid "Fised Asset Impairment"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment:account_asset_management_impairment.account_asset_impairment_view_form
+#: view:account.asset.impairment:account_asset_management_impairment.account_asset_impairment_view_search
+#: view:account.asset.impairment:account_asset_management_impairment.account_asset_impairment_view_tree
+msgid "Fixed Asset Impairment"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: model:ir.model,name:account_asset_management_impairment.model_account_asset_impairment_common
+msgid "Fixed Asset Impairment Common"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_reversal:account_asset_management_impairment.account_asset_impairment_reversal_view_form
+#: view:account.asset.impairment_reversal:account_asset_management_impairment.account_asset_impairment_reversal_view_search
+#: view:account.asset.impairment_reversal:account_asset_management_impairment.account_asset_impairment_reversal_view_tree
+#: model:ir.model,name:account_asset_management_impairment.model_account_asset_impairment_reversal
+msgid "Fixed Asset Impairment Reversal"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.config_setting,fixed_asset_impairment_reversal_sequence_id:0
+#: field:res.company,fixed_asset_impairment_reversal_sequence_id:0
+msgid "Fixed Asset Impairment Reversal Sequence"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.config_setting,fixed_asset_impairment_sequence_id:0
+#: field:res.company,fixed_asset_impairment_sequence_id:0
+msgid "Fixed Asset Impairment Sequence"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,message_follower_ids:0
+#: field:account.asset.impairment_common,message_follower_ids:0
+#: field:account.asset.impairment_reversal,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.config_setting:account_asset_management_impairment.account_asset_config_setting_view_form
+msgid "General"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_search
+msgid "Group By.."
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: help:account.asset.impairment,message_summary:0
+#: help:account.asset.impairment_common,message_summary:0
+#: help:account.asset.impairment_reversal,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,id:0
+#: field:account.asset.impairment_common,id:0
+#: field:account.asset.impairment_reversal,id:0
+msgid "ID"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: help:account.asset.impairment,message_unread:0
+#: help:account.asset.impairment_common,message_unread:0
+#: help:account.asset.impairment_reversal,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.asset:account_asset_management_impairment.account_asset_view_form
+#: field:account.asset.asset,impairment_ids:0
+#: selection:account.asset.impairment,type:0
+#: selection:account.asset.impairment_common,type:0
+#: selection:account.asset.impairment_reversal,type:0
+#: model:ir.ui.menu,name:account_asset_management_impairment.account_asset_impairment_menu
+#: model:ir.ui.menu,name:account_asset_management_impairment.account_asset_impairment_root_menu
+msgid "Impairment"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.category,impairment_account_id:0
+#: field:account.asset.impairment,account_impairment_id:0
+#: field:account.asset.impairment_common,account_impairment_id:0
+#: field:account.asset.impairment_reversal,account_impairment_id:0
+msgid "Impairment Account"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,impairment_amount:0
+#: field:account.asset.impairment_common,impairment_amount:0
+#: field:account.asset.impairment_reversal,impairment_amount:0
+msgid "Impairment Amount"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.category,impairment_expense_account_id:0
+msgid "Impairment Expense Account"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.category,impairment_reversal_account_id:0
+msgid "Impairment Expense Reversal Account"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.category,impairment_journal_id:0
+msgid "Impairment Journal"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.asset:account_asset_management_impairment.account_asset_view_form
+#: field:account.asset.asset,impairment_reversal_ids:0
+#: view:account.asset.config_setting:account_asset_management_impairment.account_asset_config_setting_view_form
+#: model:ir.ui.menu,name:account_asset_management_impairment.account_asset_impairment_reversal_menu
+msgid "Impairment Reversal"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.asset,amount_impairment:0
+msgid "Impairment Value"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,message_is_follower:0
+#: field:account.asset.impairment_common,message_is_follower:0
+#: field:account.asset.impairment_reversal,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,journal_id:0
+#: field:account.asset.impairment_common,journal_id:0
+#: field:account.asset.impairment_reversal,journal_id:0
+msgid "Journal"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,message_last_post:0
+#: field:account.asset.impairment_common,message_last_post:0
+#: field:account.asset.impairment_reversal,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,__last_update:0
+#: field:account.asset.impairment_common,__last_update:0
+#: field:account.asset.impairment_reversal,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,write_uid:0
+#: field:account.asset.impairment_reversal,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,write_date:0
+#: field:account.asset.impairment_reversal,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_form
+msgid "Log"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,message_ids:0
+#: field:account.asset.impairment_common,message_ids:0
+#: field:account.asset.impairment_reversal,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: help:account.asset.impairment,message_ids:0
+#: help:account.asset.impairment_common,message_ids:0
+#: help:account.asset.impairment_reversal,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: code:addons/account_asset_management_impairment/models/account_asset_impairment_common.py:545
+#, python-format
+msgid "No impairment before last depreciation date"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: code:addons/account_asset_management_impairment/models/account_asset_impairment_common.py:536
+#, python-format
+msgid "No zero or negative value"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,note:0
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_form
+#: field:account.asset.impairment_common,note:0
+#: field:account.asset.impairment_reversal,note:0
+msgid "Note"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,period_id:0
+#: field:account.asset.impairment_common,period_id:0
+#: field:account.asset.impairment_reversal,period_id:0
+msgid "Period"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_form
+msgid "Policy"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_form
+msgid "Restart"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: selection:account.asset.impairment,type:0
+#: selection:account.asset.impairment_common,type:0
+#: selection:account.asset.impairment_reversal,type:0
+msgid "Reversal"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.config_setting:account_asset_management_impairment.account_asset_config_setting_view_form
+msgid "Sequence"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,state:0
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_search
+#: field:account.asset.impairment_common,state:0
+#: field:account.asset.impairment_reversal,state:0
+msgid "State"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,message_summary:0
+#: field:account.asset.impairment_common,message_summary:0
+#: field:account.asset.impairment_reversal,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.config_setting:account_asset_management_impairment.account_asset_config_setting_view_form
+msgid "To Cancel"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.config_setting:account_asset_management_impairment.account_asset_config_setting_view_form
+msgid "To Confirm"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.config_setting:account_asset_management_impairment.account_asset_config_setting_view_form
+msgid "To Restart"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.config_setting:account_asset_management_impairment.account_asset_config_setting_view_form
+msgid "To Validate"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,type:0
+#: field:account.asset.impairment_common,type:0
+#: field:account.asset.impairment_reversal,type:0
+msgid "Type"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,message_unread:0
+#: field:account.asset.impairment_common,message_unread:0
+#: field:account.asset.impairment_reversal,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: selection:account.asset.impairment,state:0
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_form
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_search
+#: selection:account.asset.impairment_common,state:0
+#: selection:account.asset.impairment_reversal,state:0
+msgid "Valid"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_form
+msgid "Validation"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,validated_user_id:0
+#: field:account.asset.impairment_common,validated_user_id:0
+#: field:account.asset.impairment_reversal,validated_user_id:0
+msgid "Validation By"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: field:account.asset.impairment,validated_date:0
+#: field:account.asset.impairment_common,validated_date:0
+#: field:account.asset.impairment_reversal,validated_date:0
+msgid "Validation Date"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: selection:account.asset.impairment,state:0
+#: view:account.asset.impairment_common:account_asset_management_impairment.account_asset_impairment_common_view_search
+#: selection:account.asset.impairment_common,state:0
+#: selection:account.asset.impairment_reversal,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: account_asset_management_impairment
+#: code:addons/account_asset_management_impairment/models/account_asset_impairment_common.py:392
+#, python-format
+msgid "You can only delete data on draft state"
+msgstr ""
+
