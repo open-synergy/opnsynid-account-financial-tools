@@ -4,14 +4,14 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Stock and Asset Management Integration",
-    "version": "8.0.1.0.1",
+    "version": "8.0.2.0.0",
     "category": "Accounting & Finance",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
-        "account_asset_management",
+        "account_asset_management_extend",
         "stock_account",
     ],
     "data": [
@@ -20,5 +20,6 @@
         "views/account_asset_views.xml",
         "views/product_template_views.xml",
         "views/stock_production_lot_views.xml",
+        "views/account_asset_config_setting_views.xml",
     ]
 }

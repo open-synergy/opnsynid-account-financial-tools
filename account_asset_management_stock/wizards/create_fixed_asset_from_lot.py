@@ -120,8 +120,8 @@ class CreateFixedAssetFromLotDetail(models.TransientModel):
             "purchase_value": purchase_value,
             "salvage_value": salvage_value,
             "category_id": categ.id,
-            "parent_id": self.parent_id and \
-                self.parent_id.id or False,
+            "parent_id": self.parent_id and
+            self.parent_id.id or False,
             "partner_id": partner and partner.id or False,
             "date_start": move.date,
             "method": categ.method,

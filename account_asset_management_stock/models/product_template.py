@@ -24,3 +24,6 @@ class ProductTemplate(models.Model):
         string="Fixed Asset Salvage Value",
         default=0.0,
     )
+    auto_capitalization = fields.Boolean(
+        string="Auto Capitalization",
+    )
