@@ -15,6 +15,7 @@
                 <field name="asset_category_id"/>
                 <field name="fixed_asset_salvage_value_computation"/>
                 <field name="fixed_asset_salvage_value"/>
+                <field name="auto_capitalization"/>
             </group>
         </xpath>
     </field>
