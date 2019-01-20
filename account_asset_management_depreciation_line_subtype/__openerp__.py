@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Depreciation Line Subtype",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.1.0",
     "category": "Accounting & Finance",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -14,6 +14,7 @@
         "account_asset_management_extend",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "views/account_asset_asset_views.xml",
     ]
 }
