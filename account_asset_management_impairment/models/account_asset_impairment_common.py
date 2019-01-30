@@ -2,14 +2,18 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, _, SUPERUSER_ID
+from openerp import models, fields, api, _
 from openerp.exceptions import Warning as UserError
 
 
 class FixedAssetImpairmentCommon(models.AbstractModel):
     _name = "account.asset.impairment_common"
     _description = "Fixed Asset Impairment Common"
-    _inherit = ["mail.thread"]
+    _inherit = [
+        "mail.thread",
+        "base.sequence_document",
+        "base.workflow_policy_object",
+    ]
 
     @api.model
     def _default_company_id(self):
@@ -50,45 +54,11 @@ class FixedAssetImpairmentCommon(models.AbstractModel):
 
     @api.multi
     @api.depends(
-        "state",
         "company_id",
     )
     def _compute_policy(self):
-        for imp in self:
-            imp.confirm_ok = imp.valid_ok = \
-                imp.cancel_ok = \
-                imp.restart_ok = False
-
-            if self.env.user.id == SUPERUSER_ID:
-                imp.confirm_ok = imp.valid_ok = \
-                    imp.cancel_ok = \
-                    imp.restart_ok = True
-                continue
-
-            if not imp.company_id:
-                continue
-
-            company = imp.company_id
-            if imp.type == "impairment":
-                for policy in company.\
-                        _get_fixed_asset_impairment_button_policy_map():
-                    setattr(
-                        imp,
-                        policy[0],
-                        company.
-                        _get_fixed_asset_impairment_button_policy(
-                            policy[1]),
-                    )
-            elif imp.type == "reversal":
-                for policy in company.\
-                        _get_fixed_asset_imp_rev_button_policy_map():
-                    setattr(
-                        imp,
-                        policy[0],
-                        company.
-                        _get_fixed_asset_imp_rev_button_policy(
-                            policy[1]),
-                    )
+        _super = super(FixedAssetImpairmentCommon, self)
+        _super._compute_policy()
 
     name = fields.Char(
         string="# Document",
@@ -357,35 +327,14 @@ class FixedAssetImpairmentCommon(models.AbstractModel):
         return result
 
     @api.model
-    def _prepare_create_data(self, values):
-        name = values.get("name", False)
-        company_id = values.get("company_id", False)
-        if not name or name == "/":
-            values["name"] = self._create_sequence(company_id)
-        return values
-
-    @api.model
-    def _get_sequence(self, company_id):
-        company = self.env["res.company"].browse([company_id])[0]
-
-        if company.fixed_asset_impairment_sequence_id:
-            result = company.fixed_asset_impairment_sequence_id
-        else:
-            result = self.env.ref(
-                "account_asset_management_impairment.sequence_"
-                "fixed_asset_impairment")
-        return result
-
-    @api.model
-    def _create_sequence(self, company_id):
-        name = self.env["ir.sequence"].\
-            next_by_id(self._get_sequence(company_id).id) or "/"
-        return name
-
-    @api.model
     def create(self, values):
-        new_values = self._prepare_create_data(values)
-        return super(FixedAssetImpairmentCommon, self).create(new_values)
+        _super = super(FixedAssetImpairmentCommon, self)
+        result = _super.create(values)
+        sequence = result._create_sequence()
+        result.write({
+            "name": sequence,
+        })
+        return result
 
     @api.multi
     def unlink(self):
