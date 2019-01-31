@@ -2,13 +2,17 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, SUPERUSER_ID
+from openerp import models, fields, api
 
 
 class FixedAssetImprovement(models.Model):
     _name = "account.asset_improvement"
-    _inherit = ["mail.thread", "base.sequence_document"]
     _description = "Fixed Asset Improvement"
+    _inherit = [
+        "mail.thread",
+        "base.sequence_document",
+        "base.workflow_policy_object",
+    ]
 
     @api.model
     def _default_company_id(self):
@@ -27,22 +31,8 @@ class FixedAssetImprovement(models.Model):
         "company_id",
     )
     def _compute_policy(self):
-        for improvement in self:
-            if improvement.company_id:
-                company = improvement.company_id
-                for policy in company.\
-                        _get_asset_improvement_button_policy_map():
-                    if self.env.user.id == SUPERUSER_ID:
-                        result = True
-                    else:
-                        result = company.\
-                            _get_asset_improvement_button_policy(
-                                policy[1])
-                    setattr(
-                        improvement,
-                        policy[0],
-                        result,
-                    )
+        _super = super(FixedAssetImprovement, self)
+        _super._compute_policy()
 
     name = fields.Char(
         string="# Document",

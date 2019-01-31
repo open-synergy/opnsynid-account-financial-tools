@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+<data>
+
+<record id="seq_type_fixed_asset_improvement" model="ir.sequence.type">
+    <field name="name">Fixed Asset Improvement</field>
+    <field name="code">account.asset_improvement</field>
+</record>
+
+<record id="sequence_fixed_asset_improvement" model="ir.sequence">
+    <field name="name">Fixed Asset Improvement</field>
+    <field name="code">account.asset_improvement</field>
+    <field name="padding">5</field>
+    <field name="prefix">IMPRV/%(year)s/</field>
+    <field eval="1" name="number_next"/>
+    <field eval="1" name="number_increment"/>
+</record>
+</data>
+</openerp>
