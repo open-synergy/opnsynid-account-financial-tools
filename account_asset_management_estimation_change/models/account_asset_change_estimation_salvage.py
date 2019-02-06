@@ -2,13 +2,17 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, SUPERUSER_ID
+from openerp import models, fields, api
 
 
 class FixedAssetSalvageEstimationChange(models.Model):
     _name = "account.asset_change_estimation_salvage"
-    _inherit = ["mail.thread", "base.sequence_document"]
     _description = "Fixed Asset Salvage Value Estimation Change"
+    _inherit = [
+        "mail.thread",
+        "base.sequence_document",
+        "base.workflow_policy_object",
+    ]
 
     @api.model
     def _default_company_id(self):
@@ -27,22 +31,8 @@ class FixedAssetSalvageEstimationChange(models.Model):
         "company_id",
     )
     def _compute_policy(self):
-        for change in self:
-            if change.company_id:
-                company = change.company_id
-                for policy in company.\
-                        _get_asset_salvage_button_policy_map():
-                    if self.env.user.id == SUPERUSER_ID:
-                        result = True
-                    else:
-                        result = company.\
-                            _get_asset_salvage_button_policy(
-                                policy[1])
-                    setattr(
-                        change,
-                        policy[0],
-                        result,
-                    )
+        _super = super(FixedAssetSalvageEstimationChange, self)
+        _super._compute_policy()
 
     name = fields.Char(
         string="# Document",
@@ -308,8 +298,9 @@ class FixedAssetSalvageEstimationChange(models.Model):
     def create(self, values):
         _super = super(FixedAssetSalvageEstimationChange, self)
         result = _super.create(values)
+        sequence = result._create_sequence()
         result.write({
-            "name": result._create_sequence(),
+            "name": sequence,
         })
         return result
 
