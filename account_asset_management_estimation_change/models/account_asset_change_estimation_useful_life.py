@@ -2,13 +2,17 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, SUPERUSER_ID
+from openerp import models, fields, api
 
 
 class FixedAssetUsefulLifeEstimationChange(models.Model):
     _name = "account.asset_change_estimation_useful_life"
-    _inherit = ["mail.thread", "base.sequence_document"]
     _description = "Fixed Asset Useful Life Estimation Change"
+    _inherit = [
+        "mail.thread",
+        "base.sequence_document",
+        "base.workflow_policy_object",
+    ]
 
     @api.model
     def _default_company_id(self):
@@ -23,22 +27,8 @@ class FixedAssetUsefulLifeEstimationChange(models.Model):
         "company_id",
     )
     def _compute_policy(self):
-        for change in self:
-            if change.company_id:
-                company = change.company_id
-                for policy in company.\
-                        _get_asset_useful_life_button_policy_map():
-                    if self.env.user.id == SUPERUSER_ID:
-                        result = True
-                    else:
-                        result = company.\
-                            _get_asset_useful_life_button_policy(
-                                policy[1])
-                    setattr(
-                        change,
-                        policy[0],
-                        result,
-                    )
+        _super = super(FixedAssetUsefulLifeEstimationChange, self)
+        _super._compute_policy()
 
     name = fields.Char(
         string="# Document",
