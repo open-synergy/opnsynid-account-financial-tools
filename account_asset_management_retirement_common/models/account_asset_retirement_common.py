@@ -2,13 +2,17 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, SUPERUSER_ID
+from openerp import models, fields, api
 
 
 class FixedAssetRetirementCommon(models.AbstractModel):
     _name = "account.asset_retirement_common"
-    _inherit = ["mail.thread", "base.sequence_document"]
     _description = "Abstract Model for Fixed Asset Retirement"
+    _inherit = [
+        "mail.thread",
+        "base.sequence_document",
+        "base.workflow_policy_object",
+    ]
 
     @api.model
     def _default_company_id(self):
@@ -28,25 +32,11 @@ class FixedAssetRetirementCommon(models.AbstractModel):
 
     @api.multi
     @api.depends(
-        "type_id",
+        "company_id",
     )
     def _compute_policy(self):
-        for retirement in self:
-            if retirement.type_id:
-                ret_type = retirement.type_id
-                for policy in ret_type.\
-                        _get_asset_retirement_button_policy_map():
-                    if self.env.user.id == SUPERUSER_ID:
-                        result = True
-                    else:
-                        result = ret_type.\
-                            _get_asset_retirement_button_policy(
-                                policy[1])
-                    setattr(
-                        retirement,
-                        policy[0],
-                        result,
-                    )
+        _super = super(FixedAssetRetirementCommon, self)
+        _super._compute_policy()
 
     @api.multi
     @api.depends(

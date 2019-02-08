@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Fixed Asset Retirement",
-    "version": "8.0.1.1.1",
+    "version": "8.0.1.2.1",
     "category": "Accounting & Finance",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -13,6 +13,7 @@
     "depends": [
         "account_asset_management",
         "base_sequence_configurator",
+        "base_workflow_policy",
         "web_readonly_bypass",
     ],
     "data": [
