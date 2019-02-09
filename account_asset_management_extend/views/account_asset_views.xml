@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="account_asset_view_form" model="ir.ui.view">
+    <field name="name">Prorate by Month</field>
+    <field name="model">account.asset.asset</field>
+    <field name="inherit_id" ref="account_asset_management.view_account_asset_asset_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='method_period']" position="after">
+            <field name="method_period_number"/>
+            <field name="method_period_start_number"/>
+            <field name="method_period_depreciated_number"/>
+            <field name="method_period_remaining_number"/>
+            <field name="last_posted_depreciation_line_id"/>
+            <field name="last_posted_asset_line_id"/>
+        </xpath>
+
+        <xpath expr="//field[@name='depreciation_line_ids']/tree/field[@name='amount']" position="attributes">
+            <attribute name="on_change"/>
+        </xpath>
+
+        <xpath expr="//notebook" position="inside">
+            <page name="helper" string="Helper">
+                <group name="helper_1" colspan="4" col="2" string="Posted Asset Values">
+                    <field name="last_posted_asset_value_id"/>
+                    <field name="posted_asset_value_ids" nolabel="1" colspan="2"/>
+                </group>
+                <group name="helper_2" colspan="4" col="2" string="Posted Depreciations">
+                    <field name="last_depreciation_id"/>
+                    <field name="posted_depreciation_ids" nolabel="1" colspan="2"/>
+                </group>
+                <group name="helper_3" colspan="4" col="2" string="Posted Histories">
+                    <field name="posted_history_ids" nolabel="1"/>
+                </group>
+                <group name="helper_4" colspan="4" col="2" string="Unposted Histories">
+                    <field name="unposted_history_ids" nolabel="1"/>
+                </group>
+            </page>
+        </xpath>
+    </field>
+</record>
+
+</data>
+</openerp>

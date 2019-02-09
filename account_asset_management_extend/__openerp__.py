@@ -14,5 +14,7 @@
         "account_asset_management",
     ],
     "data": [
+        "data/decimal_precision_data.xml",
+        "views/account_asset_views.xml",
     ]
 }
