@@ -4,3 +4,4 @@
 
 from . import account_asset_asset_monkeypatch
 from . import account_asset_asset
+from . import account_asset_depreciation_line
