@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- Copyright 2018 OpenSynergy Indonesia
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
 <data>
@@ -39,9 +39,14 @@
                         <field name="prev_method_period"/>
                         <field name="method_number"/>
                         <field name="method_period"/>
+                        <field name="asset_value_history_id"/>
+                        <field name="depreciation_history_id"/>
                     </group>
                 </group>
                 <notebook>
+                    <page name="note" string="Note">
+                        <field name="note" colspan="4" nolabel="1"/>
+                    </page>
                     <page name="policy" string="Policy" groups="base.group_system">
                         <group name="group_policy_1" colspan="4" col="2">
                             <field name="confirm_ok"/>
@@ -50,9 +55,6 @@
                             <field name="cancel_ok"/>
                             <field name="restart_ok"/>
                         </group>
-                    </page>
-                    <page name="note" string="Note">
-                        <field name="note" colspan="4" nolabel="1"/>
                     </page>
                     <page name="log" string="Log" groups="base.group_system">
                         <group name="group_log_1" colspan="4" col="3">

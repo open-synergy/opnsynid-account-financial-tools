@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="depr_line_subtype_salvage_value" model="account.asset_depreciation_line_subtype">
+    <field name="name">Salvage Value Estimation Change</field>
+</record>
+
+<record id="depr_line_subtype_useful_life" model="account.asset_depreciation_line_subtype">
+    <field name="name">Useful Life Estimation Change</field>
+</record>
+
+</data>
+</openerp>
