@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 OpenSynergy Indonesia
+# Copyright 2018-2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
+from datetime import datetime
 from openerp import models, fields, api
+from dateutil.relativedelta import relativedelta
 
 
 class FixedAssetImprovement(models.Model):
@@ -102,6 +104,16 @@ class FixedAssetImprovement(models.Model):
                 ("readonly", False),
             ],
         },
+    )
+    asset_value_history_id = fields.Many2one(
+        string="Asset Value History",
+        comodel_name="account.asset.depreciation.line",
+        readonly=True,
+    )
+    depreciation_history_id = fields.Many2one(
+        string="Depreciation History",
+        comodel_name="account.asset.depreciation.line",
+        readonly=True,
     )
     currency_id = fields.Many2one(
         string="Currency",
@@ -299,6 +311,7 @@ class FixedAssetImprovement(models.Model):
     @api.multi
     def action_cancel(self):
         for improvement in self:
+            # TODO: Change
             improvement.depreciation_line_id.unlink_move()
             improvement.depreciation_line_id.unlink()
             improvement.write(self._prepare_cancel_data())
@@ -308,6 +321,110 @@ class FixedAssetImprovement(models.Model):
     def action_restart(self):
         for improvement in self:
             improvement.write(self._prepare_restart_data())
+
+    @api.multi
+    def _prepare_asset_value(self):
+        self.ensure_one()
+        subtype_id = self.env.ref(
+            "account_asset_management_capital_improvement."
+            "depr_line_subtype_improvement")
+        return {
+            "name": self._get_asset_value_name(),
+            "previous_id": self.asset_id.last_posted_depreciation_line_id.id,
+            "subtype_id": subtype_id.id,
+            "type": "create",
+            "line_date": self.date_improvement,
+            "amount": -1.0 * self.improvement_amount,
+            "init_entry": True,
+            "asset_id": self.asset_id.id,
+        }
+
+    @api.multi
+    def _create_asset_value(self):
+        self.ensure_one()
+        obj_line = self.env["account.asset.depreciation.line"]
+        asset_value = obj_line.create(self._prepare_asset_value())
+        return asset_value
+
+    @api.multi
+    def _get_asset_value_name(self):
+        self.ensure_one()
+        name = "Asset value of %s" % (self.name)
+        return name
+
+    @api.multi
+    def _create_adjustment_depreciation(self):
+        self.ensure_one()
+        if not self._check_create_adjustment():
+            return False
+
+        obj_line = self.env["account.asset.depreciation.line"]
+        adj = obj_line.create(self._prepare_depreciation())
+        adj.create_move()
+        return adj
+
+    @api.multi
+    def _check_create_adjustment(self):
+        self.ensure_one()
+        if not self.asset_id.last_depreciation_id:
+
+            return False
+
+        if self.asset_id.last_depreciation_id.line_date == \
+                self._get_depreciation_date().strftime("%Y-%m-%d"):
+            return False
+
+        return True
+
+    @api.multi
+    def _prepare_depreciation(self):
+        self.ensure_one()
+        subtype_id = self.env.ref(
+            "account_asset_management_capital_improvement."
+            "depr_line_subtype_improvement")
+        return {
+            "name": self._get_depreciation_name(),
+            "subtype_id": subtype_id.id,
+            "previous_id": self.asset_id.last_posted_depreciation_line_id.id,
+            "type": "depreciate",
+            "line_date": self._get_depreciation_date().strftime("%Y-%m-%d"),
+            "amount": self._get_depreciation_amount(),
+            "asset_id": self.asset_id.id,
+        }
+
+    @api.multi
+    def _get_depreciation_name(self):
+        self.ensure_one()
+        name = "Depreciation adjustment of %s" % (self.name)
+        return name
+
+    @api.multi
+    def _get_depreciation_date(self):
+        self.ensure_one()
+        dt_document = datetime.strptime(
+            self.date_improvement,
+            "%Y-%m-%d",
+        )
+        dt_depreciation = dt_document + relativedelta(day=1, days=-1)
+        return dt_depreciation
+
+    @api.multi
+    def _get_depreciation_amount(self):
+        self.ensure_one()
+
+        table = self.asset_id._compute_depreciation_table()
+        depreciation_date = self._get_depreciation_date()
+        year_amount = 0.0
+
+        for year in table:
+            if year["date_start"] <= depreciation_date and \
+                    year["date_stop"] >= depreciation_date:
+                year_amount = year["fy_amount"]
+                break
+
+        coef = self._get_depreciation_date().month
+        period_amount = year_amount / 12.0
+        return coef * period_amount
 
     @api.multi
     def _prepare_confirm_data(self):
@@ -333,13 +450,15 @@ class FixedAssetImprovement(models.Model):
     def _prepare_valid_data(self):
         self.ensure_one()
         acc_move = self._create_acc_move()
-        depreciation_line = self._create_depreciation_line(acc_move)
+        depreciation = self._create_adjustment_depreciation()
+        depreciation_id = depreciation and depreciation.id or False
         result = {
             "state": "valid",
             "acc_move_id": acc_move.id,
             "validated_user_id": self.env.user.id,
             "validated_date": fields.Datetime.now(),
-            "depreciation_line_id": depreciation_line.id,
+            "asset_value_history_id": self._create_asset_value().id,
+            "depreciation_history_id": depreciation_id,
         }
         return result
 
@@ -350,8 +469,8 @@ class FixedAssetImprovement(models.Model):
             "state": "cancel",
             "cancelled_user_id": self.env.user.id,
             "cancelled_date": fields.Datetime.now(),
-            "acc_move_id": False,
-            "depreciation_line_id": False,
+            "asset_value_history_id": False,
+            "depreciation_history_id": False,
         }
         return result
 

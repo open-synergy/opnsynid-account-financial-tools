@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- Copyright 2018 OpenSynergy Indonesia
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
 <data>
@@ -38,10 +38,12 @@
                             domain="[('company_id','=',company_id),('type','=','normal')]"/>
                         <field name="currency_id" invisible="0"/>
                         <field name="improvement_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                        <field name="asset_value_history_id"/>
+                        <field name="depreciation_history_id"/>
                     </group>
                 </group>
                 <notebook>
-                    <page name="acc_config" string="Accounting Entry">
+                    <page name="acc_config" string="Accounting Configuration">
                         <group name="acc_config_1" colspan="4" col="2">
                             <group name="acc_config_1_1" colspan="1" col="2">
                                 <field name="acc_move_creation"/>
