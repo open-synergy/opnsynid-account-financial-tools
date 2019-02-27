@@ -2,7 +2,6 @@
 # Copyright 2018-2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from dateutil.relativedelta import relativedelta
 from openerp import models, fields
 
 
@@ -12,7 +11,6 @@ class AccountAssetDepreciationLine(models.Model):
     # the middle of table. Thus it will accomodate othe fixed asset
     # event that can happend (e.g. improvement, impairment)
     _order = "line_date, type"
-
 
     amount = fields.Float(
         # Remove digits configuration to avoid rounding problems
