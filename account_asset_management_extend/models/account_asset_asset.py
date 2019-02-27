@@ -5,14 +5,17 @@
 from dateutil.relativedelta import relativedelta
 from datetime import datetime
 from openerp import models, fields, api, _
-from openerp.addons.decimal_precision import decimal_precision as dp
 from openerp.exceptions import Warning as UserError
 import numpy as np
+
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class AccountAsset(models.Model):
     _inherit = "account.asset.asset"
 
+    # TODO: Remove
     @api.multi
     @api.depends(
         "depreciation_line_ids",
@@ -25,7 +28,8 @@ class AccountAsset(models.Model):
         obj_line = self.env["account.asset.depreciation.line"]
         for asset in self:
             criteria = asset._prepare_valid_lines_domain()
-            lines = obj_line.search(criteria, order="type desc, line_date desc")
+            lines = obj_line.search(
+                criteria, order="type desc, line_date desc")
             line_id = False
             if len(lines) > 0:
                 line_id = lines[0].id
@@ -48,7 +52,6 @@ class AccountAsset(models.Model):
         "depreciation_line_ids.line_date",
     )
     def _compute_method_period_number(self):
-        obj_line = self.env["account.asset.depreciation.line"]
         for asset in self:
             method_period_start_number = method_period_depreciated_number = \
                 method_period_remaining_number = 0.0
@@ -82,7 +85,7 @@ class AccountAsset(models.Model):
                 dt_depreciation = np.datetime64(
                     depreciation.line_date,
                     np_date_unit
-                    )
+                )
                 method_period_depreciated_number = dt_depreciation - \
                     dt_temp
 
@@ -92,8 +95,10 @@ class AccountAsset(models.Model):
 
             asset.method_period_number = method_period_number
             asset.method_period_start_number = method_period_start_number
-            asset.method_period_depreciated_number = method_period_depreciated_number
-            asset.method_period_remaining_number = method_period_remaining_number
+            asset.method_period_depreciated_number = \
+                method_period_depreciated_number
+            asset.method_period_remaining_number = \
+                method_period_remaining_number
 
     @api.multi
     @api.depends(
@@ -105,13 +110,15 @@ class AccountAsset(models.Model):
     def _compute_asset_histories(self):
         obj_line = self.env["account.asset.depreciation.line"]
         for asset in self:
-            last_posted_asset_value = last_posted_depreciation = False
+            last_posted_asset_value = \
+                last_posted_depreciation = \
+                last_posted_history = False
 
             posted_asset_value_domain = \
                 asset._prepare_posted_asset_value_domain()
             posted_asset_values = obj_line.search(
                 posted_asset_value_domain,
-                order="type, line_date")
+                order="line_date, type")
 
             if len(posted_asset_values) > 0:
                 last_posted_asset_value = posted_asset_values[-1]
@@ -120,7 +127,7 @@ class AccountAsset(models.Model):
                 asset._prepare_posted_depreciation_domain()
             posted_depreciations = obj_line.search(
                 posted_depreciation_domain,
-                order="type, line_date")
+                order="line_date, type")
 
             if len(posted_depreciations) > 0:
                 last_posted_depreciation = posted_depreciations[-1]
@@ -129,13 +136,16 @@ class AccountAsset(models.Model):
                 asset._prepare_posted_history_domain()
             posted_histories = obj_line.search(
                 posted_history_domain,
-                order="type, line_date")
+                order="line_date, type")
+
+            if len(posted_histories) > 0:
+                last_posted_history = posted_histories[-1]
 
             unposted_history_domain = \
                 asset._prepare_unposted_history_domain()
             unposted_histories = obj_line.search(
                 unposted_history_domain,
-                order="type, line_date")
+                order="line_date, type")
 
             asset.posted_asset_value_ids = posted_asset_values.ids
             asset.last_posted_asset_value_id = last_posted_asset_value and \
@@ -147,8 +157,26 @@ class AccountAsset(models.Model):
                 False
             asset.unposted_history_ids = unposted_histories.ids
             asset.posted_history_ids = posted_histories.ids
+            asset.last_posted_history_id = last_posted_history and \
+                last_posted_history.id or \
+                False
 
+    # TODO: Remove
 
+    @api.multi
+    @api.depends(
+        "depreciation_line_ids",
+        "depreciation_line_ids.init_entry",
+        "depreciation_line_ids.move_check",
+        "depreciation_line_ids.type",
+    )
+    def _compute_posted_depreciation_line_ids(self):
+        obj_line = self.env["account.asset.depreciation.line"]
+        for asset in self:
+            domain = asset._prepare_posted_lines_domain()
+            posted_lines = obj_line.search(
+                domain, order="line_date desc")
+            asset.posted_depreciation_line_ids = posted_lines.ids
 
     value_residual = fields.Float(
         compute="_compute_depreciation",
@@ -193,18 +221,25 @@ class AccountAsset(models.Model):
         string="Remaining Age",
         compute="_compute_method_period_number",
     )
-    # TODO: Store?
+    # TODO: Remove
     last_posted_depreciation_line_id = fields.Many2one(
         string="Last Posted Depreciation Line",
         comodel_name="account.asset.depreciation.line",
         compute="_compute_last_posted_depreciation_line",
     )
-    # TODO: Store?
+    # TODO: Remove
     last_posted_asset_line_id = fields.Many2one(
         string="Last Asset Value Depreciation Line",
         comodel_name="account.asset.depreciation.line",
         compute="_compute_last_posted_depreciation_line",
     )
+    # TODO: Remove
+    posted_depreciation_line_ids = fields.Many2many(
+        string="Posted Depreciation Lines",
+        comodel_name="account.asset.depreciation.line",
+        compute="_compute_posted_depreciation_line_ids",
+    )
+
     posted_asset_value_ids = fields.Many2many(
         string="Posted Asset Value Histories",
         comodel_name="account.asset.depreciation.line",
@@ -232,6 +267,11 @@ class AccountAsset(models.Model):
     )
     posted_history_ids = fields.Many2many(
         string="Posted Asset Histories",
+        comodel_name="account.asset.depreciation.line",
+        compute="_compute_asset_histories",
+    )
+    last_posted_history_id = fields.Many2one(
+        string="Last Posted History",
         comodel_name="account.asset.depreciation.line",
         compute="_compute_asset_histories",
     )
@@ -317,7 +357,8 @@ class AccountAsset(models.Model):
 
     @api.multi
     def _prepare_posted_lines_domain(self):
-        self.ensure_one()
+        self.ensure_one
+        date = self.last_posted_asset_line_id.line_date
         return [
             "&",
             "&",
@@ -325,6 +366,7 @@ class AccountAsset(models.Model):
             ("init_entry", "=", True),
             ("asset_id", "=", self.id),
             ("type", "=", "depreciate"),
+            ("line_date", ">=", date)
         ]
 
     @api.multi
@@ -335,6 +377,18 @@ class AccountAsset(models.Model):
             "|", ("move_check", "=", True),
             ("init_entry", "=", True),
             ("asset_id", "=", self.id),
+        ]
+
+    @api.multi
+    def _prepare_depreciated_lines_domain(self):
+        self.ensure_one()
+        return [
+            "&",
+            "&",
+            "|", ("move_check", "=", True),
+            ("init_entry", "=", True),
+            ("asset_id", "=", self.id),
+            ("type", "=", "depreciate"),
         ]
 
     @api.multi
@@ -402,8 +456,11 @@ class AccountAsset(models.Model):
         posted_lines = self.posted_depreciation_line_ids
         obj_line = self.env["account.asset.depreciation.line"]
         seq = len(posted_lines)
-        depr_line = self.last_posted_depreciation_line_id
-        last_date = table[-1]["lines"][-1]["date"]
+        # SPONGE
+        depr_line = self.last_posted_history_id
+        # depr_line = self.last_posted_depreciation_line_id
+
+        # last_date = table[-1]["lines"][-1]["date"]
         depreciated_value = sum([l.amount for l in posted_lines])
 
         for entry in table[table_i_start:]:
@@ -472,7 +529,6 @@ class AccountAsset(models.Model):
     @api.multi
     def _compute_starting_depreciation_entry(self, table):
         self.ensure_one()
-        depreciated_value_posted = depreciated_value = 0.0
         # TODO: Use new helper field
         line_obj = self.env["account.asset.depreciation.line"]
         domain = self._prepare_posted_lines_domain()
@@ -492,8 +548,8 @@ class AccountAsset(models.Model):
                       "posted depreciation table entry dates."))
 
             for table_i, entry in enumerate(table):
-                residual_amount_table = \
-                    entry["lines"][-1]["remaining_value"]
+                # residual_amount_table = \
+                #     entry["lines"][-1]["remaining_value"]
                 if entry["date_start"] <= last_depreciation_date \
                         <= entry["date_stop"]:
                     break
@@ -504,7 +560,7 @@ class AccountAsset(models.Model):
                 entry = table[table_i]
                 date_min = entry["date_start"]
                 for line_i, line in enumerate(entry["lines"]):
-                    residual_amount_table = line["remaining_value"]
+                    # residual_amount_table = line["remaining_value"]
                     if date_min <= last_depreciation_date <= line["date"]:
                         break
                     date_min = line["date"]
