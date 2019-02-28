@@ -23,7 +23,12 @@ class DummyFy(object):
              "depreciation_line_ids.amount",
              "depreciation_line_ids.previous_id",
              "depreciation_line_ids.init_entry",
-             "depreciation_line_ids.move_id")
+             "depreciation_line_ids.move_id",
+             "child_ids",
+             "child_ids.value_residual",
+             "child_ids.value_depreciated",
+             "child_ids.parent_id",
+             )
 def _compute_depreciation(self):
     for asset in self:
         if asset.type == "normal":
@@ -36,18 +41,28 @@ def _compute_depreciation(self):
                 asset._get_asset_value() - value_depreciated
             asset.value_depreciated = value_depreciated
         else:
-            asset.value_residual = 0.0
-            asset.value_depreciated = 0.0
+            value_residual = value_depreciated = 0.0
+            for child in asset.child_ids:
+                if child.state == "open" and asset.type == "normal":
+                    value_residual += child.value_residual
+                    value_depreciated += child.value_depreciated
+            asset.value_residual = value_residual
+            asset.value_depreciated = value_depreciated
 
 
 @api.multi
 @api.depends(
     "purchase_value", "salvage_value",
-    "type", "method")
+    "type", "method",
+    "child_ids", "child_ids.asset_value", "child_ids.parent_id")
 def _asset_value(self):
     for asset in self:
         if asset.type == "view":
-            asset.asset_value = 0.0
+            asset_value = 0.0
+            for child in asset.child_ids:
+                if child.state == "open" and asset.type == "normal":
+                    asset_value += child.asset_value
+            asset.asset_value = asset_value
         elif asset.method in ["linear-limit", "degr-limit"]:
             asset.asset_value = asset._get_asset_value()
         else:
