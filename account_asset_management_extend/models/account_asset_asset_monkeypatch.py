@@ -43,7 +43,7 @@ def _compute_depreciation(self):
         else:
             value_residual = value_depreciated = 0.0
             for child in asset.child_ids:
-                if child.state == "open" and asset.type == "normal":
+                if child.state == "open" and child.type == "normal":
                     value_residual += child.value_residual
                     value_depreciated += child.value_depreciated
             asset.value_residual = value_residual
@@ -60,7 +60,7 @@ def _asset_value(self):
         if asset.type == "view":
             asset_value = 0.0
             for child in asset.child_ids:
-                if child.state == "open" and asset.type == "normal":
+                if child.state == "open" and child.type == "normal":
                     asset_value += child.asset_value
             asset.asset_value = asset_value
         elif asset.method in ["linear-limit", "degr-limit"]:
