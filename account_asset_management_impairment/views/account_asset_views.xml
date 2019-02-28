@@ -36,6 +36,7 @@
         </xpath>
         <xpath expr="//field[@name='value_residual']" position="after">
             <field name="amount_impairment" widget="monetary" options="{'currency_field': 'company_currency_id'}" attrs="{'invisible':[('type','=','view')]}"/>
+            <field name="amount_residual_impairment" widget="monetary" options="{'currency_field': 'company_currency_id'}" attrs="{'invisible':[('type','=','view')]}"/>
         </xpath>
     </field>
 </record>
