@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 OpenSynergy Indonesia
+# Copyright 2018-2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Fixed Asset Impairment",
-    "version": "8.0.1.1.2",
+    "version": "8.0.2.0.0",
     "category": "Accounting & Finance",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -12,6 +12,7 @@
     "installable": True,
     "depends": [
         "account_asset_management_config_page",
+        "account_asset_management_depreciation_line_subtype",
         "base_sequence_configurator",
         "base_workflow_policy",
     ],
