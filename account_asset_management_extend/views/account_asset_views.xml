@@ -10,6 +10,15 @@
     <field name="model">account.asset.asset</field>
     <field name="inherit_id" ref="account_asset_management.view_account_asset_asset_form"/>
     <field name="arch" type="xml">
+        <xpath expr="//sheet/group/field[@name='asset_value']" position="attributes">
+            <attribute name="attrs"/>
+        </xpath>
+        <xpath expr="//sheet/group/field[@name='value_depreciated']" position="attributes">
+            <attribute name="attrs"/>
+        </xpath>
+        <xpath expr="//sheet/group/field[@name='value_residual']" position="attributes">
+            <attribute name="attrs"/>
+        </xpath>
         <xpath expr="//field[@name='method_period']" position="after">
             <field name="method_period_number"/>
             <field name="method_period_start_number"/>
