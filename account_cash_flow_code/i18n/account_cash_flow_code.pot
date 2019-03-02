@@ -1,0 +1,122 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_cash_flow_code
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_cash_flow_code
+#: model:ir.actions.act_window,help:account_cash_flow_code.account_cash_flow_code_action
+msgid "<p class=\"oe_view_nocontent_create\">\n"
+"                Click to add a Cash Flow Code.\n"
+"              </p>\n"
+"            "
+msgstr ""
+
+#. module: account_cash_flow_code
+#: model:ir.model,name:account_cash_flow_code.model_account_account
+msgid "Account"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: field:account.cash_flow_code,active:0
+msgid "Active"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: view:account.cash_flow_code:account_cash_flow_code.account_cash_flow_code_view_form
+#: model:ir.actions.act_window,name:account_cash_flow_code.account_cash_flow_code_action
+#: model:ir.model,name:account_cash_flow_code.model_account_cash_flow_code
+#: model:ir.ui.menu,name:account_cash_flow_code.account_cash_flow_code_menu
+msgid "Cash Flow Code"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: field:account.cash_flow_code,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: field:account.cash_flow_code,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: field:account.cash_flow_code,description:0
+msgid "Description"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: selection:account.cash_flow_code,type:0
+msgid "Direct"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: view:account.account:account_cash_flow_code.account_account_view_search
+#: field:account.account,direct_cash_flow_id:0
+#: view:account.move.line:account_cash_flow_code.account_move_line_view_search
+#: field:account.move.line,direct_cash_flow_id:0
+msgid "Direct Cash Flow"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: field:account.cash_flow_code,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: field:account.cash_flow_code,id:0
+msgid "ID"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: selection:account.cash_flow_code,type:0
+msgid "Indirect"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: view:account.account:account_cash_flow_code.account_account_view_search
+#: field:account.account,indirect_cash_flow_id:0
+#: view:account.move.line:account_cash_flow_code.account_move_line_view_search
+#: field:account.move.line,indirect_cash_flow_id:0
+msgid "Indirect Cash Flow"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: model:ir.model,name:account_cash_flow_code.model_account_move_line
+msgid "Journal Items"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: field:account.cash_flow_code,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: field:account.cash_flow_code,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: field:account.cash_flow_code,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: field:account.cash_flow_code,name:0
+msgid "Name"
+msgstr ""
+
+#. module: account_cash_flow_code
+#: field:account.cash_flow_code,type:0
+msgid "Type"
+msgstr ""
+
