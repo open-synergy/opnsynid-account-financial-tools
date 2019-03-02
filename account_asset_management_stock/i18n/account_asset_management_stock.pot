@@ -6,8 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-24 14:33+0000\n"
-"PO-Revision-Date: 2018-11-24 14:33+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -26,9 +24,26 @@ msgid "Asset Category"
 msgstr ""
 
 #. module: account_asset_management_stock
+#: field:product.template,auto_capitalization:0
+msgid "Auto Capitalization"
+msgstr ""
+
+#. module: account_asset_management_stock
+#: view:account.asset.config_setting:account_asset_management_stock.account_asset_config_setting_view_form
+#: field:account.asset.config_setting,auto_capitalization_limit:0
+#: field:res.company,auto_capitalization_limit:0
+msgid "Auto Capitalization Limit"
+msgstr ""
+
+#. module: account_asset_management_stock
 #: view:stock.create_fixed_asset_from_lot:account_asset_management_stock.stock_create_fixed_asset_from_lot_view_form
 #: view:stock.link_fixed_asset_to_lot:account_asset_management_stock.stock_link_fixed_asset_to_lot_view_form
 msgid "Cancel"
+msgstr ""
+
+#. module: account_asset_management_stock
+#: model:ir.model,name:account_asset_management_stock.model_res_company
+msgid "Companies"
 msgstr ""
 
 #. module: account_asset_management_stock
@@ -188,6 +203,11 @@ msgid "Product Template"
 msgstr ""
 
 #. module: account_asset_management_stock
+#: model:ir.model,name:account_asset_management_stock.model_stock_quant
+msgid "Quants"
+msgstr ""
+
+#. module: account_asset_management_stock
 #: field:account.asset.asset,lot_id:0
 #: field:stock.create_fixed_asset_from_lot,detail_ids:0
 #: field:stock.create_fixed_asset_from_lot_detail,lot_id:0
@@ -199,6 +219,11 @@ msgstr ""
 #. module: account_asset_management_stock
 #: view:account.asset.asset:account_asset_management_stock.account_asset_view_form
 msgid "Stock"
+msgstr ""
+
+#. module: account_asset_management_stock
+#: view:account.asset.config_setting:account_asset_management_stock.account_asset_config_setting_view_form
+msgid "Stock Integration"
 msgstr ""
 
 #. module: account_asset_management_stock
