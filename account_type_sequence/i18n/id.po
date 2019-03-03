@@ -1,0 +1,28 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_type_sequence
+# 
+# Translators:
+# Andhitia Rama <andhitia.r@gmail.com>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Andhitia Rama <andhitia.r@gmail.com>, 2019\n"
+"Language-Team: Indonesian (https://www.transifex.com/opensynergy-indonesia/teams/96793/id/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: account_type_sequence
+#: model:ir.model,name:account_type_sequence.model_account_account_type
+msgid "Account Type"
+msgstr ""
+
+#. module: account_type_sequence
+#: field:account.account.type,sequence:0
+msgid "Sequence"
+msgstr "Sequence"

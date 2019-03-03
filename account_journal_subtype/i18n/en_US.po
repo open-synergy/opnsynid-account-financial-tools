@@ -1,0 +1,137 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_journal_subtype
+# 
+# Translators:
+# Andhitia Rama <andhitia.r@gmail.com>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Andhitia Rama <andhitia.r@gmail.com>, 2019\n"
+"Language-Team: English (United States) (https://www.transifex.com/opensynergy-indonesia/teams/96793/en_US/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: account_journal_subtype
+#: model:ir.model,name:account_journal_subtype.model_account_journal_subtype
+msgid "Account Journal Subtype"
+msgstr ""
+
+#. module: account_journal_subtype
+#: field:account.journal_subtype,active:0
+msgid "Active"
+msgstr "Active"
+
+#. module: account_journal_subtype
+#: selection:account.journal_subtype,type:0
+msgid "Bank and Checks"
+msgstr ""
+
+#. module: account_journal_subtype
+#: selection:account.journal_subtype,type:0
+msgid "Cash"
+msgstr ""
+
+#. module: account_journal_subtype
+#: view:account.journal_subtype:account_journal_subtype.account_journal_subtype_view_form
+msgid "Cash Flow Code"
+msgstr ""
+
+#. module: account_journal_subtype
+#: field:account.journal_subtype,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: account_journal_subtype
+#: field:account.journal_subtype,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: account_journal_subtype
+#: field:account.journal_subtype,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: account_journal_subtype
+#: selection:account.journal_subtype,type:0
+msgid "General"
+msgstr "General"
+
+#. module: account_journal_subtype
+#: field:account.journal_subtype,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: account_journal_subtype
+#: model:ir.model,name:account_journal_subtype.model_account_journal
+msgid "Journal"
+msgstr "Journal"
+
+#. module: account_journal_subtype
+#: field:account.journal_subtype,name:0
+#: model:ir.actions.act_window,name:account_journal_subtype.account_journal_subtype_action
+#: model:ir.ui.menu,name:account_journal_subtype.account_journal_subtype_menu
+msgid "Journal Subtype"
+msgstr ""
+
+#. module: account_journal_subtype
+#: field:account.journal_subtype,type:0
+msgid "Journal Type"
+msgstr ""
+
+#. module: account_journal_subtype
+#: field:account.journal_subtype,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: account_journal_subtype
+#: field:account.journal_subtype,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: account_journal_subtype
+#: field:account.journal_subtype,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: account_journal_subtype
+#: view:account.journal_subtype:account_journal_subtype.account_journal_subtype_view_form
+#: field:account.journal_subtype,note:0
+msgid "Note"
+msgstr "Note"
+
+#. module: account_journal_subtype
+#: selection:account.journal_subtype,type:0
+msgid "Opening/Closing Situation"
+msgstr ""
+
+#. module: account_journal_subtype
+#: selection:account.journal_subtype,type:0
+msgid "Purchase"
+msgstr ""
+
+#. module: account_journal_subtype
+#: selection:account.journal_subtype,type:0
+msgid "Purchase Refund"
+msgstr ""
+
+#. module: account_journal_subtype
+#: selection:account.journal_subtype,type:0
+msgid "Sale"
+msgstr ""
+
+#. module: account_journal_subtype
+#: selection:account.journal_subtype,type:0
+msgid "Sale Refund"
+msgstr ""
+
+#. module: account_journal_subtype
+#: view:account.journal:account_journal_subtype.account_journal_view_search
+#: field:account.journal,subtype_id:0
+msgid "Subtype"
+msgstr "Subtype"

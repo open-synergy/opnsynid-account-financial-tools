@@ -1,0 +1,74 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * account_asset_management_depreciation_line_subtype
+# 
+# Translators:
+# Andhitia Rama <andhitia.r@gmail.com>, 2019
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: Andhitia Rama <andhitia.r@gmail.com>, 2019\n"
+"Language-Team: Indonesian (https://www.transifex.com/opensynergy-indonesia/teams/96793/id/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: id\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. module: account_asset_management_depreciation_line_subtype
+#: model:ir.model,name:account_asset_management_depreciation_line_subtype.model_account_asset_asset
+msgid "Asset"
+msgstr "Asset"
+
+#. module: account_asset_management_depreciation_line_subtype
+#: model:ir.model,name:account_asset_management_depreciation_line_subtype.model_account_asset_depreciation_line
+msgid "Asset depreciation line"
+msgstr "Asset depreciation line"
+
+#. module: account_asset_management_depreciation_line_subtype
+#: field:account.asset_depreciation_line_subtype,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: account_asset_management_depreciation_line_subtype
+#: field:account.asset_depreciation_line_subtype,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: account_asset_management_depreciation_line_subtype
+#: field:account.asset_depreciation_line_subtype,name:0
+#: model:ir.model,name:account_asset_management_depreciation_line_subtype.model_account_asset_depreciation_line_subtype
+msgid "Depreciation Line Subtype"
+msgstr ""
+
+#. module: account_asset_management_depreciation_line_subtype
+#: field:account.asset_depreciation_line_subtype,display_name:0
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: account_asset_management_depreciation_line_subtype
+#: field:account.asset_depreciation_line_subtype,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: account_asset_management_depreciation_line_subtype
+#: field:account.asset_depreciation_line_subtype,__last_update:0
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: account_asset_management_depreciation_line_subtype
+#: field:account.asset_depreciation_line_subtype,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: account_asset_management_depreciation_line_subtype
+#: field:account.asset_depreciation_line_subtype,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: account_asset_management_depreciation_line_subtype
+#: field:account.asset.depreciation.line,subtype_id:0
+msgid "Subtype"
+msgstr ""
