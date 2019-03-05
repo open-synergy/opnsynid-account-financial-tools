@@ -13,6 +13,11 @@
     "depends": [
         "account_asset_management",
     ],
+    "external_dependencies": {
+        "python": [
+            "numpy",
+        ]
+    },
     "data": [
         "data/decimal_precision_data.xml",
         "views/account_asset_views.xml",

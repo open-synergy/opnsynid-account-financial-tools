@@ -18,6 +18,7 @@ class AccountAssetDepreciationLine(models.Model):
         # ui will only show 2 digits
         digits=False,
     )
+    # pylint: disable=locally-disabled, method-compute
     remaining_value = fields.Float(
         # Remove digits configuration to avoid rounding problems
         # Actual number will store on database
@@ -26,6 +27,7 @@ class AccountAssetDepreciationLine(models.Model):
         compute="_compute",
         store=True,
     )
+    # pylint: disable=locally-disabled, method-compute
     depreciated_value = fields.Float(
         # Remove digits configuration to avoid rounding problems
         # Actual number will store on database
