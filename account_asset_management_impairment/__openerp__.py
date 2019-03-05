@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Fixed Asset Impairment",
-    "version": "8.0.2.0.0",
+    "version": "8.0.2.1.0",
     "category": "Accounting & Finance",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -18,6 +18,7 @@
     ],
     "data": [
         "security/ir.model.access.csv",
+        "security/res_groups_data.xml",
         "data/ir_sequence_data.xml",
         "data/base_sequence_configurator_data.xml",
         "data/base_workflow_policy_data.xml",
