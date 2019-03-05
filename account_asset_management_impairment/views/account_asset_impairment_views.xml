@@ -1,16 +1,25 @@
 <?xml version="1.0"?>
-<!-- Copyright 2018 OpenSynergy Indonesia
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
 <data>
 <record id="account_asset_impairment_view_form" model="ir.ui.view">
     <field name="name">account.asset.impairment form</field>
     <field name="model">account.asset.impairment</field>
+    <field name="mode">primary</field>
     <field name="inherit_id" ref="account_asset_impairment_common_view_form"/>
     <field name="arch" type="xml">
         <data>
             <xpath expr="//form" position="attributes">
                 <attribute name="string">Fixed Asset Impairment</attribute>
+            </xpath>
+
+            <xpath expr="//group[@name='group_1_2']" position="attributes">
+                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+            </xpath>
+
+            <xpath expr="//page[@name='accounting']" position="attributes">
+                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
             </xpath>
         </data>
     </field>
@@ -19,6 +28,7 @@
 <record id="account_asset_impairment_view_tree" model="ir.ui.view">
     <field name="name">account.asset.impairment tree</field>
     <field name="model">account.asset.impairment</field>
+    <field name="mode">primary</field>
     <field name="inherit_id" ref="account_asset_impairment_common_view_tree"/>
     <field name="arch" type="xml">
         <data>
@@ -32,11 +42,30 @@
 <record id="account_asset_impairment_view_search" model="ir.ui.view">
     <field name="name">account.asset.impairment search</field>
     <field name="model">account.asset.impairment</field>
+    <field name="mode">primary</field>
     <field name="inherit_id" ref="account_asset_impairment_common_view_search"/>
     <field name="arch" type="xml">
         <data>
             <xpath expr="//search" position="attributes">
                 <attribute name="string">Fixed Asset Impairment</attribute>
+            </xpath>
+            <xpath expr="//field[@name='account_impairment_id']" position="attributes">
+                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+            </xpath>
+            <xpath expr="//field[@name='account_contra_id']" position="attributes">
+                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+            </xpath>
+            <xpath expr="//field[@name='journal_id']" position="attributes">
+                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+            </xpath>
+            <xpath expr="//filter[@name='grp_account_impairment']" position="attributes">
+                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+            </xpath>
+            <xpath expr="//filter[@name='grp_account_contra']" position="attributes">
+                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
+            </xpath>
+            <xpath expr="//filter[@name='grp_journal']" position="attributes">
+                <attribute name="groups">account_asset_management_impairment.group_technical_impairment_accounting</attribute>
             </xpath>
         </data>
     </field>

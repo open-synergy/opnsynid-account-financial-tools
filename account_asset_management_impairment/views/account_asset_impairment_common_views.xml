@@ -101,6 +101,10 @@
     <field name="arch" type="xml">
         <search>
             <field name="name"/>
+            <field name="asset_id"/>
+            <field name="account_impairment_id"/>
+            <field name="account_contra_id"/>
+            <field name="journal_id"/>
             <field name="company_id" groups="base.group_multi_company"/>
             <field name="state"/>
             <group name="group_state" string="State">
@@ -110,8 +114,13 @@
                 <filter name="filter_cancel" string="Cancel" domain="[('state','=','cancel')]"/>
             </group>
             <group name="group_by" string="Group By..">
+                <filter name="grp_asset" string="Asset" context="{'group_by':'asset_id'}"/>
+                <filter name="grp_account_impairment" string="Impairment Account" context="{'group_by':'account_impairment_id'}"/>
+                <filter name="grp_account_contra" string="Contra-Impairment Account" context="{'group_by':'account_contra_id'}"/>
+                <filter name="grp_journal" string="Journal" context="{'group_by':'journal_id'}"/>
                 <filter name="grp_date_year" string="Date by Year" context="{'group_by':'date:year'}"/>
                 <filter name="grp_date_month" string="Date by Month" context="{'group_by':'date:month'}"/>
+                <filter name="grp_date_week" string="Date by Week" context="{'group_by':'date:week'}"/>
                 <filter name="grp_date_day" string="Date by Day" context="{'group_by':'date:day'}"/>
                 <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
             </group>
