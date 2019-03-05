@@ -6,10 +6,14 @@ from dateutil.relativedelta import relativedelta
 from datetime import datetime
 from openerp import models, fields, api, _
 from openerp.exceptions import Warning as UserError
-import numpy as np
 
 import logging
 _logger = logging.getLogger(__name__)
+
+try:
+    import numpy as np
+except (ImportError, IOError) as err:
+    _logger.debug(err)
 
 
 class AccountAsset(models.Model):
@@ -190,6 +194,7 @@ class AccountAsset(models.Model):
         string="Depreciated Value",
         store=True,
     )
+    # pylint: disable=locally-disabled, method-compute
     asset_value = fields.Float(
         compute="_asset_value",
         digits=False,
@@ -357,7 +362,7 @@ class AccountAsset(models.Model):
 
     @api.multi
     def _prepare_posted_lines_domain(self):
-        self.ensure_one
+        self.ensure_one()
         date = self.last_posted_asset_line_id.line_date
         return [
             "&",
