@@ -102,8 +102,11 @@
                 <filter name="filter_cancel" string="Cancel" domain="[('state','=','cancel')]"/>
             </group>
             <group name="group_by" string="Group By..">
+                <filter name="grp_asset" string="Asset" context="{'group_by':'asset_id'}"/>
+                <filter name="grp_parent_asset" string="Complex Asset" context="{'group_by':'parent_asset_id'}"/>
                 <filter name="grp_date_year" string="Date by Year" context="{'group_by':'date:year'}"/>
                 <filter name="grp_date_month" string="Date by Month" context="{'group_by':'date:month'}"/>
+                <filter name="grp_date_week" string="Date by Week" context="{'group_by':'date:week'}"/>
                 <filter name="grp_date_day" string="Date by Day" context="{'group_by':'date:day'}"/>
                 <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
             </group>

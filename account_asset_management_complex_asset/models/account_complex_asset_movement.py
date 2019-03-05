@@ -56,7 +56,7 @@ class ComplexAssetMovementCommon(models.AbstractModel):
                 )
 
     name = fields.Char(
-        string="# Order",
+        string="# Document",
         required=True,
         default="/",
         copy=False,
@@ -83,6 +83,11 @@ class ComplexAssetMovementCommon(models.AbstractModel):
         default=lambda self: self._default_date(),
         required=False,
         readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     asset_id = fields.Many2one(
         string="Asset",
