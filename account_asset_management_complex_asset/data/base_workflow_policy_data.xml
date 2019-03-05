@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+        <!-- Complex Asset Installation -->
+        <record id="base_workflow_account_complex_asset_installation" model="base.workflow_policy">
+            <field name="model_id" ref="account_asset_management_complex_asset.model_account_complex_asset_installation"/>
+        </record>
+        <record id="base_workflow_line_account_complex_asset_installation_confirm" model="base.workflow_policy_line">
+            <field name="workflow_id" ref="account_asset_management_complex_asset.base_workflow_account_complex_asset_installation"/>
+            <field name="field_id" search="[('model_id.model','=','account.complex_asset_installation'),('name','=','confirm_ok')]"/>
+            <field name="python_code">result = document.company_id.complex_asset_installation_confirm_grp_ids.ids</field>
+        </record>
+        <record id="base_workflow_line_account_complex_asset_installation_valid" model="base.workflow_policy_line">
+            <field name="workflow_id" ref="account_asset_management_complex_asset.base_workflow_account_complex_asset_installation"/>
+            <field name="field_id" search="[('model_id.model','=','account.complex_asset_installation'),('name','=','valid_ok')]"/>
+            <field name="python_code">result = document.company_id.complex_asset_installation_valid_grp_ids.ids</field>
+        </record>
+        <record id="base_workflow_line_account_complex_asset_installation_cancel" model="base.workflow_policy_line">
+            <field name="workflow_id" ref="account_asset_management_complex_asset.base_workflow_account_complex_asset_installation"/>
+            <field name="field_id" search="[('model_id.model','=','account.complex_asset_installation'),('name','=','cancel_ok')]"/>
+            <field name="python_code">result = document.company_id.complex_asset_installation_cancel_grp_ids.ids</field>
+        </record>
+        <record id="base_workflow_line_account_complex_asset_installation_restart" model="base.workflow_policy_line">
+            <field name="workflow_id" ref="account_asset_management_complex_asset.base_workflow_account_complex_asset_installation"/>
+            <field name="field_id" search="[('model_id.model','=','account.complex_asset_installation'),('name','=','restart_ok')]"/>
+            <field name="python_code">result = document.company_id.complex_asset_installation_restart_grp_ids.ids</field>
+        </record>
+
+        <!-- Complex Asset Removal -->
+        <record id="base_workflow_account_complex_asset_removal" model="base.workflow_policy">
+            <field name="model_id" ref="account_asset_management_complex_asset.model_account_complex_asset_removal"/>
+        </record>
+        <record id="base_workflow_line_account_complex_asset_removal_confirm" model="base.workflow_policy_line">
+            <field name="workflow_id" ref="account_asset_management_complex_asset.base_workflow_account_complex_asset_removal"/>
+            <field name="field_id" search="[('model_id.model','=','account.complex_asset_removal'),('name','=','confirm_ok')]"/>
+            <field name="python_code">result = document.company_id.complex_asset_removal_confirm_grp_ids.ids</field>
+        </record>
+        <record id="base_workflow_line_account_complex_asset_removal_valid" model="base.workflow_policy_line">
+            <field name="workflow_id" ref="account_asset_management_complex_asset.base_workflow_account_complex_asset_removal"/>
+            <field name="field_id" search="[('model_id.model','=','account.complex_asset_removal'),('name','=','valid_ok')]"/>
+            <field name="python_code">result = document.company_id.complex_asset_removal_valid_grp_ids.ids</field>
+        </record>
+        <record id="base_workflow_line_account_complex_asset_removal_cancel" model="base.workflow_policy_line">
+            <field name="workflow_id" ref="account_asset_management_complex_asset.base_workflow_account_complex_asset_removal"/>
+            <field name="field_id" search="[('model_id.model','=','account.complex_asset_removal'),('name','=','cancel_ok')]"/>
+            <field name="python_code">result = document.company_id.complex_asset_removal_cancel_grp_ids.ids</field>
+        </record>
+        <record id="base_workflow_line_account_complex_asset_removal_restart" model="base.workflow_policy_line">
+            <field name="workflow_id" ref="account_asset_management_complex_asset.base_workflow_account_complex_asset_removal"/>
+            <field name="field_id" search="[('model_id.model','=','account.complex_asset_removal'),('name','=','restart_ok')]"/>
+            <field name="python_code">result = document.company_id.complex_asset_removal_restart_grp_ids.ids</field>
+        </record>
+    </data>
+</openerp>

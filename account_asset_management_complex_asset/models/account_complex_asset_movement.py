@@ -2,14 +2,18 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, SUPERUSER_ID, _
+from openerp import models, fields, api, _
 from openerp.exceptions import Warning as UserError
 
 
 class ComplexAssetMovementCommon(models.AbstractModel):
     _name = "account.complex_asset_movement_common"
-    _inherit = ["mail.thread"]
     _description = "Common Object For Complex Fixed Asset Movement"
+    _inherit = [
+        "mail.thread",
+        "base.sequence_document",
+        "base.workflow_policy_object",
+    ]
 
     @api.model
     def _default_company_id(self):
@@ -25,35 +29,11 @@ class ComplexAssetMovementCommon(models.AbstractModel):
 
     @api.multi
     @api.depends(
-        "state",
         "company_id",
     )
     def _compute_policy(self):
-        for rec in self:
-            rec.confirm_ok = rec.valid_ok = \
-                rec.cancel_ok = \
-                rec.restart_ok = False
-
-            if self.env.user.id == SUPERUSER_ID:
-                rec.confirm_ok = rec.valid_ok = \
-                    rec.cancel_ok = \
-                    rec.restart_ok = True
-                continue
-
-            if not rec.company_id:
-                continue
-
-            company = rec.company_id
-            type = rec.movement_type
-            for policy in company.\
-                    _get_complex_asset_movement_button_policy_map(type):
-                setattr(
-                    rec,
-                    policy[0],
-                    company.
-                    _get_complex_asset_movement_button_policy(
-                        policy[1]),
-                )
+        _super = super(ComplexAssetMovementCommon, self)
+        _super._compute_policy()
 
     name = fields.Char(
         string="# Document",
@@ -267,31 +247,14 @@ class ComplexAssetMovementCommon(models.AbstractModel):
         }
         return result
 
-    @api.multi
-    def _prepare_post_create_data(self):
-        self.ensure_one()
-        result = {
-            "name": self._create_sequence(),
-        }
-        return result
-
-    @api.multi
-    def _get_sequence(self):
-        return False
-
-    @api.multi
-    def _create_sequence(self):
-        self.ensure_one()
-        name = self.name
-        if self.name == "/":
-            name = self.env["ir.sequence"].\
-                next_by_id(self._get_sequence().id) or "/"
-        return name
-
     @api.model
     def create(self, values):
-        result = super(ComplexAssetMovementCommon, self).create(values)
-        result.write(result._prepare_post_create_data())
+        _super = super(ComplexAssetMovementCommon, self)
+        result = _super.create(values)
+        sequence = result._create_sequence()
+        result.write({
+            "name": sequence,
+        })
         return result
 
     @api.multi

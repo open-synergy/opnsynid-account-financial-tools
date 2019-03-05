@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Complex Fixed Assets Management",
-    "version": "8.0.2.2.0",
+    "version": "8.0.2.3.0",
     "category": "Accounting & Finance",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -18,6 +18,8 @@
     "data": [
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",
+        "data/base_sequence_configurator_data.xml",
+        "data/base_workflow_policy_data.xml",
         "menu.xml",
         "views/account_asset_config_setting_views.xml",
         "views/account_asset_views.xml",
