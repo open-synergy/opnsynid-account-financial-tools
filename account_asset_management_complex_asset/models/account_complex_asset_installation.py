@@ -7,6 +7,7 @@ from openerp import models, fields, api
 
 class ComplexAssetInstallation(models.Model):
     _name = "account.complex_asset_installation"
+    _description = "Complex Asset Installation"
     _inherit = "account.complex_asset_movement_common"
     _table = "account_complex_asset_movement"
 
@@ -29,15 +30,3 @@ class ComplexAssetInstallation(models.Model):
         return super(ComplexAssetInstallation, self).search(
             args=args, offset=offset, limit=limit,
             order=order, count=count)
-
-    @api.multi
-    def _get_sequence(self):
-        self.ensure_one()
-        company = self.company_id
-        if company.complex_asset_installation_sequence_id:
-            result = company.complex_asset_installation_sequence_id
-        else:
-            result = self.env.ref(
-                "account_asset_management_complex_asset.sequence_"
-                "complex_asset_installation")
-        return result
