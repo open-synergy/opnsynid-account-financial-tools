@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Fixed Asset Change of Estimation",
-    "version": "8.0.2.0.0",
+    "version": "8.0.2.1.0",
     "category": "Accounting & Finance",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -18,6 +18,7 @@
         "web_readonly_bypass",
     ],
     "data": [
+        "security/res_groups_data.xml",
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",
         "data/base_sequence_configurator_data.xml",
