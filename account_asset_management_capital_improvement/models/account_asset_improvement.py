@@ -14,6 +14,7 @@ class FixedAssetImprovement(models.Model):
         "mail.thread",
         "base.sequence_document",
         "base.workflow_policy_object",
+        "base.cancel.reason_common"
     ]
 
     @api.model
