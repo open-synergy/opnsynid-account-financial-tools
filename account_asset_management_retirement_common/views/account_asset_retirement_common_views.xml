@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<!-- Copyright 2018 OpenSynergy Indonesia
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
 <data>
@@ -45,7 +45,7 @@
                     </group>
                 </group>
                 <notebook>
-                    <page name="acc_config" string="Accounting Entry">
+                    <page name="acc_config" string="Accounting Configuration" groups="account_asset_management_retirement_common.group_technical_retirement_accounting">
                         <group name="acc_config_1" colspan="4" col="2">
                             <group name="acc_config_1_1" colspan="1" col="2">
                                 <field name="exchange_acc_move_creation"/>
@@ -66,7 +66,7 @@
                             </group>
                         </group>
                     </page>
-                    <page name="acc_entry" string="Accounting Entry">
+                    <page name="acc_entry" string="Accounting Entry" groups="account_asset_management_retirement_common.group_technical_retirement_helper">
                         <group name="acc_entry_1" colspan="4" col="2">
                             <field name="exchange_acc_move_id"/>
                             <field name="disposal_acc_move_id"/>
@@ -131,6 +131,16 @@
         <search>
             <field name="name"/>
             <field name="company_id" groups="base.group_multi_company"/>
+            <field name="asset_id"/>
+            <field name="currency_id"/>
+            <field name="asset_account_id" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+            <field name="exchange_account_id" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+            <field name="accumulated_depreciation_account_id" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+            <field name="gain_account_id" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+            <field name="loss_account_id" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+            <field name="exchange_journal_id" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+            <field name="disposal_journal_id" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+            <field name="gain_journal_id" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
             <field name="state"/>
             <group name="group_state" string="State">
                 <filter name="filter_draft" string="Draft" domain="[('state','=','draft')]"/>
@@ -140,8 +150,18 @@
                 <filter name="filter_cancel" string="Cancel" domain="[('state','=','cancel')]"/>
             </group>
             <group name="group_by" string="Group By..">
+                <filter name="grp_asset" string="Asset" context="{'group_by':'asset_id'}"/>
+                <filter name="grp_asset_account" string="Asset Account" context="{'group_by':'asset_account_id'}" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+                <filter name="grp_exchange_account" string="Exchange Account" context="{'group_by':'exchange_account_id'}" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+                <filter name="grp_accumulated_depreciation_account" string="Accumulated Depreciation Account" context="{'group_by':'accumulated_depreciation_account_id'}" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+                <filter name="grp_gain_account" string="Gain Account" context="{'group_by':'gain_account_id'}" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+                <filter name="grp_loss_account" string="Loss Account" context="{'group_by':'loss_account_id'}" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+                <filter name="grp_exchange_journal" string="Exchange Journal" context="{'group_by':'exchange_journal_id'}" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+                <filter name="grp_disposal_journal" string="Disposal Journal" context="{'group_by':'disposal_journal_id'}" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
+                <filter name="grp_gain_journal" string="Gain/Loss Journal" context="{'group_by':'gain_journal_id'}" groups="account_asset_management_retirement_common.group_technical_retirement_accounting"/>
                 <filter name="grp_date_year" string="Date by Year" context="{'group_by':'date_disposition:year'}"/>
                 <filter name="grp_date_month" string="Date by Month" context="{'group_by':'date_disposition:month'}"/>
+                <filter name="grp_date_week" string="Date by Week" context="{'group_by':'date_disposition:week'}"/>
                 <filter name="grp_date_day" string="Date by Day" context="{'group_by':'date_disposition:day'}"/>
                 <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
             </group>
