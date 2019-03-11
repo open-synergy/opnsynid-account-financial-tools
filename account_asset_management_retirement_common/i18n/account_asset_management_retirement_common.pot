@@ -25,10 +25,16 @@ msgstr ""
 
 #. module: account_asset_management_retirement_common
 #: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+msgid "Accounting Configuration"
+msgstr ""
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
 msgid "Accounting Entry"
 msgstr ""
 
 #. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,accumulated_depreciation_account_id:0
 msgid "Accumulated Depreciation Account"
 msgstr ""
@@ -79,11 +85,13 @@ msgid "Approve"
 msgstr ""
 
 #. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,asset_id:0
 msgid "Asset"
 msgstr ""
 
 #. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,asset_account_id:0
 msgid "Asset Account"
 msgstr ""
@@ -205,6 +213,11 @@ msgstr ""
 
 #. module: account_asset_management_retirement_common
 #: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
+msgid "Date by Week"
+msgstr ""
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
 msgid "Date by Year"
 msgstr ""
 
@@ -236,6 +249,7 @@ msgid "Disposal Account Move"
 msgstr ""
 
 #. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,disposal_journal_id:0
 #: field:account.asset_retirement_type,disposal_journal_id:0
 msgid "Disposal Journal"
@@ -263,6 +277,7 @@ msgid "Exchange Acc. Move Creation"
 msgstr ""
 
 #. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,exchange_account_id:0
 #: field:account.asset_retirement_type,exchange_account_id:0
 msgid "Exchange Account"
@@ -274,6 +289,7 @@ msgid "Exchange Account Move"
 msgstr ""
 
 #. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,exchange_journal_id:0
 #: field:account.asset_retirement_type,exchange_journal_id:0
 msgid "Exchange Journal"
@@ -291,6 +307,7 @@ msgid "Followers"
 msgstr ""
 
 #. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,gain_account_id:0
 #: field:account.asset_retirement_type,gain_account_id:0
 msgid "Gain Account"
@@ -315,6 +332,11 @@ msgstr ""
 #. module: account_asset_management_retirement_common
 #: field:account.asset_retirement_common,gain_loss_amount:0
 msgid "Gain/Loss Amount"
+msgstr ""
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
+msgid "Gain/Loss Journal"
 msgstr ""
 
 #. module: account_asset_management_retirement_common
@@ -379,6 +401,7 @@ msgid "Log"
 msgstr ""
 
 #. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_search
 #: field:account.asset_retirement_common,loss_account_id:0
 #: field:account.asset_retirement_type,loss_account_id:0
 msgid "Loss Account"
@@ -461,6 +484,16 @@ msgstr ""
 #. module: account_asset_management_retirement_common
 #: field:account.asset_retirement_type,sequence_id:0
 msgid "Sequence"
+msgstr ""
+
+#. module: account_asset_management_retirement_common
+#: model:res.groups,name:account_asset_management_retirement_common.group_technical_retirement_accounting
+msgid "Show Accounting Options On Fixed Asset Retirement"
+msgstr ""
+
+#. module: account_asset_management_retirement_common
+#: model:res.groups,name:account_asset_management_retirement_common.group_technical_retirement_helper
+msgid "Show Helper Information On Fixed Asset Retirement"
 msgstr ""
 
 #. module: account_asset_management_retirement_common
