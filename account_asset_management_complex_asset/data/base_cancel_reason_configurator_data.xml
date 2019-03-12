@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+        <record id="base_cancel_reason_config_account_complex_asset_installation" model="base.cancel.reason_config">
+            <field name="name" ref="account_asset_management_complex_asset.model_account_complex_asset_installation"/>
+            <field name="method_cancel_name">action_cancel</field>
+        </record>
+        <record id="base_cancel_reason_config_account_complex_asset_removal" model="base.cancel.reason_config">
+            <field name="name" ref="account_asset_management_complex_asset.model_account_complex_asset_removal"/>
+            <field name="method_cancel_name">action_cancel</field>
+        </record>
+    </data>
+</openerp>

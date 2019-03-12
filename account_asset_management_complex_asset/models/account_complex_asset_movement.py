@@ -13,6 +13,7 @@ class ComplexAssetMovementCommon(models.AbstractModel):
         "mail.thread",
         "base.sequence_document",
         "base.workflow_policy_object",
+        "base.cancel.reason_common"
     ]
 
     @api.model

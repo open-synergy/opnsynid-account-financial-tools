@@ -11,7 +11,7 @@
             <header>
                 <button name="action_confirm" type="object" string="Confirm" class="oe_highlight" attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"/>
                 <button name="action_valid" type="object" string="Valid" class="oe_highlight" attrs="{'invisible':['|',('state','!=','confirm'),('valid_ok','=',False)]}"/>
-                <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible':['|',('state','not in',['draft','confirm','valid']),('cancel_ok','=',False)]}"/>
+                <button name="%(base_cancel_reason.base_cancel_reason_wizard_action)d" string="Cancel" type="action" attrs="{'invisible':['|',('state','not in',['confirm','valid','open']),('cancel_ok','=',False)]}" confirm="Cancel Asset. Are you sure?"/>
                 <button name="action_restart" type="object" string="Restart" attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"/>
                 <field name="state" widget="statusbar" statusbar_visible="draft,confirm,valid"/>
             </header>
@@ -58,6 +58,7 @@
                             <field name="validated_user_id" nolabel="1"/>
                             <field name="cancelled_date" string="Cancellation"/>
                             <field name="cancelled_user_id" nolabel="1"/>
+                            <field name="cancel_reason_id"/>
                         </group>
                     </page>
                 </notebook>
@@ -94,6 +95,7 @@
             <field name="company_id" groups="base.group_multi_company"/>
             <field name="asset_id"/>
             <field name="parent_asset_id"/>
+            <field name="cancel_reason_id"/>
             <field name="state"/>
             <group name="group_state" string="State">
                 <filter name="filter_draft" string="Draft" domain="[('state','=','draft')]"/>
