@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Fixed Asset Improvement",
-    "version": "8.0.2.1.0",
+    "version": "8.0.3.0.0",
     "category": "Accounting & Finance",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -16,6 +16,7 @@
         "base_sequence_configurator",
         "base_workflow_policy",
         "web_readonly_bypass",
+        "base_cancel_reason",
     ],
     "data": [
         "security/res_groups_data.xml",
@@ -24,6 +25,7 @@
         "data/ir_sequence_data.xml",
         "data/base_sequence_configurator_data.xml",
         "data/base_workflow_policy_data.xml",
+        "data/base_cancel_reason_configurator_data.xml",
         "views/account_asset_asset_views.xml",
         "views/account_asset_config_setting_views.xml",
         "views/account_asset_category_views.xml",
