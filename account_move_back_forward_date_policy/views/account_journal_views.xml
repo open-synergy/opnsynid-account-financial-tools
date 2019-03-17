@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+
+        <record id="account_journal_view_form" model="ir.ui.view">
+            <field name="name">account.journal form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='allow_date']" position="after">
+                    <field name="allow_back_date"/>
+                    <field name="allow_forward_date"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="account_journal_view_search" model="ir.ui.view">
+            <field name="name">account.journal search</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_search"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='name']" position="after">
+                        <filter name="dom_allow_backdate" string="Allow Back Date" domain="[('allow_back_date','=',True)]"/>
+                        <filter name="dom_not_allow_backdate" string="Do Not Allow Back Date" domain="[('allow_back_date','=',False)]"/>
+                        <filter name="dom_allow_forwarddate" string="Allow Forward Date" domain="[('allow_forward_date','=',True)]"/>
+                        <filter name="dom_not_allow_forwarddate" string="Do Not Allow Forward Date" domain="[('allow_forward_date','=',False)]"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+    </data>
+</openerp>
