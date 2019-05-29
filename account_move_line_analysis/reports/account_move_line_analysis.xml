@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Opensynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="account_move_line_analysis_view_search" model="ir.ui.view">
+    <field name="name">account.move_line_analysis form</field>
+    <field name="model">account.move_line_analysis</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="ref"/>
+            <field name="period_id"/>
+            <field name="account_id"/>
+            <field name="journal_id"/>
+            <field name="fiscalyear_id"/>
+            <field name="product_id"/>
+            <field name="move_state"/>
+            <field name="move_line_state"/>
+            <field name="reconcile_id"/>
+            <field name="partner_id"/>
+            <field name="analytic_account_id"/>
+            <field name="user_type_id"/>
+            <field name="type"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+            <filter name="dom_empty" string="Empty" domain="[('id','=',0)]"/>
+            <group name="filter_move_state" string="Account Move State">
+                <filter name="dom_state_draft" string="Unposted" domain="[('move_state','=','draft')]"/>
+                <filter name="dom_state_posted" string="Posted" domain="[('move_state','=','posted')]"/>
+            </group>
+            <group name="filter_date" string="Date Start">
+                <filter string="01" domain="[('date','&gt;=', datetime.date(context_today().year,1,1).strftime('%Y-%m-%d')), ('date','&lt;=', datetime.date(context_today().year,1,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="02" domain="[('date','&gt;=', datetime.date(context_today().year,2,1).strftime('%Y-%m-%d')), ('date','&lt;=', (datetime.date(context_today().year,2,1) + relativedelta(months=1) + relativedelta(days=-1)).strftime('%Y-%m-%d'))]"/>
+                <filter string="03" domain="[('date','&gt;=', datetime.date(context_today().year,3,1).strftime('%Y-%m-%d')), ('date','&lt;=', datetime.date(context_today().year,3,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="04" domain="[('date','&gt;=', datetime.date(context_today().year,4,1).strftime('%Y-%m-%d')), ('date','&lt;=', datetime.date(context_today().year,4,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="05" domain="[('date','&gt;=', datetime.date(context_today().year,5,1).strftime('%Y-%m-%d')), ('date','&lt;=', datetime.date(context_today().year,5,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="06" domain="[('date','&gt;=', datetime.date(context_today().year,6,1).strftime('%Y-%m-%d')), ('date','&lt;=', datetime.date(context_today().year,6,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="07" domain="[('date','&gt;=', datetime.date(context_today().year,7,1).strftime('%Y-%m-%d')), ('date','&lt;=', datetime.date(context_today().year,7,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="08" domain="[('date','&gt;=', datetime.date(context_today().year,8,1).strftime('%Y-%m-%d')), ('date','&lt;=', datetime.date(context_today().year,8,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="09" domain="[('date','&gt;=', datetime.date(context_today().year,9,1).strftime('%Y-%m-%d')), ('date','&lt;=', datetime.date(context_today().year,9,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="10" domain="[('date','&gt;=', datetime.date(context_today().year,10,1).strftime('%Y-%m-%d')), ('date','&lt;=', datetime.date(context_today().year,10,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="11" domain="[('date','&gt;=', datetime.date(context_today().year,11,1).strftime('%Y-%m-%d')), ('date','&lt;=', datetime.date(context_today().year,11,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="12" domain="[('date','&gt;=', datetime.date(context_today().year,12,1).strftime('%Y-%m-%d')), ('date','&lt;=', datetime.date(context_today().year,12,31).strftime('%Y-%m-%d'))]"/>
+            </group>
+            <group name="row_grp" string="Row Grouping">
+                <filter name="row_grp_period" string="Period" context="{'group_by':'period_id'}"/>
+                <filter name="row_grp_account" string="Account" context="{'group_by':'account_id'}"/>
+                <filter name="row_grp_journal" string="Journal" context="{'group_by':'journal_id'}"/>
+                <filter name="row_grp_fiscalyear" string="Fiscal Year" context="{'group_by':'fiscalyear_id'}"/>
+                <filter name="row_grp_product" string="Product" context="{'group_by':'product_id'}"/>
+                <filter name="row_grp_uom" string="UoM" context="{'group_by':'product_uom_id'}"/>
+                <filter name="row_grp_move_state" string="Move State" context="{'group_by':'move_state'}"/>
+                <filter name="row_grp_move_line_state" string="Move Line State" context="{'group_by':'move_line_state'}"/>
+                <filter name="row_grp_reconcile" string="Reconciliation Number" context="{'group_by':'reconcile_id'}"/>
+                <filter name="row_grp_partner" string="Partner" context="{'group_by':'partner_id'}"/>
+                <filter name="row_grp_analytic_account" string="Analytic Account" context="{'group_by':'analytic_account_id'}"/>
+                <filter name="row_grp_user_type" string="Account Type" context="{'group_by':'user_type_id'}"/>
+                <filter name="row_grp_type" string="Internal Type" context="{'group_by':'type'}"/>
+                <filter name="row_grp_company" string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                <filter name="row_grp_date_year" string="Effective Date by Year" context="{'group_by':'date:year'}"/>
+                <filter name="row_grp_date_month" string="Effective Date by Month" context="{'group_by':'date:month'}"/>
+                <filter name="row_grp_date_week" string="Effective Date by Week" context="{'group_by':'date:week'}"/>
+                <filter name="row_grp_date_day" string="Effective Date by Day" context="{'group_by':'date:day'}"/>
+            </group>
+            <group name="col_grp" string="Col Grouping">
+                <filter name="col_grp_period" string="Period" context="{'col_group_by':'period_id'}"/>
+                <filter name="col_grp_account" string="Account" context="{'col_group_by':'account_id'}"/>
+                <filter name="col_grp_journal" string="Journal" context="{'col_group_by':'journal_id'}"/>
+                <filter name="col_grp_fiscalyear" string="Fiscal Year" context="{'col_group_by':'fiscalyear_id'}"/>
+                <filter name="col_grp_product" string="Product" context="{'col_group_by':'product_id'}"/>
+                <filter name="col_grp_uom" string="UoM" context="{'col_group_by':'product_uom_id'}"/>
+                <filter name="col_grp_move_state" string="Move State" context="{'col_group_by':'move_state'}"/>
+                <filter name="col_grp_move_line_state" string="Move Line State" context="{'col_group_by':'move_line_state'}"/>
+                <filter name="col_grp_reconcile" string="Reconciliation Number" context="{'col_group_by':'reconcile_id'}"/>
+                <filter name="col_grp_partner" string="Partner" context="{'col_group_by':'partner_id'}"/>
+                <filter name="col_grp_analytic_account" string="Analytic Account" context="{'col_group_by':'analytic_account_id'}"/>
+                <filter name="col_grp_user_type" string="Account Type" context="{'col_group_by':'user_type_id'}"/>
+                <filter name="col_grp_type" string="Internal Type" context="{'col_group_by':'type'}"/>
+                <filter name="col_grp_company" string="Company" context="{'col_group_by':'company_id'}" groups="base.group_multi_company"/>
+                <filter name="col_grp_date_year" string="Effective Date by Year" context="{'col_group_by':'date:year'}"/>
+                <filter name="col_grp_date_month" string="Effective Date by Month" context="{'col_group_by':'date:month'}"/>
+                <filter name="col_grp_date_week" string="Effective Date by Week" context="{'col_group_by':'date:week'}"/>
+                <filter name="col_grp_date_day" string="Effective Date by Day" context="{'col_group_by':'date:day'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="account_move_line_analysis_view_graph" model="ir.ui.view">
+    <field name="name">account.move_line_analysis_graph form</field>
+    <field name="model">account.move_line_analysis</field>
+    <field name="arch" type="xml">
+        <graph type="pivot">
+            <field name="debit" type="measure"/>
+            <field name="credit" type="measure"/>
+            <field name="balance" type="measure"/>
+            <field name="amount_currency" type="measure"/>
+            <field name="quantity" type="measure"/>
+        </graph>
+    </field>
+</record>
+
+<record id="account_move_line_analysis_action" model="ir.actions.act_window">
+    <field name="name">Account Move Line Analysis</field>
+    <field name="res_model">account.move_line_analysis</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">graph</field>
+    <field name="context">{'search_default_dom_empty':1}</field>
+    <field name="view_id" ref="account_move_line_analysis_view_graph"/>
+    <field name="search_view_id" ref="account_move_line_analysis_view_search"/>
+</record>
+
+
+<menuitem
+    id="account_move_line_analysis_menu"
+    name="Account Move Line Analysis"
+    parent="account.menu_finance_reporting"
+    action="account_move_line_analysis_action"
+    sequence="1"
+    />
+
+</data>
+</openerp>
