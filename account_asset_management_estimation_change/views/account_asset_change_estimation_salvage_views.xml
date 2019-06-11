@@ -14,6 +14,7 @@
                 <button name="action_valid" type="object" string="Valid" class="oe_highlight" attrs="{'invisible':['|',('state','!=','open'),('valid_ok','=',False)]}"/>
                 <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible':['|',('state','not in',['draft','confirm','open']),('cancel_ok','=',False)]}"/>
                 <button name="action_restart" type="object" string="Restart" attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"/>
+                <button name="%(base_print_policy.base_print_document_action)d" string="Print" type="action" class="oe_highlight" icon="gtk-print"/>
                 <field name="state" widget="statusbar" statusbar_visible="draft,confirm,open,valid"/>
             </header>
             <sheet>
