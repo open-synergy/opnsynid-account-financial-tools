@@ -468,6 +468,11 @@ msgstr ""
 
 #. module: account_asset_management_retirement_common
 #: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
+msgid "Print"
+msgstr ""
+
+#. module: account_asset_management_retirement_common
+#: view:account.asset_retirement_common:account_asset_management_retirement_common.account_asset_retirement_common_view_form
 msgid "Restart"
 msgstr ""
 
