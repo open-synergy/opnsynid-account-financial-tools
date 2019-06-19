@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Complex Fixed Assets Management",
-    "version": "8.0.2.3.0",
+    "version": "8.0.3.0.0",
     "category": "Accounting & Finance",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -13,7 +13,10 @@
     "depends": [
         "account_asset_management_config_page",
         "account_asset_management_depreciation_line_subtype",
+        "base_sequence_configurator",
+        "base_workflow_policy",
         "web_readonly_bypass",
+        "base_print_policy"
     ],
     "data": [
         "security/ir.model.access.csv",
