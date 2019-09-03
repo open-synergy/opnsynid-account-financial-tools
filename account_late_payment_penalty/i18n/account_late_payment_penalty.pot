@@ -1,0 +1,652 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_late_payment_penalty
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,name:0
+#: field:account.in_late_payment_penalty,name:0
+#: field:account.out_late_payment_penalty,name:0
+msgid "# Document"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: model:ir.model,name:account_late_payment_penalty.model_account_common_late_payment_penalty
+msgid "Abstract Model for Late Payment Penalty"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_form
+msgid "Accounting"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.late_payment_penalty_type,active:0
+msgid "Active"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.late_payment_penalty_type:account_late_payment_penalty.account_late_payment_penalty_type_view_form
+msgid "Agreement"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.late_payment_penalty_type,penalty_cancel_group_ids:0
+msgid "Allow To Cancel Late Payment Penalty"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.late_payment_penalty_type,penalty_post_group_ids:0
+msgid "Allow To Post Late Payment Penalty"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.late_payment_penalty_type,penalty_restart_group_ids:0
+msgid "Allow To Restart Late Payment Penalty"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,allowed_move_line_ids:0
+#: field:account.in_late_payment_penalty,allowed_move_line_ids:0
+#: field:account.out_late_payment_penalty,allowed_move_line_ids:0
+msgid "Allowed Move Lines"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.invoice,late_payment_penalty_type_ids:0
+#: field:account.move.line,late_payment_penalty_type_ids:0
+msgid "Applicable Late Payment Penalty Types"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,amount_base:0
+#: field:account.in_late_payment_penalty,amount_base:0
+#: field:account.out_late_payment_penalty,amount_base:0
+msgid "Base Amount"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,cancel_ok:0
+#: field:account.in_late_payment_penalty,cancel_ok:0
+#: field:account.out_late_payment_penalty,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,post_ok:0
+#: field:account.in_late_payment_penalty,post_ok:0
+#: field:account.out_late_payment_penalty,post_ok:0
+msgid "Can Post"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,restart_ok:0
+#: field:account.in_late_payment_penalty,restart_ok:0
+#: field:account.out_late_payment_penalty,restart_ok:0
+msgid "Can Unpost"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_form
+#: selection:account.common_late_payment_penalty,state:0
+#: selection:account.in_late_payment_penalty,state:0
+#: selection:account.out_late_payment_penalty,state:0
+msgid "Cancel"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,cancel_date:0
+#: field:account.in_late_payment_penalty,cancel_date:0
+#: field:account.out_late_payment_penalty,cancel_date:0
+msgid "Cancel Date"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,cancel_reason_id:0
+#: field:account.in_late_payment_penalty,cancel_reason_id:0
+#: field:account.out_late_payment_penalty,cancel_reason_id:0
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_form
+msgid "Cancel late payment penalty. Are you sure?"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_form
+msgid "Cancellation reason:"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,cancel_user_id:0
+#: field:account.in_late_payment_penalty,cancel_user_id:0
+#: field:account.out_late_payment_penalty,cancel_user_id:0
+msgid "Cancelled By"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.late_payment_penalty_type,code:0
+msgid "Code"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.late_payment_penalty_type,auto_create_python_code:0
+msgid "Code for Auto Create Penalty Creation"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.late_payment_penalty_type,python_code:0
+msgid "Code for Penalty Computation"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+#: field:account.common_late_payment_penalty,company_id:0
+#: field:account.in_late_payment_penalty,company_id:0
+#: field:account.out_late_payment_penalty,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.late_payment_penalty_type:account_late_payment_penalty.account_late_payment_penalty_type_view_form
+msgid "Configuration"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_form
+msgid "Confirm late payment penalty. Are you sure?"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.in_late_payment_penalty,create_uid:0
+#: field:account.late_payment_penalty_type,create_uid:0
+#: field:account.out_late_payment_penalty,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.in_late_payment_penalty,create_date:0
+#: field:account.late_payment_penalty_type,create_date:0
+#: field:account.out_late_payment_penalty,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,date:0
+#: field:account.in_late_payment_penalty,date:0
+#: field:account.out_late_payment_penalty,date:0
+msgid "Date"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,date_due:0
+#: field:account.in_late_payment_penalty,date_due:0
+#: field:account.out_late_payment_penalty,date_due:0
+msgid "Date Due"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+msgid "Date Due by Day"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+msgid "Date Due by Month"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+msgid "Date Due by Week"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+msgid "Date Due by Year"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+msgid "Date by Day"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+msgid "Date by Month"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+msgid "Date by Week"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+msgid "Date by Year"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: help:account.common_late_payment_penalty,message_last_post:0
+#: help:account.in_late_payment_penalty,message_last_post:0
+#: help:account.out_late_payment_penalty,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,day_diff:0
+#: field:account.in_late_payment_penalty,day_diff:0
+#: field:account.out_late_payment_penalty,day_diff:0
+msgid "Day Diff"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.late_payment_penalty_type,journal_id:0
+msgid "Default Journal"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,direction:0
+#: field:account.in_late_payment_penalty,direction:0
+#: field:account.late_payment_penalty_type,direction:0
+#: field:account.out_late_payment_penalty,direction:0
+msgid "Direction"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,display_name:0
+#: field:account.in_late_payment_penalty,display_name:0
+#: field:account.late_payment_penalty_type,display_name:0
+#: field:account.out_late_payment_penalty,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: selection:account.common_late_payment_penalty,state:0
+#: selection:account.in_late_payment_penalty,state:0
+#: selection:account.out_late_payment_penalty,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,message_follower_ids:0
+#: field:account.in_late_payment_penalty,message_follower_ids:0
+#: field:account.out_late_payment_penalty,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+msgid "Group By.."
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: help:account.common_late_payment_penalty,message_summary:0
+#: help:account.in_late_payment_penalty,message_summary:0
+#: help:account.out_late_payment_penalty,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,id:0
+#: field:account.in_late_payment_penalty,id:0
+#: field:account.late_payment_penalty_type,id:0
+#: field:account.out_late_payment_penalty,id:0
+msgid "ID"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: help:account.common_late_payment_penalty,message_unread:0
+#: help:account.in_late_payment_penalty,message_unread:0
+#: help:account.out_late_payment_penalty,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: selection:account.common_late_payment_penalty,direction:0
+#: selection:account.in_late_payment_penalty,direction:0
+#: selection:account.late_payment_penalty_type,direction:0
+#: selection:account.out_late_payment_penalty,direction:0
+msgid "In"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: model:ir.actions.act_window,name:account_late_payment_penalty.account_in_late_payment_penalty_action
+#: model:ir.ui.menu,name:account_late_payment_penalty.account_in_late_payment_penalty_menu
+msgid "In Late Payment Penalties"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: model:ir.model,name:account_late_payment_penalty.model_account_in_late_payment_penalty
+msgid "In Late Payment Penalty Type"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: model:ir.actions.act_window,name:account_late_payment_penalty.account_late_payment_penalty_in_type_action
+msgid "In Late Payment Penalty Types"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: model:ir.ui.menu,name:account_late_payment_penalty.account_late_payment_penalty_in_type_menu
+msgid "In Penalty Types"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.late_payment_penalty_type,income_account_id:0
+msgid "Income Account"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: model:ir.model,name:account_late_payment_penalty.model_account_invoice
+msgid "Invoice"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,message_is_follower:0
+#: field:account.in_late_payment_penalty,message_is_follower:0
+#: field:account.out_late_payment_penalty,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,journal_id:0
+#: field:account.in_late_payment_penalty,journal_id:0
+#: field:account.out_late_payment_penalty,journal_id:0
+msgid "Journal"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: model:ir.model,name:account_late_payment_penalty.model_account_move_line
+msgid "Journal Items"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,message_last_post:0
+#: field:account.in_late_payment_penalty,message_last_post:0
+#: field:account.out_late_payment_penalty,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,__last_update:0
+#: field:account.in_late_payment_penalty,__last_update:0
+#: field:account.late_payment_penalty_type,__last_update:0
+#: field:account.out_late_payment_penalty,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.in_late_payment_penalty,write_uid:0
+#: field:account.late_payment_penalty_type,write_uid:0
+#: field:account.out_late_payment_penalty,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.in_late_payment_penalty,write_date:0
+#: field:account.late_payment_penalty_type,write_date:0
+#: field:account.out_late_payment_penalty,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: model:ir.ui.menu,name:account_late_payment_penalty.account_late_payment_penalty_configuration_menu
+#: model:ir.ui.menu,name:account_late_payment_penalty.account_late_payment_penalty_menu
+msgid "Late Payment Penalty"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.late_payment_penalty_type,name:0
+#: model:ir.model,name:account_late_payment_penalty.model_account_late_payment_penalty_type
+msgid "Late Payment Penalty Type"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_form
+msgid "Logs"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,message_ids:0
+#: field:account.in_late_payment_penalty,message_ids:0
+#: field:account.out_late_payment_penalty,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: help:account.common_late_payment_penalty,message_ids:0
+#: help:account.in_late_payment_penalty,message_ids:0
+#: help:account.out_late_payment_penalty,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,move_line_id:0
+#: field:account.in_late_payment_penalty,move_line_id:0
+#: field:account.out_late_payment_penalty,move_line_id:0
+msgid "Move Line"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_form
+#: field:account.common_late_payment_penalty,note:0
+#: field:account.in_late_payment_penalty,note:0
+#: view:account.late_payment_penalty_type:account_late_payment_penalty.account_late_payment_penalty_type_view_form
+#: field:account.late_payment_penalty_type,note:0
+#: field:account.out_late_payment_penalty,note:0
+msgid "Note"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,move_amount_base:0
+#: field:account.in_late_payment_penalty,move_amount_base:0
+#: field:account.out_late_payment_penalty,move_amount_base:0
+msgid "Origin Move Base Amount"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,move_date_due:0
+#: field:account.in_late_payment_penalty,move_date_due:0
+#: field:account.out_late_payment_penalty,move_date_due:0
+msgid "Original Move Line Date Due"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: selection:account.common_late_payment_penalty,direction:0
+#: selection:account.in_late_payment_penalty,direction:0
+#: selection:account.late_payment_penalty_type,direction:0
+#: selection:account.out_late_payment_penalty,direction:0
+msgid "Out"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: model:ir.actions.act_window,name:account_late_payment_penalty.account_out_late_payment_penalty_action
+#: model:ir.ui.menu,name:account_late_payment_penalty.account_out_late_payment_penalty_menu
+msgid "Out Late Payment Penalties"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: model:ir.model,name:account_late_payment_penalty.model_account_out_late_payment_penalty
+msgid "Out Late Payment Penalty Type"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: model:ir.actions.act_window,name:account_late_payment_penalty.account_late_payment_penalty_out_type_action
+msgid "Out Late Payment Penalty Types"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: model:ir.ui.menu,name:account_late_payment_penalty.account_late_payment_penalty_out_type_menu
+msgid "Out Penalty Types"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+#: field:account.common_late_payment_penalty,partner_id:0
+#: field:account.in_late_payment_penalty,partner_id:0
+#: field:account.out_late_payment_penalty,partner_id:0
+msgid "Partner"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,amount_penalty:0
+#: field:account.in_late_payment_penalty,amount_penalty:0
+#: field:account.out_late_payment_penalty,amount_penalty:0
+msgid "Penalty Amount"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,account_id:0
+#: field:account.in_late_payment_penalty,account_id:0
+#: field:account.out_late_payment_penalty,account_id:0
+msgid "Penalty Income Account"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,penalty_move_id:0
+#: field:account.in_late_payment_penalty,penalty_move_id:0
+#: field:account.out_late_payment_penalty,penalty_move_id:0
+msgid "Penalty Move"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,penalty_move_line_id:0
+#: field:account.in_late_payment_penalty,penalty_move_line_id:0
+#: field:account.out_late_payment_penalty,penalty_move_line_id:0
+msgid "Penalty Move Line"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: code:addons/account_late_payment_penalty/models/account_late_payment_penalty_common.py:552
+#: code:addons/account_late_payment_penalty/models/account_late_payment_penalty_common.py:562
+#, python-format
+msgid "Please delete late payment penaly first"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_form
+msgid "Policies"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_form
+#: selection:account.common_late_payment_penalty,state:0
+#: selection:account.in_late_payment_penalty,state:0
+#: selection:account.out_late_payment_penalty,state:0
+msgid "Post"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,post_date:0
+#: field:account.in_late_payment_penalty,post_date:0
+#: field:account.out_late_payment_penalty,post_date:0
+msgid "Post Date"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,post_user_id:0
+#: field:account.in_late_payment_penalty,post_user_id:0
+#: field:account.out_late_payment_penalty,post_user_id:0
+msgid "Posted By"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.late_payment_penalty_type:account_late_payment_penalty.account_late_payment_penalty_type_view_form
+msgid "Python Code for Auto Penalty Creation"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.late_payment_penalty_type:account_late_payment_penalty.account_late_payment_penalty_type_view_form
+msgid "Python Code for Penalty Computation"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,amount_residual:0
+#: field:account.in_late_payment_penalty,amount_residual:0
+#: field:account.out_late_payment_penalty,amount_residual:0
+msgid "Residual Amount"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_form
+msgid "Restart"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_form
+msgid "Restart late payment penalty. Are you sure?"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.late_payment_penalty_type,sequence:0
+#: field:account.late_payment_penalty_type,sequence_id:0
+msgid "Sequence"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+#: field:account.common_late_payment_penalty,state:0
+#: field:account.in_late_payment_penalty,state:0
+#: field:account.out_late_payment_penalty,state:0
+msgid "State"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,message_summary:0
+#: field:account.in_late_payment_penalty,message_summary:0
+#: field:account.out_late_payment_penalty,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: help:account.in_late_payment_penalty,penalty_move_id:0
+#: help:account.out_late_payment_penalty,penalty_move_id:0
+msgid "The move of this entry line."
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.common_late_payment_penalty:account_late_payment_penalty.account_common_late_payment_penalty_view_search
+#: field:account.common_late_payment_penalty,type_id:0
+#: field:account.in_late_payment_penalty,type_id:0
+#: field:account.out_late_payment_penalty,type_id:0
+msgid "Type"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: field:account.common_late_payment_penalty,message_unread:0
+#: field:account.in_late_payment_penalty,message_unread:0
+#: field:account.out_late_payment_penalty,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.late_payment_penalty_type:account_late_payment_penalty.account_late_payment_penalty_type_view_form
+msgid "Workflow Policy"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: code:addons/account_late_payment_penalty/models/account_late_payment_penalty_common.py:567
+#, python-format
+msgid "You can only delete data on draft state"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.in_late_payment_penalty:account_late_payment_penalty.account_in_late_payment_penalty_view_form
+msgid "[('direction','=','in')]"
+msgstr ""
+
+#. module: account_late_payment_penalty
+#: view:account.out_late_payment_penalty:account_late_payment_penalty.account_out_late_payment_penalty_view_form
+msgid "[('direction','=','out')]"
+msgstr ""
+
