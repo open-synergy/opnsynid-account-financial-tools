@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="account_in_late_payment_penalty_view_search" model="ir.ui.view">
+    <field name="name">account.in_late_payment_penalty form</field>
+    <field name="model">account.in_late_payment_penalty</field>
+    <field name="inherit_id" ref="account_common_late_payment_penalty_view_search"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data/>
+    </field>
+</record>
+
+<record id="account_in_late_payment_penalty_view_tree" model="ir.ui.view">
+    <field name="name">account.in_late_payment_penalty tree</field>
+    <field name="model">account.in_late_payment_penalty</field>
+    <field name="inherit_id" ref="account_common_late_payment_penalty_view_tree"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data/>
+    </field>
+</record>
+
+<record id="account_in_late_payment_penalty_view_form" model="ir.ui.view">
+    <field name="name">account.in_late_payment_penalty form</field>
+    <field name="model">account.in_late_payment_penalty</field>
+    <field name="inherit_id" ref="account_common_late_payment_penalty_view_form"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='type_id']" position="attributes">
+                <attribute name="domain">[('direction','=','in')]</attribute>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="account_in_late_payment_penalty_action" model="ir.actions.act_window">
+    <field name="name">In Late Payment Penalties</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">account.in_late_payment_penalty</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{'readonly_by_pass': True}</field>
+</record>
+
+<menuitem
+    id="account_in_late_payment_penalty_menu"
+    name="In Late Payment Penalties"
+    parent="account_late_payment_penalty_menu"
+    action="account_in_late_payment_penalty_action"
+    sequence="2"
+    />
+
+</data>
+</openerp>
