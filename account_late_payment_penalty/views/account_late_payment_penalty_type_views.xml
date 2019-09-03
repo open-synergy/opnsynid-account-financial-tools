@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="account_late_payment_penalty_type_view_tree" model="ir.ui.view">
+    <field name="name">account.late_payment_penalty_type tree</field>
+    <field name="model">account.late_payment_penalty_type</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="sequence" widget="handle"/>
+            <field name="name"/>
+            <field name="code"/>
+        </tree>
+    </field>
+</record>
+
+<record id="account_late_payment_penalty_type_view_form" model="ir.ui.view">
+    <field name="name">account.late_payment_penalty_type form</field>
+    <field name="model">account.late_payment_penalty_type</field>
+    <field name="arch" type="xml">
+        <form>
+            <header/>
+            <div class="oe_right oe_button_box" style="width: 300px;" name="buttons"/>
+            <label for="code"/>
+            <field name="code"/>
+            <label for="name"/>
+            <h1>
+                <field name="name"/>
+            </h1>
+            <group name="header" colspan="4" col="2">
+                <field name="active"/>
+                <field name="sequence"/>
+                <field name="direction"/>
+            </group>
+            <notebook colspan="4">
+                <page name="configuration" string="Configuration">
+                    <group name="group_1" colspan="4" col="2">
+                        <field name="sequence_id"/>
+                        <field name="journal_id"/>
+                        <field name="income_account_id"/>
+                    </group>
+                    <group name="group_2" colspan="4" col="1" string="Python Code for Penalty Computation">
+                        <field name="python_code"/>
+                    </group>
+                    <group name="group_3" colspan="4" col="1" string="Python Code for Auto Penalty Creation">
+                        <field name="auto_create_python_code"/>
+                    </group>
+                </page>
+                <page name="note" string="Note">
+                    <field name="note"/>
+                </page>
+                <page name="policy" string="Workflow Policy">
+                    <group name="policy_1" colspan="4" col="2" string="Agreement">
+                        <field name="penalty_post_group_ids" widget="many2many_tags"/>
+                        <field name="penalty_cancel_group_ids" widget="many2many_tags"/>
+                        <field name="penalty_restart_group_ids" widget="many2many_tags"/>
+                    </group>
+                </page>
+            </notebook>
+        </form>
+    </field>
+</record>
+
+<record id="account_late_payment_penalty_out_type_action" model="ir.actions.act_window">
+    <field name="name">Out Late Payment Penalty Types</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">account.late_payment_penalty_type</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[('direction','=','out')]</field>
+    <field name="context">{'default_direction': 'out'}</field>
+</record>
+
+<menuitem
+    id="account_late_payment_penalty_out_type_menu"
+    name="Out Penalty Types"
+    parent="account_late_payment_penalty_configuration_menu"
+    action="account_late_payment_penalty_out_type_action"
+    sequence="1"
+    />
+
+<record id="account_late_payment_penalty_in_type_action" model="ir.actions.act_window">
+    <field name="name">In Late Payment Penalty Types</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">account.late_payment_penalty_type</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[('direction','=','in')]</field>
+    <field name="context">{'default_direction': 'in'}</field>
+</record>
+
+<menuitem
+    id="account_late_payment_penalty_in_type_menu"
+    name="In Penalty Types"
+    parent="account_late_payment_penalty_configuration_menu"
+    action="account_late_payment_penalty_in_type_action"
+    sequence="2"
+    />
+
+
+</data>
+</openerp>

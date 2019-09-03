@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="base_workflow_account_out_late_payment_penalty" model="base.workflow_policy">
+    <field name="model_id" ref="account_late_payment_penalty.model_account_out_late_payment_penalty"/>
+</record>
+<record id="base_workflow_line_account_out_late_payment_penalty_post" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="account_late_payment_penalty.base_workflow_account_out_late_payment_penalty"/>
+    <field name="field_id" search="[('model_id.model','=','account.out_late_payment_penalty'),('name','=','post_ok')]"/>
+    <field name="python_code">result = document.type_id.penalty_post_group_ids.ids</field>
+</record>
+<record id="base_workflow_line_account_out_late_payment_penalty_cancel" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="account_late_payment_penalty.base_workflow_account_out_late_payment_penalty"/>
+    <field name="field_id" search="[('model_id.model','=','account.out_late_payment_penalty'),('name','=','cancel_ok')]"/>
+    <field name="python_code">result = document.type_id.penalty_cancel_group_ids.ids</field>
+</record>
+<record id="base_workflow_line_account_out_late_payment_penalty_restart" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="account_late_payment_penalty.base_workflow_account_out_late_payment_penalty"/>
+    <field name="field_id" search="[('model_id.model','=','account.out_late_payment_penalty'),('name','=','restart_ok')]"/>
+    <field name="python_code">result = document.type_id.penalty_restart_group_ids.ids</field>
+</record>
+
+<!-- IN -->
+<record id="base_workflow_account_in_late_payment_penalty" model="base.workflow_policy">
+    <field name="model_id" ref="account_late_payment_penalty.model_account_in_late_payment_penalty"/>
+</record>
+<record id="base_workflow_line_account_in_late_payment_penalty_post" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="account_late_payment_penalty.base_workflow_account_in_late_payment_penalty"/>
+    <field name="field_id" search="[('model_id.model','=','account.in_late_payment_penalty'),('name','=','post_ok')]"/>
+    <field name="python_code">result = document.type_id.penalty_post_group_ids.ids</field>
+</record>
+<record id="base_workflow_line_account_in_late_payment_penalty_cancel" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="account_late_payment_penalty.base_workflow_account_in_late_payment_penalty"/>
+    <field name="field_id" search="[('model_id.model','=','account.in_late_payment_penalty'),('name','=','cancel_ok')]"/>
+    <field name="python_code">result = document.type_id.penalty_cancel_group_ids.ids</field>
+</record>
+<record id="base_workflow_line_account_in_late_payment_penalty_restart" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="account_late_payment_penalty.base_workflow_account_in_late_payment_penalty"/>
+    <field name="field_id" search="[('model_id.model','=','account.in_late_payment_penalty'),('name','=','restart_ok')]"/>
+    <field name="python_code">result = document.type_id.penalty_restart_group_ids.ids</field>
+</record>
+</data>
+</openerp>

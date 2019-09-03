@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="base_cancel_reason_config_out_late_payment_penalty" model="base.cancel.reason_config">
+    <field name="name" ref="account_late_payment_penalty.model_account_out_late_payment_penalty"/>
+    <field name="method_cancel_name">action_cancel</field>
+</record>
+
+<record id="base_cancel_reason_config_in_late_payment_penalty" model="base.cancel.reason_config">
+    <field name="name" ref="account_late_payment_penalty.model_account_in_late_payment_penalty"/>
+    <field name="method_cancel_name">action_cancel</field>
+</record>
+</data>
+</openerp>

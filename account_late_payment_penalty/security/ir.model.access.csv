@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_late_payment_penalty_type_employee,account.late_payment_penalty_type - user,model_account_late_payment_penalty_type,base.group_user,1,1,1,1
+access_account_late_payment_penalty_type_all,account.late_payment_penalty_type - all,model_account_late_payment_penalty_type,,1,0,0,0
+access_account_out_late_payment_penalty_employee,account.out_late_payment_penalty - user,model_account_out_late_payment_penalty,base.group_user,1,1,1,1
+access_account_out_late_payment_penalty_all,account.out_late_payment_penalty - all,model_account_out_late_payment_penalty,,1,0,0,0
+access_account_in_late_payment_penalty_employee,account.in_late_payment_penalty - user,model_account_in_late_payment_penalty,base.group_user,1,1,1,1
+access_account_in_late_payment_penalty_all,account.in_late_payment_penalty - all,model_account_in_late_payment_penalty,,1,0,0,0
