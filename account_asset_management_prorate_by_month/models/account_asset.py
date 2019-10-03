@@ -4,6 +4,7 @@
 
 from openerp import models, fields, api
 from datetime import datetime
+from dateutil.relativedelta import relativedelta
 
 
 class AccountAsset(models.Model):
@@ -11,25 +12,24 @@ class AccountAsset(models.Model):
 
     prorate_by_month = fields.Boolean(
         string="Prorate by Month",
+        default=True,
     )
     date_min_prorate = fields.Integer(
         string="Date Min. to Prorate",
-        default=1,
+        default=15,
     )
 
-    @api.model
-    def _get_fy_duration_factor(self, entry,
-                                asset, firstyear):
+    @api.multi
+    def _get_date_start(self):
+        self.ensure_one()
         _super = super(AccountAsset, self)
-        duration_factor = _super._get_fy_duration_factor(
-            entry, asset, firstyear)
-        if asset.prorata and asset.prorate_by_month:
-            duration_factor = 1.0
-            if firstyear:
-                depreciation_date_start = datetime.strptime(
-                    asset.date_start, '%Y-%m-%d')
-                month_factor = 13 - depreciation_date_start.month
-                if depreciation_date_start.day > asset.date_min_prorate:
-                    month_factor -= 1
-                duration_factor = float(month_factor) / 12.0
-        return duration_factor
+        date_start = _super._get_date_start()
+        dt_date_start = datetime.strptime(
+            date_start,
+            "%Y-%m-%d"
+        )
+        if self.prorate_by_month:
+            if dt_date_start.day > self.date_min_prorate:
+                dt_date_start = dt_date_start + relativedelta(day=1, months=1)
+
+        return dt_date_start.strftime("%Y-%m-%d")
