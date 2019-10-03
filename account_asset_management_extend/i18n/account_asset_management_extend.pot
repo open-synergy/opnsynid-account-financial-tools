@@ -167,7 +167,7 @@ msgid "The '_compute_year_amount' method is only intended for Time Method 'Numbe
 msgstr ""
 
 #. module: account_asset_management_extend
-#: code:addons/account_asset_management_extend/models/account_asset_asset.py:552
+#: code:addons/account_asset_management_extend/models/account_asset_asset.py:557
 #, python-format
 msgid "The duration of the asset conflicts with the posted depreciation table entry dates."
 msgstr ""
