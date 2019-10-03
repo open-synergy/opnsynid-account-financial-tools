@@ -448,24 +448,6 @@ def _get_fy_duration_factor(self, entry, asset, firstyear):
 
             duration_factor = float(13 - first_fy_asset_days.month) / 12.0
 
-            # raise UserError(str(duration_factor))
-
-            # first_fy_asset_days = \
-            #     (fy_date_stop - depreciation_date_start).days + 1
-            # if fy_id:
-            #     first_fy_duration = asset._get_fy_duration(
-            #         fy_id, option="days")
-            #     first_fy_year_factor = asset._get_fy_duration(
-            #         fy_id, option="years")
-            #     duration_factor = \
-            #         float(first_fy_asset_days) / first_fy_duration \
-            #         * first_fy_year_factor
-            # else:
-            #     first_fy_duration = \
-            #         calendar.isleap(entry["date_start"].year) \
-            #         and 366 or 365
-            #     duration_factor = \
-            #         float(first_fy_asset_days) / first_fy_duration
         elif fy_id:
             duration_factor = asset._get_fy_duration(
                 fy_id, option="years")
@@ -531,11 +513,12 @@ def create(self, vals):
         # create first asset line
         asset_line_obj = self.env["account.asset.depreciation.line"]
         line_name = asset._get_depreciation_entry_name(0)
+        asset_date_start = asset._get_date_start()
         asset_line_vals = {
             "amount": asset.asset_value,
             "asset_id": asset.id,
             "name": line_name,
-            "line_date": asset.date_start,
+            "line_date": asset_date_start,
             "init_entry": True,
             "type": "create",
         }
