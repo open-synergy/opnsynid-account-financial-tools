@@ -299,6 +299,11 @@ class AccountAsset(models.Model):
                 result -= getattr(self, field_dict[1])
         return result
 
+    @api.multi
+    def _get_date_start(self):
+        self.ensure_one()
+        return self.date_start
+
     @api.model
     def _get_asset_value_field(self):
         return [
