@@ -139,7 +139,7 @@ def _compute_depreciation_table(self):
             init_flag = True
         fy_date_start = datetime.strptime(fy.date_start, "%Y-%m-%d")
         fy_date_stop = datetime.strptime(fy.date_stop, "%Y-%m-%d")
-    except:
+    except:  # noqa: E722
         # The following logic is used when no fiscal year
         # is defined for the asset start date:
         # - We lookup the first fiscal year defined in the system
@@ -190,7 +190,7 @@ def _compute_depreciation_table(self):
         try:
             fy_id = fy_obj.find(fy_date_start)
             init_flag = False
-        except:
+        except:  # noqa : E722
             fy_id = False
         if fy_id:
             fy = fy_obj.browse(fy_id)

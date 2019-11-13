@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Account Asset Management Monkeypatch",
-    "version": "8.0.2.2.1",
+    "version": "8.0.2.3.0",
     "category": "Accounting & Finance",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
