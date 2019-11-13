@@ -29,6 +29,11 @@ msgid "Asset"
 msgstr ""
 
 #. module: account_asset_management_extend
+#: model:ir.model,name:account_asset_management_extend.model_account_asset_depreciation_line_monkeypatch
+msgid "Asset Depreciation Line Monkeypatch"
+msgstr ""
+
+#. module: account_asset_management_extend
 #: model:ir.model,name:account_asset_management_extend.model_account_asset_asset_monkeypatch
 msgid "Asset Monkeypatch"
 msgstr ""
@@ -40,11 +45,13 @@ msgstr ""
 
 #. module: account_asset_management_extend
 #: field:account.asset.asset.monkeypatch,create_uid:0
+#: field:account.asset.depreciation.line.monkeypatch,create_uid:0
 msgid "Created by"
 msgstr ""
 
 #. module: account_asset_management_extend
 #: field:account.asset.asset.monkeypatch,create_date:0
+#: field:account.asset.depreciation.line.monkeypatch,create_date:0
 msgid "Created on"
 msgstr ""
 
@@ -55,6 +62,7 @@ msgstr ""
 
 #. module: account_asset_management_extend
 #: field:account.asset.asset.monkeypatch,display_name:0
+#: field:account.asset.depreciation.line.monkeypatch,display_name:0
 msgid "Display Name"
 msgstr ""
 
@@ -65,6 +73,7 @@ msgstr ""
 
 #. module: account_asset_management_extend
 #: field:account.asset.asset.monkeypatch,id:0
+#: field:account.asset.depreciation.line.monkeypatch,id:0
 msgid "ID"
 msgstr ""
 
@@ -86,6 +95,7 @@ msgstr ""
 
 #. module: account_asset_management_extend
 #: field:account.asset.asset.monkeypatch,__last_update:0
+#: field:account.asset.depreciation.line.monkeypatch,__last_update:0
 msgid "Last Modified on"
 msgstr ""
 
@@ -106,11 +116,13 @@ msgstr ""
 
 #. module: account_asset_management_extend
 #: field:account.asset.asset.monkeypatch,write_uid:0
+#: field:account.asset.depreciation.line.monkeypatch,write_uid:0
 msgid "Last Updated by"
 msgstr ""
 
 #. module: account_asset_management_extend
 #: field:account.asset.asset.monkeypatch,write_date:0
+#: field:account.asset.depreciation.line.monkeypatch,write_date:0
 msgid "Last Updated on"
 msgstr ""
 
@@ -183,9 +195,28 @@ msgid "Unposted Histories"
 msgstr ""
 
 #. module: account_asset_management_extend
+#: code:addons/account_asset_management_extend/models/account_asset_depreciation_line_monkeypatch.py:19
+#, python-format
+msgid "You are not allowed to remove an accounting entry linked to an asset.\n"
+"You should remove such entries from the asset."
+msgstr ""
+
+#. module: account_asset_management_extend
+#: code:addons/account_asset_management_extend/models/account_asset_depreciation_line_monkeypatch.py:27
+#, python-format
+msgid "You cannot change a depreciation line with an associated accounting entry."
+msgstr ""
+
+#. module: account_asset_management_extend
 #: code:addons/account_asset_management_extend/models/account_asset_asset_monkeypatch.py:163
 #, python-format
 msgid "You cannot compute a depreciation table for an asset starting in an undefined future fiscal year.\n"
 "Please correct the start date for asset %s."
+msgstr ""
+
+#. module: account_asset_management_extend
+#: code:addons/account_asset_management_extend/models/account_asset_depreciation_line_monkeypatch.py:39
+#, python-format
+msgid "You cannot set the 'Initial Balance Entry' flag on a depreciation line with prior posted entries."
 msgstr ""
 
