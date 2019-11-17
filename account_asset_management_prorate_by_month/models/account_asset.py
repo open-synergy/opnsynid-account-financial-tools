@@ -33,3 +33,25 @@ class AccountAsset(models.Model):
                 dt_date_start = dt_date_start + relativedelta(day=1, months=1)
 
         return dt_date_start.strftime("%Y-%m-%d")
+
+    @api.multi
+    def get_method_period_start_number(
+        self,
+        dt_diff,
+        coef_method_period
+    ):
+        self.ensure_one()
+        _super = super(AccountAsset, self)
+        result = _super.get_method_period_start_number(
+            dt_diff,
+            coef_method_period
+        )
+        if self.prorate_by_month:
+            dt_date_start = datetime.strptime(
+                self.date_start,
+                "%Y-%m-%d"
+            )
+            if dt_date_start.day > self.date_min_prorate:
+                result = 0
+
+        return result
