@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+    <record id="base_workflow_account_bank_statement" model="base.workflow_policy">
+        <field name="model_id" ref="account.model_account_bank_statement"/>
+    </record>
+    <record id="base_workflow_line_account_bank_statement_reconcile" model="base.workflow_policy_line">
+        <field name="workflow_id" ref="account_bank_statement_policy.base_workflow_account_bank_statement"/>
+        <field name="field_id" search="[('model_id.model','=','account.bank.statement'),('name','=','reconcile_ok')]"/>
+        <field name="python_code">journal_id =\
+document.journal_id
+if journal_id.type == "bank":
+    result = journal_id.bank_stmt_reconcile_group_ids.ids
+elif journal_id.type == "cash":
+    result = journal_id.cash_register_reconcile_group_ids.ids
+else:
+    result = False
+        </field>
+    </record>
+    <record id="base_workflow_line_account_bank_statement_close" model="base.workflow_policy_line">
+        <field name="workflow_id" ref="account_bank_statement_policy.base_workflow_account_bank_statement"/>
+        <field name="field_id" search="[('model_id.model','=','account.bank.statement'),('name','=','close_ok')]"/>
+        <field name="python_code">journal_id =\
+document.journal_id
+if journal_id.type == "bank":
+    result = journal_id.bank_stmt_close_group_ids.ids
+elif journal_id.type == "cash":
+    result = journal_id.cash_register_close_group_ids.ids
+else:
+    result = False
+        </field>
+    </record>
+    <record id="base_workflow_line_account_bank_statement_open" model="base.workflow_policy_line">
+        <field name="workflow_id" ref="account_bank_statement_policy.base_workflow_account_bank_statement"/>
+        <field name="field_id" search="[('model_id.model','=','account.bank.statement'),('name','=','open_ok')]"/>
+        <field name="python_code">journal_id =\
+document.journal_id
+if journal_id.type == "cash":
+    result = journal_id.cash_register_open_group_ids.ids
+else:
+    result = False
+        </field>
+    </record>
+    <record id="base_workflow_line_account_bank_statement_cancel" model="base.workflow_policy_line">
+        <field name="workflow_id" ref="account_bank_statement_policy.base_workflow_account_bank_statement"/>
+        <field name="field_id" search="[('model_id.model','=','account.bank.statement'),('name','=','cancel_ok')]"/>
+        <field name="python_code">result = document.journal_id.bank_stmt_cancel_group_ids.ids</field>
+        <field name="python_code">journal_id =\
+document.journal_id
+if journal_id.type == "bank":
+    result = journal_id.bank_stmt_cancel_group_ids.ids
+elif journal_id.type == "cash":
+    result = journal_id.cash_register_cancel_group_ids.ids
+else:
+    result = False
+        </field>
+    </record>
+</data>
+</openerp>
