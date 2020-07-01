@@ -14,12 +14,142 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: account_bank_statement_policy
+#: field:account.journal,bank_stmt_cancel_group_ids:0
+#: field:account.journal,cash_register_cancel_group_ids:0
+msgid "Allowed to Cancel"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.journal,bank_stmt_close_group_ids:0
+msgid "Allowed to Close"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.journal,cash_register_close_group_ids:0
+msgid "Allowed to Close CashBox"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.journal,cash_register_open_group_ids:0
+msgid "Allowed to Open CashBox"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.journal,bank_stmt_reconcile_group_ids:0
+#: field:account.journal,cash_register_reconcile_group_ids:0
+msgid "Allowed to Reconcile"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: model:ir.model,name:account_bank_statement_policy.model_account_bank_statement
+msgid "Bank Statement"
+msgstr ""
+
+#. module: account_bank_statement_policy
 #: view:account.journal:account_bank_statement_policy.account_journal_view_form
 msgid "Bank Statement Policy"
 msgstr ""
 
 #. module: account_bank_statement_policy
+#: field:account.bank.statement,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.bank.statement,close_ok:0
+msgid "Can Close"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: view:account.bank.statement:account_bank_statement_policy.account_cash_register_view_form
+msgid "Can Close CashBox"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.bank.statement,open_ok:0
+msgid "Can Open"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: view:account.bank.statement:account_bank_statement_policy.account_cash_register_view_form
+msgid "Can Open CashBox"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.bank.statement,reconcile_ok:0
+msgid "Can Reconcile"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.bank.statement,cancel_date:0
+msgid "Cancel Date"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.bank.statement,cancel_user_id:0
+msgid "Cancelled By"
+msgstr ""
+
+#. module: account_bank_statement_policy
 #: view:account.journal:account_bank_statement_policy.account_journal_view_form
 msgid "Cash Register Policy"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.bank.statement,close_user_id:0
+msgid "Close By"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.bank.statement,close_date:0
+msgid "Close Date"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: model:ir.model,name:account_bank_statement_policy.model_account_journal
+msgid "Journal"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.bank.statement,reconcile_user_id:0
+msgid "Reconcile By"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: field:account.bank.statement,reconcile_date:0
+msgid "Reconcile Date"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: view:account.bank.statement:account_bank_statement_policy.account_bank_statement_view_form
+#: view:account.bank.statement:account_bank_statement_policy.account_cash_register_view_form
+msgid "Workflow Policy"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: view:account.bank.statement:account_bank_statement_policy.account_bank_statement_view_form
+msgid "{'invisible':['|',('state','!=','confirm'),('cancel_ok','=',False)]}"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: view:account.bank.statement:account_bank_statement_policy.account_bank_statement_view_form
+#: view:account.bank.statement:account_bank_statement_policy.account_cash_register_view_form
+msgid "{'invisible':['|',('state','!=','draft'),('close_ok','=',False)]}"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: view:account.bank.statement:account_bank_statement_policy.account_cash_register_view_form
+msgid "{'invisible':['|',('state','!=','draft'),('open_ok','=',False)]}"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: view:account.bank.statement:account_bank_statement_policy.account_bank_statement_view_form
+#: view:account.bank.statement:account_bank_statement_policy.account_cash_register_view_form
+msgid "{'invisible':['|',('state','!=','draft'),('reconcile_ok','=',False)]}"
+msgstr ""
+
+#. module: account_bank_statement_policy
+#: view:account.bank.statement:account_bank_statement_policy.account_cash_register_view_form
+msgid "{'invisible':['|',('state','not in', ['open', 'confirm']),('cancel_ok','=',False)]}"
 msgstr ""
 
