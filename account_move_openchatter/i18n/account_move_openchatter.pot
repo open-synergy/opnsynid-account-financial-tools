@@ -1,0 +1,70 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* account_move_openchatter
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_move_openchatter
+#: model:ir.model,name:account_move_openchatter.model_account_move
+msgid "Account Entry"
+msgstr ""
+
+#. module: account_move_openchatter
+#: help:account.move,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: account_move_openchatter
+#: field:account.move,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: account_move_openchatter
+#: help:account.move,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: account_move_openchatter
+#: help:account.move,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: account_move_openchatter
+#: field:account.move,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: account_move_openchatter
+#: field:account.move,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: account_move_openchatter
+#: field:account.move,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: account_move_openchatter
+#: help:account.move,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: account_move_openchatter
+#: field:account.move,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: account_move_openchatter
+#: field:account.move,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
