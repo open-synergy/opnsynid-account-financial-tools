@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018-2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 # pylint: disable=locally-disabled, manifest-required-author
@@ -6,8 +5,8 @@
     "name": "Fixed Asset Improvement",
     "version": "8.0.3.0.0",
     "category": "Accounting & Finance",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
@@ -16,7 +15,7 @@
         "base_sequence_configurator",
         "base_workflow_policy",
         "web_readonly_bypass",
-        "base_print_policy"
+        "base_print_policy",
     ],
     "data": [
         "security/res_groups_data.xml",
@@ -29,5 +28,5 @@
         "views/account_asset_config_setting_views.xml",
         "views/account_asset_category_views.xml",
         "views/account_asset_improvement_views.xml",
-    ]
+    ],
 }

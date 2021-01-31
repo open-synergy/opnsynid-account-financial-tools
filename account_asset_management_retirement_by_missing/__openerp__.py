@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 # pylint: disable=locally-disabled, manifest-required-author
@@ -6,8 +5,8 @@
     "name": "Fixed Asset Retirement by Missing",
     "version": "8.0.1.1.2",
     "category": "Accounting & Finance",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
@@ -20,5 +19,5 @@
         "data/base_sequence_configurator_data.xml",
         "data/base_workflow_policy_data.xml",
         "views/account_asset_retirement_missing_views.xml",
-    ]
+    ],
 }
