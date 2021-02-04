@@ -2,14 +2,12 @@
 # Copyright 2020 PT Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import api, models
+from openerp import api, models, _
+from openerp.exceptions import Warning as UserError
 
 
 class AccountMove(models.Model):
-    _name = "account.move"
-    _inherit = [
-        "account.move",
-    ]
+    _inherit = "account.move",
 
     @api.multi
     def post(self):
@@ -24,3 +22,4 @@ class AccountMove(models.Model):
                 )
             name = record.journal_id.sequence_id.with_context(ctx)._next()
             record.write({"name": name})
+        return super(AccountMove, self).post()
