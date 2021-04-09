@@ -19,6 +19,6 @@ class AccountMove(models.Model):
                         "ir_sequence_date": record.date,
                     }
                 )
-            name = record.journal_id.sequence_id.with_context(ctx)._next()
-            record.write({"name": name})
+                name = record.journal_id.sequence_id.with_context(ctx)._next()
+                record.write({"name": name})
         return super(AccountMove, self).post()
