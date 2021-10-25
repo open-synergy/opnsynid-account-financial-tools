@@ -31,7 +31,7 @@ msgid "Allow Forward Date"
 msgstr ""
 
 #. module: account_move_back_forward_date_policy
-#: code:addons/account_move_back_forward_date_policy/models/account_move.py:29
+#: code:addons/account_move_back_forward_date_policy/models/account_move.py:28
 #, python-format
 msgid "Back date is not allowed"
 msgstr ""
@@ -47,7 +47,7 @@ msgid "Do Not Allow Forward Date"
 msgstr ""
 
 #. module: account_move_back_forward_date_policy
-#: code:addons/account_move_back_forward_date_policy/models/account_move.py:42
+#: code:addons/account_move_back_forward_date_policy/models/account_move.py:40
 #, python-format
 msgid "Forward date is not allowed"
 msgstr ""
