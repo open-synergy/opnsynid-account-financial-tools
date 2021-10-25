@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -31,10 +31,12 @@ class FixedAssetImpairmentCommon(models.AbstractModel):
         res = {}
         for asset in self.browse(cr, uid, ids, context=context):
             res[asset.id] = {}
-            child_ids = self.search(cr, uid,
-                                    [('parent_id', 'child_of', [asset.id]),
-                                     ('type', '=', 'normal')],
-                                    context=context)
+            child_ids = self.search(
+                cr,
+                uid,
+                [("parent_id", "child_of", [asset.id]), ("type", "=", "normal")],
+                context=context,
+            )
             if child_ids:
                 cr.execute(
                     "SELECT COALESCE(SUM(amount),0.0) AS amount "
@@ -42,14 +44,13 @@ class FixedAssetImpairmentCommon(models.AbstractModel):
                     "WHERE asset_id in %s "
                     "AND type in ('depreciate','remove') "
                     "AND (init_entry=TRUE OR move_check=TRUE)",
-                    (tuple(child_ids),))
+                    (tuple(child_ids),),
+                )
                 value_depreciated = cr.fetchone()[0]
             else:
                 value_depreciated = 0.0
-            res[asset.id]['value_residual'] = \
-                asset.asset_value - value_depreciated
-            res[asset.id]['value_depreciated'] = \
-                value_depreciated
+            res[asset.id]["value_residual"] = asset.asset_value - value_depreciated
+            res[asset.id]["value_depreciated"] = value_depreciated
         return res
 
     @api.multi
@@ -331,9 +332,11 @@ class FixedAssetImpairmentCommon(models.AbstractModel):
         _super = super(FixedAssetImpairmentCommon, self)
         result = _super.create(values)
         sequence = result._create_sequence()
-        result.write({
-            "name": sequence,
-        })
+        result.write(
+            {
+                "name": sequence,
+            }
+        )
         return result
 
     @api.multi
@@ -352,15 +355,13 @@ class FixedAssetImpairmentCommon(models.AbstractModel):
 
     @api.onchange("date")
     def onchange_period_id(self):
-        self.period_id = self.env[
-            "account.period"].find(self.date).id
+        self.period_id = self.env["account.period"].find(self.date).id
 
     @api.onchange("asset_id")
     def onchange_account_impairment_id(self):
         self.account_impairment_id = False
         if self.asset_id and self.asset_id.category_id.impairment_account_id:
-            self.account_impairment_id = self.asset_id.\
-                category_id.impairment_account_id
+            self.account_impairment_id = self.asset_id.category_id.impairment_account_id
 
     @api.onchange("asset_id")
     def onchange_account_contra_id(self):
@@ -368,21 +369,26 @@ class FixedAssetImpairmentCommon(models.AbstractModel):
         if not self.asset_id:
             return {}
 
-        if self.type == "impairment" and \
-                self.asset_id.category_id.impairment_expense_account_id:
-            self.account_contra_id = self.asset_id.\
-                category_id.impairment_expense_account_id
-        elif self.type == "reversal" and \
-                self.asset_id.category_id.impairment_reversal_account_id:
-            self.account_contra_id = self.asset_id.\
-                category_id.impairment_reversal_account_id
+        if (
+            self.type == "impairment"
+            and self.asset_id.category_id.impairment_expense_account_id
+        ):
+            self.account_contra_id = (
+                self.asset_id.category_id.impairment_expense_account_id
+            )
+        elif (
+            self.type == "reversal"
+            and self.asset_id.category_id.impairment_reversal_account_id
+        ):
+            self.account_contra_id = (
+                self.asset_id.category_id.impairment_reversal_account_id
+            )
 
     @api.onchange("asset_id")
     def onchange_journal_id(self):
         self.journal_id = False
         if self.asset_id and self.asset_id.category_id.impairment_journal_id:
-            self.journal_id = self.asset_id.\
-                category_id.impairment_journal_id
+            self.journal_id = self.asset_id.category_id.impairment_journal_id
 
     @api.multi
     def _prepare_account_move(self):
@@ -396,7 +402,7 @@ class FixedAssetImpairmentCommon(models.AbstractModel):
             "line_id": [
                 (0, 0, self._prepare_move_impairment()),
                 (0, 0, self._prepare_move_contra_impairment()),
-            ]
+            ],
         }
         return data
 
@@ -451,8 +457,7 @@ class FixedAssetImpairmentCommon(models.AbstractModel):
     @api.multi
     def _create_account_move(self):
         self.ensure_one()
-        return self.env["account.move"].create(
-            self._prepare_account_move())
+        return self.env["account.move"].create(self._prepare_account_move())
 
     @api.multi
     def _prepare_depreciation_line(self):

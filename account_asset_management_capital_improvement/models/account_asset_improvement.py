@@ -3,8 +3,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from datetime import datetime
-from openerp import models, fields, api
+
 from dateutil.relativedelta import relativedelta
+from openerp import api, fields, models
 
 
 class FixedAssetImprovement(models.Model):
@@ -94,10 +95,7 @@ class FixedAssetImprovement(models.Model):
         string="Asset",
         comodel_name="account.asset.asset",
         required=True,
-        domain=[
-            ("type", "=", "normal"),
-            ("state", "=", "open")
-        ],
+        domain=[("type", "=", "normal"), ("state", "=", "open")],
         readonly=True,
         states={
             "draft": [
@@ -170,9 +168,7 @@ class FixedAssetImprovement(models.Model):
         readonly=True,
         required=True,
         states={
-            "draft": [
-                ("readonly", False)
-            ],
+            "draft": [("readonly", False)],
         },
     )
     exchange_account_id = fields.Many2one(
@@ -327,7 +323,8 @@ class FixedAssetImprovement(models.Model):
         self.ensure_one()
         subtype_id = self.env.ref(
             "account_asset_management_capital_improvement."
-            "depr_line_subtype_improvement")
+            "depr_line_subtype_improvement"
+        )
         return {
             "name": self._get_asset_value_name(),
             "previous_id": self.asset_id.last_posted_depreciation_line_id.id,
@@ -370,8 +367,10 @@ class FixedAssetImprovement(models.Model):
 
             return False
 
-        if self.asset_id.last_depreciation_id.line_date == \
-                self._get_depreciation_date().strftime("%Y-%m-%d"):
+        if (
+            self.asset_id.last_depreciation_id.line_date
+            == self._get_depreciation_date().strftime("%Y-%m-%d")
+        ):
             return False
 
         return True
@@ -381,7 +380,8 @@ class FixedAssetImprovement(models.Model):
         self.ensure_one()
         subtype_id = self.env.ref(
             "account_asset_management_capital_improvement."
-            "depr_line_subtype_improvement")
+            "depr_line_subtype_improvement"
+        )
         return {
             "name": self._get_depreciation_name(),
             "subtype_id": subtype_id.id,
@@ -417,8 +417,10 @@ class FixedAssetImprovement(models.Model):
         year_amount = 0.0
 
         for year in table:
-            if year["date_start"] <= depreciation_date and \
-                    year["date_stop"] >= depreciation_date:
+            if (
+                year["date_start"] <= depreciation_date
+                and year["date_stop"] >= depreciation_date
+            ):
                 year_amount = year["fy_amount"]
                 break
 
@@ -490,37 +492,37 @@ class FixedAssetImprovement(models.Model):
 
     @api.onchange("date_improvement")
     def onchange_period_id(self):
-        self.period_id = self.env[
-            "account.period"].find(self.date_improvement).id
+        self.period_id = self.env["account.period"].find(self.date_improvement).id
 
     @api.onchange("asset_id")
     def onchange_accumulated_depreciation_account(self):
         self.accumulated_depreciation_account_id = False
         if self.asset_id:
-            self.accumulated_depreciation_account_id = \
+            self.accumulated_depreciation_account_id = (
                 self.asset_id.category_id.account_depreciation_id
+            )
 
     @api.onchange("asset_id")
     def onchange_journal_id(self):
         self.journal_id = False
         if self.asset_id:
-            self.journal_id = \
-                self.asset_id.category_id.improvement_journal_id
+            self.journal_id = self.asset_id.category_id.improvement_journal_id
 
     @api.model
     def create(self, values):
         _super = super(FixedAssetImprovement, self)
         result = _super.create(values)
-        result.write({
-            "name": result._create_sequence(),
-        })
+        result.write(
+            {
+                "name": result._create_sequence(),
+            }
+        )
         return result
 
     @api.multi
     def _prepare_acc_move(self):
         self.ensure_one()
-        move_lines = self._prepare_debit_move_line() + \
-            self._prepare_credit_move_line()
+        move_lines = self._prepare_debit_move_line() + self._prepare_credit_move_line()
         return {
             "name": self.name,
             "date": self.date_improvement,
@@ -532,20 +534,24 @@ class FixedAssetImprovement(models.Model):
     @api.multi
     def _create_acc_move(self):
         self.ensure_one()
-        return self.env["account.move"].create(
-            self._prepare_acc_move()
-        )
+        return self.env["account.move"].create(self._prepare_acc_move())
 
     @api.multi
     def _prepare_move_line(self, description, account, debit, credit):
         self.ensure_one()
-        return [(0, 0, {
-            "name": description,
-            "account_id": account,
-            "debit": debit,
-            "credit": credit,
-            "analytic_account_id": False,
-        })]
+        return [
+            (
+                0,
+                0,
+                {
+                    "name": description,
+                    "account_id": account,
+                    "debit": debit,
+                    "credit": credit,
+                    "analytic_account_id": False,
+                },
+            )
+        ]
 
     @api.multi
     def _prepare_debit_move_line(self):
@@ -580,7 +586,8 @@ class FixedAssetImprovement(models.Model):
         self.ensure_one()
         subtype = self.env.ref(
             "account_asset_management_capital_improvement."
-            "depr_line_subtype_improvement")
+            "depr_line_subtype_improvement"
+        )
         return {
             "name": self.name,
             "previous_id": self._get_previous_depreciation_line_id(),

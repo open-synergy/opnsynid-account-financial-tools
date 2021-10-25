@@ -1,31 +1,38 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="account_asset_view_form" model="ir.ui.view">
     <field name="name">account.asset.asset</field>
     <field name="model">account.asset.asset</field>
-    <field name="inherit_id" ref="account_asset_management.view_account_asset_asset_form"/>
+    <field
+                name="inherit_id"
+                ref="account_asset_management.view_account_asset_asset_form"
+            />
     <field name="arch" type="xml">
         <xpath expr="//notebook" position="inside">
             <page name="improvement" string="Improvement">
                 <group name="improvement_1" colspan="4" col="2">
                     <field name="improvement_ids" nolabel="1" colspan="2">
                         <tree>
-                            <field name="name"/>
-                            <field name="date_improvement"/>
-                            <field name="improvement_amount"/>
-                            <field name="state"/>
+                            <field name="name" />
+                            <field name="date_improvement" />
+                            <field name="improvement_amount" />
+                            <field name="state" />
                         </tree>
                     </field>
                 </group>
             </page>
         </xpath>
         <xpath expr="//field[@name='value_residual']" position="after">
-            <field name="amount_improvement" widget="monetary" options="{'currency_field': 'company_currency_id'}" attrs="{'invisible':[('type','=','view')]}"/>
+            <field
+                        name="amount_improvement"
+                        widget="monetary"
+                        options="{'currency_field': 'company_currency_id'}"
+                        attrs="{'invisible':[('type','=','view')]}"
+                    />
         </xpath>
     </field>
 </record>

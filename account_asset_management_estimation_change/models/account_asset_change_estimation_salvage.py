@@ -3,8 +3,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
 from datetime import datetime
-from openerp import models, fields, api
+
 from dateutil.relativedelta import relativedelta
+from openerp import api, fields, models
 
 
 class FixedAssetSalvageEstimationChange(models.Model):
@@ -73,10 +74,7 @@ class FixedAssetSalvageEstimationChange(models.Model):
         string="Asset",
         comodel_name="account.asset.asset",
         required=True,
-        domain=[
-            ("type", "=", "normal"),
-            ("state", "=", "open")
-        ],
+        domain=[("type", "=", "normal"), ("state", "=", "open")],
         readonly=True,
         states={
             "draft": [
@@ -230,9 +228,7 @@ class FixedAssetSalvageEstimationChange(models.Model):
     def action_valid(self):
         for change in self:
             change.write(self._prepare_valid_data())
-            change.asset_id.write(
-                self._prepare_asset_estimation_change()
-            )
+            change.asset_id.write(self._prepare_asset_estimation_change())
             change.asset_id.compute_depreciation_board()
 
     @api.multi
@@ -257,7 +253,8 @@ class FixedAssetSalvageEstimationChange(models.Model):
         self.ensure_one()
         subtype = self.env.ref(
             "account_asset_management_estimation_change."
-            "depr_line_subtype_salvage_value")
+            "depr_line_subtype_salvage_value"
+        )
         return {
             "name": self._get_asset_value_name(),
             "previous_id": self.asset_id.last_posted_depreciation_line_id.id,
@@ -300,8 +297,10 @@ class FixedAssetSalvageEstimationChange(models.Model):
 
             return False
 
-        if self.asset_id.last_depreciation_id.line_date == \
-                self._get_depreciation_date().strftime("%Y-%m-%d"):
+        if (
+            self.asset_id.last_depreciation_id.line_date
+            == self._get_depreciation_date().strftime("%Y-%m-%d")
+        ):
             return False
 
         return True
@@ -311,7 +310,8 @@ class FixedAssetSalvageEstimationChange(models.Model):
         self.ensure_one()
         subtype = self.env.ref(
             "account_asset_management_estimation_change."
-            "depr_line_subtype_salvage_value")
+            "depr_line_subtype_salvage_value"
+        )
         return {
             "name": self._get_depreciation_name(),
             "previous_id": self.asset_id.last_posted_depreciation_line_id.id,
@@ -347,8 +347,10 @@ class FixedAssetSalvageEstimationChange(models.Model):
         year_amount = 0.0
 
         for year in table:
-            if year["date_start"] <= depreciation_date and \
-                    year["date_stop"] >= depreciation_date:
+            if (
+                year["date_start"] <= depreciation_date
+                and year["date_stop"] >= depreciation_date
+            ):
                 year_amount = year["fy_amount"]
                 break
 
@@ -419,9 +421,11 @@ class FixedAssetSalvageEstimationChange(models.Model):
         _super = super(FixedAssetSalvageEstimationChange, self)
         result = _super.create(values)
         sequence = result._create_sequence()
-        result.write({
-            "name": sequence,
-        })
+        result.write(
+            {
+                "name": sequence,
+            }
+        )
         return result
 
     @api.onchange("asset_id")

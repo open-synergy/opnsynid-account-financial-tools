@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
         <record id=">account_move_view_form" model="ir.ui.view">
             <field name="name">account.move.print.policy.form</field>
             <field name="model">account.move</field>
-            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="inherit_id" ref="account.view_move_form" />
             <field name="arch" type="xml">
                 <data>
                     <xpath expr="//field[@name='state']" position="before">
-                        <button name="%(base_print_policy.base_print_document_action)d" string="Print" type="action" icon="gtk-print"/>
+                        <button
+                            name="%(base_print_policy.base_print_document_action)d"
+                            string="Print"
+                            type="action"
+                            icon="gtk-print"
+                        />
                     </xpath>
                 </data>
             </field>

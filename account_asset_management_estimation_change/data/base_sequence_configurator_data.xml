@@ -1,33 +1,72 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
     <data>
         <!-- Fixed Asset Salvage Value Estimation Change -->
-        <record id="base_sequence_fixed_asset_change_estimation_salvage" model="base.sequence_configurator">
-            <field name="model_id" ref="account_asset_management_estimation_change.model_account_asset_change_estimation_salvage"/>
-            <field name="sequence_field_id" search="[('model_id.model','=','account.asset_change_estimation_salvage'),('name','=','name')]"/>
-            <field name="fallback_sequence_id" ref="account_asset_management_estimation_change.sequence_fixed_asset_change_estimation_salvage"/>
+        <record
+            id="base_sequence_fixed_asset_change_estimation_salvage"
+            model="base.sequence_configurator"
+        >
+            <field
+                name="model_id"
+                ref="account_asset_management_estimation_change.model_account_asset_change_estimation_salvage"
+            />
+            <field
+                name="sequence_field_id"
+                search="[('model_id.model','=','account.asset_change_estimation_salvage'),('name','=','name')]"
+            />
+            <field
+                name="fallback_sequence_id"
+                ref="account_asset_management_estimation_change.sequence_fixed_asset_change_estimation_salvage"
+            />
         </record>
 
-        <record id="base_sequence_fixed_asset_change_estimation_salvage_line" model="base.sequence_configurator_line">
-            <field name="generator_id" ref="account_asset_management_estimation_change.base_sequence_fixed_asset_change_estimation_salvage"/>
-            <field name="sequence" eval="1"/>
-            <field name="sequence_computation_code">result = document.company_id.asset_salvage_sequence_id</field>
+        <record
+            id="base_sequence_fixed_asset_change_estimation_salvage_line"
+            model="base.sequence_configurator_line"
+        >
+            <field
+                name="generator_id"
+                ref="account_asset_management_estimation_change.base_sequence_fixed_asset_change_estimation_salvage"
+            />
+            <field name="sequence" eval="1" />
+            <field
+                name="sequence_computation_code"
+            >result = document.company_id.asset_salvage_sequence_id</field>
         </record>
 
         <!-- Fixed Asset Useful Life Estimation Change-->
-        <record id="base_sequence_fixed_asset_change_estimation_useful_life" model="base.sequence_configurator">
-            <field name="model_id" ref="account_asset_management_estimation_change.model_account_asset_change_estimation_useful_life"/>
-            <field name="sequence_field_id" search="[('model_id.model','=','account.asset_change_estimation_useful_life'),('name','=','name')]"/>
-            <field name="fallback_sequence_id" ref="account_asset_management_estimation_change.sequence_fixed_asset_change_estimation_useful_life"/>
+        <record
+            id="base_sequence_fixed_asset_change_estimation_useful_life"
+            model="base.sequence_configurator"
+        >
+            <field
+                name="model_id"
+                ref="account_asset_management_estimation_change.model_account_asset_change_estimation_useful_life"
+            />
+            <field
+                name="sequence_field_id"
+                search="[('model_id.model','=','account.asset_change_estimation_useful_life'),('name','=','name')]"
+            />
+            <field
+                name="fallback_sequence_id"
+                ref="account_asset_management_estimation_change.sequence_fixed_asset_change_estimation_useful_life"
+            />
         </record>
 
-        <record id="base_sequence_fixed_asset_change_estimation_useful_life_line" model="base.sequence_configurator_line">
-            <field name="generator_id" ref="account_asset_management_estimation_change.base_sequence_fixed_asset_change_estimation_useful_life"/>
-            <field name="sequence" eval="1"/>
-            <field name="sequence_computation_code">result = document.company_id.asset_useful_life_sequence_id</field>
+        <record
+            id="base_sequence_fixed_asset_change_estimation_useful_life_line"
+            model="base.sequence_configurator_line"
+        >
+            <field
+                name="generator_id"
+                ref="account_asset_management_estimation_change.base_sequence_fixed_asset_change_estimation_useful_life"
+            />
+            <field name="sequence" eval="1" />
+            <field
+                name="sequence_computation_code"
+            >result = document.company_id.asset_useful_life_sequence_id</field>
         </record>
     </data>
 </openerp>

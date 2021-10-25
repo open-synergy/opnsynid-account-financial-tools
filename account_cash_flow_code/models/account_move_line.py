@@ -2,7 +2,7 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class AccountMoveLine(models.Model):
@@ -23,15 +23,23 @@ class AccountMoveLine(models.Model):
         ],
     )
 
-    def onchange_account_id(self, cr, uid, ids, account_id=False,
-                            partner_id=False, context=None):
+    def onchange_account_id(
+        self, cr, uid, ids, account_id=False, partner_id=False, context=None
+    ):
         res = super(AccountMoveLine, self).onchange_account_id(
-            cr, uid, ids, account_id, partner_id, context)
+            cr, uid, ids, account_id, partner_id, context
+        )
         if account_id:
-            direct_cf = self.pool["account.account"].browse(
-                cr, uid, account_id).direct_cash_flow_id
-            indirect_cf = self.pool["account.account"].browse(
-                cr, uid, account_id).indirect_cash_flow_id
+            direct_cf = (
+                self.pool["account.account"]
+                .browse(cr, uid, account_id)
+                .direct_cash_flow_id
+            )
+            indirect_cf = (
+                self.pool["account.account"]
+                .browse(cr, uid, account_id)
+                .indirect_cash_flow_id
+            )
             if direct_cf:
                 vals = {"direct_cash_flow_id": direct_cf.id}
                 res["value"].update(vals)
@@ -51,13 +59,11 @@ class AccountMoveLine(models.Model):
         account = self.account_id
         if account:
             if account.direct_cash_flow_id:
-                self.direct_cash_flow_id =\
-                    account.direct_cash_flow_id.id
+                self.direct_cash_flow_id = account.direct_cash_flow_id.id
             else:
                 self.direct_cash_flow_id = False
             if account.indirect_cash_flow_id:
-                self.indirect_cash_flow_id =\
-                    account.indirect_cash_flow_id.id
+                self.indirect_cash_flow_id = account.indirect_cash_flow_id.id
             else:
                 self.indirect_cash_flow_id = False
 
@@ -67,12 +73,12 @@ class AccountMoveLine(models.Model):
         account_id = vals["account_id"]
         if account_id:
             account = obj_account.browse(account_id)
-            if account.direct_cash_flow_id and \
-                    not vals.get("direct_cash_flow_id", False):
-                vals['direct_cash_flow_id'] =\
-                    account.direct_cash_flow_id.id
-            if account.indirect_cash_flow_id and \
-                    not vals.get("indirect_cash_flow_id", False):
-                vals['indirect_cash_flow_id'] =\
-                    account.indirect_cash_flow_id.id
+            if account.direct_cash_flow_id and not vals.get(
+                "direct_cash_flow_id", False
+            ):
+                vals["direct_cash_flow_id"] = account.direct_cash_flow_id.id
+            if account.indirect_cash_flow_id and not vals.get(
+                "indirect_cash_flow_id", False
+            ):
+                vals["indirect_cash_flow_id"] = account.indirect_cash_flow_id.id
         return super(AccountMoveLine, self).create(vals)

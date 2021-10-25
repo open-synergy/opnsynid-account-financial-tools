@@ -1,67 +1,188 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
     <data>
         <!-- Fixed Asset Salvage Value Estimation Change -->
-        <record id="base_workflow_account_asset_change_estimation_salvage" model="base.workflow_policy">
-            <field name="model_id" ref="account_asset_management_estimation_change.model_account_asset_change_estimation_salvage"/>
+        <record
+            id="base_workflow_account_asset_change_estimation_salvage"
+            model="base.workflow_policy"
+        >
+            <field
+                name="model_id"
+                ref="account_asset_management_estimation_change.model_account_asset_change_estimation_salvage"
+            />
         </record>
-        <record id="base_workflow_line_account_asset_impairment_confirm" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_salvage"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_change_estimation_salvage'),('name','=','confirm_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_salvage_confirm_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_impairment_confirm"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_salvage"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_change_estimation_salvage'),('name','=','confirm_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_salvage_confirm_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_account_asset_impairment_open" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_salvage"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_change_estimation_salvage'),('name','=','open_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_salvage_open_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_impairment_open"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_salvage"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_change_estimation_salvage'),('name','=','open_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_salvage_open_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_account_asset_impairment_valid" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_salvage"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_change_estimation_salvage'),('name','=','valid_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_salvage_valid_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_impairment_valid"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_salvage"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_change_estimation_salvage'),('name','=','valid_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_salvage_valid_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_account_asset_impairment_cancel" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_salvage"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_change_estimation_salvage'),('name','=','cancel_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_salvage_cancel_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_impairment_cancel"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_salvage"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_change_estimation_salvage'),('name','=','cancel_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_salvage_cancel_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_account_asset_impairment_restart" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_salvage"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_change_estimation_salvage'),('name','=','restart_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_salvage_restart_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_impairment_restart"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_salvage"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_change_estimation_salvage'),('name','=','restart_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_salvage_restart_grp_ids.ids</field>
         </record>
 
         <!-- Fixed Asset Useful Life Estimation Change-->
-        <record id="base_workflow_account_asset_change_estimation_useful_life" model="base.workflow_policy">
-            <field name="model_id" ref="account_asset_management_estimation_change.model_account_asset_change_estimation_useful_life"/>
+        <record
+            id="base_workflow_account_asset_change_estimation_useful_life"
+            model="base.workflow_policy"
+        >
+            <field
+                name="model_id"
+                ref="account_asset_management_estimation_change.model_account_asset_change_estimation_useful_life"
+            />
         </record>
-        <record id="base_workflow_line_account_asset_impairment_reversal_confirm" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_useful_life"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_change_estimation_useful_life'),('name','=','confirm_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_useful_life_confirm_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_impairment_reversal_confirm"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_useful_life"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_change_estimation_useful_life'),('name','=','confirm_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_useful_life_confirm_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_account_asset_impairment_reversal_open" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_useful_life"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_change_estimation_useful_life'),('name','=','open_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_useful_life_open_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_impairment_reversal_open"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_useful_life"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_change_estimation_useful_life'),('name','=','open_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_useful_life_open_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_account_asset_impairment_reversal_valid" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_useful_life"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_change_estimation_useful_life'),('name','=','valid_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_useful_life_valid_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_impairment_reversal_valid"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_useful_life"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_change_estimation_useful_life'),('name','=','valid_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_useful_life_valid_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_account_asset_impairment_reversal_cancel" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_useful_life"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_change_estimation_useful_life'),('name','=','cancel_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_useful_life_cancel_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_impairment_reversal_cancel"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_useful_life"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_change_estimation_useful_life'),('name','=','cancel_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_useful_life_cancel_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_account_asset_impairment_reversal_restart" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_useful_life"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_change_estimation_useful_life'),('name','=','restart_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_useful_life_restart_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_impairment_reversal_restart"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_estimation_change.base_workflow_account_asset_change_estimation_useful_life"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_change_estimation_useful_life'),('name','=','restart_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_useful_life_restart_grp_ids.ids</field>
         </record>
     </data>
 </openerp>

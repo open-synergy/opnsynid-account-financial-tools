@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
     <menuitem
-        id="account_asset_management_estimation_change_root"
-        name="Estimation Change"
-        parent="account_asset_management.menu_finance_assets"
-        sequence="50"/>
+            id="account_asset_management_estimation_change_root"
+            name="Estimation Change"
+            parent="account_asset_management.menu_finance_assets"
+            sequence="50"
+        />
 
 </data>
 </openerp>

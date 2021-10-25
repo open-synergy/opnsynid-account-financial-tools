@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class AccountAsset(models.Model):
@@ -10,22 +10,25 @@ class AccountAsset(models.Model):
 
     @api.multi
     @api.depends(
-        "impairment_ids", "impairment_ids.state",
-        "impairment_reversal_ids", "impairment_reversal_ids.state",
+        "impairment_ids",
+        "impairment_ids.state",
+        "impairment_reversal_ids",
+        "impairment_reversal_ids.state",
         "value_residual",
     )
     def _compute_impairment(self):
         for asset in self:
             impairment = reversal = 0.0
-            for imp in asset.impairment_ids.filtered(
-                    lambda r: r.state == "valid"):
+            for imp in asset.impairment_ids.filtered(lambda r: r.state == "valid"):
                 impairment += imp.impairment_amount
             for rev in asset.impairment_reversal_ids.filtered(
-                    lambda r: r.state == "valid"):
+                lambda r: r.state == "valid"
+            ):
                 reversal += rev.impairment_amount
             asset.amount_impairment = impairment - reversal
-            asset.amount_residual_impairment = asset.value_residual - \
-                asset.amount_impairment
+            asset.amount_residual_impairment = (
+                asset.value_residual - asset.amount_impairment
+            )
 
     impairment_ids = fields.One2many(
         string="Impairment",

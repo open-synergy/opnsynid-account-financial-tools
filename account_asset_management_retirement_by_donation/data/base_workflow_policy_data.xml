@@ -1,37 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
     <data>
         <!-- Asset Retirement By Donation -->
-        <record id="base_workflow_account_asset_retirement_donation" model="base.workflow_policy">
-            <field name="model_id" ref="account_asset_management_retirement_by_donation.model_account_asset_retirement_donation"/>
+        <record
+            id="base_workflow_account_asset_retirement_donation"
+            model="base.workflow_policy"
+        >
+            <field
+                name="model_id"
+                ref="account_asset_management_retirement_by_donation.model_account_asset_retirement_donation"
+            />
         </record>
-        <record id="base_workflow_line_asset_retirement_donation_confirm" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_retirement_by_donation.base_workflow_account_asset_retirement_donation"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_retirement_donation'),('name','=','confirm_ok')]"/>
-            <field name="python_code">result = document.type_id.asset_retirement_confirm_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_asset_retirement_donation_confirm"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_retirement_by_donation.base_workflow_account_asset_retirement_donation"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_retirement_donation'),('name','=','confirm_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.type_id.asset_retirement_confirm_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_asset_retirement_donation_open" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_retirement_by_donation.base_workflow_account_asset_retirement_donation"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_retirement_donation'),('name','=','open_ok')]"/>
-            <field name="python_code">result = document.type_id.asset_retirement_open_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_asset_retirement_donation_open"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_retirement_by_donation.base_workflow_account_asset_retirement_donation"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_retirement_donation'),('name','=','open_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.type_id.asset_retirement_open_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_asset_retirement_donation_valid" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_retirement_by_donation.base_workflow_account_asset_retirement_donation"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_retirement_donation'),('name','=','valid_ok')]"/>
-            <field name="python_code">result = document.type_id.asset_retirement_valid_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_asset_retirement_donation_valid"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_retirement_by_donation.base_workflow_account_asset_retirement_donation"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_retirement_donation'),('name','=','valid_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.type_id.asset_retirement_valid_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_asset_retirement_donation_cancel" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_retirement_by_donation.base_workflow_account_asset_retirement_donation"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_retirement_donation'),('name','=','cancel_ok')]"/>
-            <field name="python_code">result = document.type_id.asset_retirement_cancel_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_asset_retirement_donation_cancel"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_retirement_by_donation.base_workflow_account_asset_retirement_donation"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_retirement_donation'),('name','=','cancel_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.type_id.asset_retirement_cancel_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_asset_retirement_donation_restart" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_retirement_by_donation.base_workflow_account_asset_retirement_donation"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_retirement_donation'),('name','=','restart_ok')]"/>
-            <field name="python_code">result = document.type_id.asset_retirement_restart_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_asset_retirement_donation_restart"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_retirement_by_donation.base_workflow_account_asset_retirement_donation"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_retirement_donation'),('name','=','restart_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.type_id.asset_retirement_restart_grp_ids.ids</field>
         </record>
     </data>
 </openerp>

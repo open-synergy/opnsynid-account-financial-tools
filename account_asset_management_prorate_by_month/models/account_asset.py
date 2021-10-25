@@ -2,9 +2,10 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
 from datetime import datetime
+
 from dateutil.relativedelta import relativedelta
+from openerp import api, fields, models
 
 
 class AccountAsset(models.Model):
@@ -24,10 +25,7 @@ class AccountAsset(models.Model):
         self.ensure_one()
         _super = super(AccountAsset, self)
         date_start = _super._get_date_start()
-        dt_date_start = datetime.strptime(
-            date_start,
-            "%Y-%m-%d"
-        )
+        dt_date_start = datetime.strptime(date_start, "%Y-%m-%d")
         if self.prorate_by_month:
             if dt_date_start.day > self.date_min_prorate:
                 dt_date_start = dt_date_start + relativedelta(day=1, months=1)

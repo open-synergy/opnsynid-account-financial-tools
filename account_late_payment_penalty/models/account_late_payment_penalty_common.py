@@ -2,13 +2,15 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, _
-from openerp.exceptions import Warning as UserError
 import logging
+
+from openerp import _, api, fields, models
+from openerp.exceptions import Warning as UserError
+
 _logger = logging.getLogger(__name__)
 try:
-    import pandas as pd
     import numpy as np
+    import pandas as pd
 except (ImportError, IOError) as err:
     _logger.debug(err)
 
@@ -59,11 +61,9 @@ class AccountCommonLatePaymentPenalty(models.AbstractModel):
     def _compute_move_amount_base(self):
         for document in self:
             if document.direction == "out":
-                document.move_amount_base = \
-                    document.move_line_id.debit
+                document.move_amount_base = document.move_line_id.debit
             else:
-                document.move_amount_base = \
-                    document.move_line_id.credit
+                document.move_amount_base = document.move_line_id.credit
 
     @api.multi
     @api.depends(
@@ -327,17 +327,17 @@ class AccountCommonLatePaymentPenalty(models.AbstractModel):
     @api.multi
     def _prepare_post_data(self):
         self.ensure_one()
-        move = self.env["account.move"].create(
-            self._prepare_move_header()
-        )
+        move = self.env["account.move"].create(self._prepare_move_header())
         if self.direction == "out":
             move_line = move.line_id.filtered(
                 lambda r: r.account_id.id == self.move_line_id.account_id.id
-                and r.debit > 0.0)[0]
+                and r.debit > 0.0
+            )[0]
         else:
             move_line = move.line_id.filtered(
                 lambda r: r.account_id.id == self.move_line_id.account_id.id
-                and r.credit > 0.0)[0]
+                and r.credit > 0.0
+            )[0]
         return {
             "state": "post",
             "post_date": fields.Datetime.now(),
@@ -437,8 +437,7 @@ class AccountCommonLatePaymentPenalty(models.AbstractModel):
         self.ensure_one()
         move_lines = self.move_line_id
         if self.move_line_id.reconcile_partial_id:
-            move_lines = self.move_line_id.reconcile_partial_id.\
-                line_partial_ids
+            move_lines = self.move_line_id.reconcile_partial_id.line_partial_ids
         move_lines += self.penalty_move_line_id
         move_lines.reconcile_partial()
 
@@ -447,9 +446,7 @@ class AccountCommonLatePaymentPenalty(models.AbstractModel):
         self.ensure_one()
         move_line = self.penalty_move_line_id
         move_line.refresh()
-        reconcile = move_line.reconcile_id or \
-            move_line.reconcile_partial_id or \
-            False
+        reconcile = move_line.reconcile_id or move_line.reconcile_partial_id or False
         if reconcile:
             move_lines = reconcile.line_id
             move_lines -= move_line
@@ -537,9 +534,11 @@ class AccountCommonLatePaymentPenalty(models.AbstractModel):
         _super = super(AccountCommonLatePaymentPenalty, self)
         result = _super.create(values)
         sequence = result._create_sequence()
-        result.write({
-            "name": sequence,
-        })
+        result.write(
+            {
+                "name": sequence,
+            }
+        )
         return result
 
     @api.constrains(

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
 
@@ -11,16 +11,23 @@
                     </group>
                     <field name="detail_ids" nolabel="1" colspan="4" mode="tree">
                         <tree create="false" edit="true" delete="false" editable="top">
-                            <field name="asset_id" readonly="1"/>
-                            <field name="product_id" readonly="1"/>
-                            <field name="lot_id"
-                                domain="[('product_id','=',product_id),('asset_id','=',False)]"/>
+                            <field name="asset_id" readonly="1" />
+                            <field name="product_id" readonly="1" />
+                            <field
+                                name="lot_id"
+                                domain="[('product_id','=',product_id),('asset_id','=',False)]"
+                            />
                         </tree>
                     </field>
                     <footer>
-                        <button string="Create Link" name="button_link" type="object" class="oe_highlight"/>
+                        <button
+                            string="Create Link"
+                            name="button_link"
+                            type="object"
+                            class="oe_highlight"
+                        />
                         or
-                        <button string="Cancel" class="oe_link" special="cancel"/>
+                        <button string="Cancel" class="oe_link" special="cancel" />
                     </footer>
                 </form>
            </field>
@@ -32,7 +39,7 @@
             <field name="res_model">stock.link_fixed_asset_to_lot</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="stock_link_fixed_asset_to_lot_view_form"/>
+            <field name="view_id" ref="stock_link_fixed_asset_to_lot_view_form" />
             <field name="target">new</field>
         </record>
 
@@ -40,7 +47,10 @@
             <field name="key2">client_action_multi</field>
             <field name="model">account.asset.asset</field>
             <field name="name">Link to Serial Number</field>
-            <field eval="'ir.actions.act_window,%d'%stock_link_fixed_asset_to_lot_action" name="value"/>
+            <field
+                eval="'ir.actions.act_window,%d'%stock_link_fixed_asset_to_lot_action"
+                name="value"
+            />
         </record>
 
     </data>

@@ -16,16 +16,10 @@ class TestCreateResetMenu(TestBaseCreateMenu):
 
         if self.bank_journal.menu_id.id:
             result_menu_id = True
-        self.assertEqual(
-            True,
-            result_menu_id
-        )
+        self.assertEqual(True, result_menu_id)
         if self.bank_journal.window_action_id.id:
             result_window_action_id = True
-        self.assertEqual(
-            True,
-            result_window_action_id
-        )
+        self.assertEqual(True, result_window_action_id)
 
     def test_create_menu_2(self):
         self._create_menu()
@@ -38,31 +32,18 @@ class TestCreateResetMenu(TestBaseCreateMenu):
         if self.bank_journal.menu_id.id:
             result_menu_id = True
             menu_id = self.bank_journal.menu_id.id
-        self.assertEqual(
-            True,
-            result_menu_id
-        )
+        self.assertEqual(True, result_menu_id)
         if self.bank_journal.window_action_id.id:
             result_window_action_id = True
-            waction_id =\
-                self.bank_journal.window_action_id.id
-        self.assertEqual(
-            True,
-            result_window_action_id
-        )
+            waction_id = self.bank_journal.window_action_id.id
+        self.assertEqual(True, result_window_action_id)
 
         # Check menu_id & window_action_id
         # Condition : menu_id or window_action_id == True
         self._create_menu()
 
-        self.assertEqual(
-            self.bank_journal.menu_id.id,
-            menu_id
-        )
-        self.assertEqual(
-            self.bank_journal.window_action_id.id,
-            waction_id
-        )
+        self.assertEqual(self.bank_journal.menu_id.id, menu_id)
+        self.assertEqual(self.bank_journal.window_action_id.id, waction_id)
 
     def test_create_menu_3(self):
         # Create Menu With Parent Menu ID
@@ -76,16 +57,10 @@ class TestCreateResetMenu(TestBaseCreateMenu):
 
         if self.bank_journal.menu_id.id:
             result_menu_id = True
-        self.assertEqual(
-            True,
-            result_menu_id
-        )
+        self.assertEqual(True, result_menu_id)
         if self.bank_journal.window_action_id.id:
             result_window_action_id = True
-        self.assertEqual(
-            True,
-            result_window_action_id
-        )
+        self.assertEqual(True, result_window_action_id)
 
     def test_reset_menu(self):
         self._create_menu()
@@ -95,11 +70,5 @@ class TestCreateResetMenu(TestBaseCreateMenu):
 
         # Check menu_id & window_action_id
         # Condition : menu_id or window_action_id == False
-        self.assertEqual(
-            False,
-            self.bank_journal.menu_id.id
-        )
-        self.assertEqual(
-            False,
-            self.bank_journal.window_action_id.id
-        )
+        self.assertEqual(False, self.bank_journal.menu_id.id)
+        self.assertEqual(False, self.bank_journal.window_action_id.id)

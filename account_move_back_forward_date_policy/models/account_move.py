@@ -2,7 +2,7 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -24,8 +24,7 @@ class AccountMove(models.Model):
         for doc in self:
             today = fields.Date.from_string(fields.Date.today())
             entry_date = fields.Date.from_string(doc.date)
-            if not doc.journal_id.allow_back_date and \
-                    entry_date < today:
+            if not doc.journal_id.allow_back_date and entry_date < today:
                 msg = _("Back date is not allowed")
                 raise UserError(msg)
 
@@ -37,7 +36,6 @@ class AccountMove(models.Model):
         for doc in self:
             today = fields.Date.from_string(fields.Date.today())
             entry_date = fields.Date.from_string(doc.date)
-            if not doc.journal_id.allow_forward_date and \
-                    entry_date > today:
+            if not doc.journal_id.allow_forward_date and entry_date > today:
                 msg = _("Forward date is not allowed")
                 raise UserError(msg)
