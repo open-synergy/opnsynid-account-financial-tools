@@ -7,4 +7,4 @@ from . import (
     account_asset_depreciation_line_monkeypatch,
     account_asset_asset,
     account_asset_depreciation_line,
-    )
+)

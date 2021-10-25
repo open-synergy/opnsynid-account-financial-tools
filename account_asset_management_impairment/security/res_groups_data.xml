@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
@@ -6,14 +6,16 @@
 
     <record id="group_technical_impairment_accounting" model="res.groups">
         <field name="name">Show Accounting Options On Fixed Asset Impairment</field>
-        <field name="category_id" ref="base.module_category_hidden"/>
-        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field name="category_id" ref="base.module_category_hidden" />
+        <field name="users" eval="[(4, ref('base.user_root'))]" />
     </record>
 
     <record id="group_technical_impairment_reversal_accounting" model="res.groups">
-        <field name="name">Show Accounting Options On Fixed Asset Impairment Reversal</field>
-        <field name="category_id" ref="base.module_category_hidden"/>
-        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field
+                name="name"
+            >Show Accounting Options On Fixed Asset Impairment Reversal</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+        <field name="users" eval="[(4, ref('base.user_root'))]" />
     </record>
 
 </data>

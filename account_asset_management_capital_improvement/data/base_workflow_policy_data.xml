@@ -1,37 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
     <data>
         <!-- Fixed Asset Improvement -->
-        <record id="base_workflow_account_asset_improvement" model="base.workflow_policy">
-            <field name="model_id" ref="account_asset_management_capital_improvement.model_account_asset_improvement"/>
+        <record
+            id="base_workflow_account_asset_improvement"
+            model="base.workflow_policy"
+        >
+            <field
+                name="model_id"
+                ref="account_asset_management_capital_improvement.model_account_asset_improvement"
+            />
         </record>
-        <record id="base_workflow_line_account_asset_improvement_confirm" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_capital_improvement.base_workflow_account_asset_improvement"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_improvement'),('name','=','confirm_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_improvement_confirm_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_improvement_confirm"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_capital_improvement.base_workflow_account_asset_improvement"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_improvement'),('name','=','confirm_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_improvement_confirm_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_account_asset_improvement_open" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_capital_improvement.base_workflow_account_asset_improvement"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_improvement'),('name','=','open_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_improvement_open_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_improvement_open"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_capital_improvement.base_workflow_account_asset_improvement"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_improvement'),('name','=','open_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_improvement_open_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_account_asset_improvement_valid" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_capital_improvement.base_workflow_account_asset_improvement"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_improvement'),('name','=','valid_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_improvement_valid_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_improvement_valid"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_capital_improvement.base_workflow_account_asset_improvement"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_improvement'),('name','=','valid_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_improvement_valid_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_account_asset_improvement_cancel" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_capital_improvement.base_workflow_account_asset_improvement"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_improvement'),('name','=','cancel_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_improvement_cancel_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_improvement_cancel"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_capital_improvement.base_workflow_account_asset_improvement"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_improvement'),('name','=','cancel_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_improvement_cancel_grp_ids.ids</field>
         </record>
-        <record id="base_workflow_line_account_asset_improvement_restart" model="base.workflow_policy_line">
-            <field name="workflow_id" ref="account_asset_management_capital_improvement.base_workflow_account_asset_improvement"/>
-            <field name="field_id" search="[('model_id.model','=','account.asset_improvement'),('name','=','restart_ok')]"/>
-            <field name="python_code">result = document.company_id.asset_improvement_restart_grp_ids.ids</field>
+        <record
+            id="base_workflow_line_account_asset_improvement_restart"
+            model="base.workflow_policy_line"
+        >
+            <field
+                name="workflow_id"
+                ref="account_asset_management_capital_improvement.base_workflow_account_asset_improvement"
+            />
+            <field
+                name="field_id"
+                search="[('model_id.model','=','account.asset_improvement'),('name','=','restart_ok')]"
+            />
+            <field
+                name="python_code"
+            >result = document.company_id.asset_improvement_restart_grp_ids.ids</field>
         </record>
     </data>
 </openerp>

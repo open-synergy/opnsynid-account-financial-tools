@@ -2,7 +2,7 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 from openerp.tools.safe_eval import safe_eval as eval
 
 
@@ -94,11 +94,10 @@ class AccountLatePaymentPenaltyType(models.Model):
         self.ensure_one()
         localdict = self._get_localdict(document)
         try:
-            eval(self.python_code,
-                 localdict, mode="exec", nocopy=True)
+            eval(self.python_code, localdict, mode="exec", nocopy=True)
             result = localdict["result"]
         # pylint: disable=locally-disabled, do-not-use-bare-except
-        except:
+        except Exception:
             result = 0.0
         return result
 
@@ -107,10 +106,9 @@ class AccountLatePaymentPenaltyType(models.Model):
         self.ensure_one()
         localdict = self._get_localdict(document)
         try:
-            eval(self.auto_create_python_code,
-                 localdict, mode="exec", nocopy=True)
+            eval(self.auto_create_python_code, localdict, mode="exec", nocopy=True)
             result = localdict["result"]
         # pylint: disable=locally-disabled, do-not-use-bare-except
-        except:
+        except Exception:
             result = False
         return result

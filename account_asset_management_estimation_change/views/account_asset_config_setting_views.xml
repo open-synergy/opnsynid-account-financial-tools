@@ -1,86 +1,136 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="account_asset_config_setting_view_form" model="ir.ui.view">
     <field name="name">account.asset.config_setting form</field>
     <field name="model">account.asset.config_setting</field>
-    <field name="inherit_id" ref="account_asset_management_config_page.account_asset_config_setting_view_form"/>
+    <field
+                name="inherit_id"
+                ref="account_asset_management_config_page.account_asset_config_setting_view_form"
+            />
     <field name="arch" type="xml">
         <xpath expr="//group[@name='feature_group']" position="after">
-            <separator string="Asset Useful Life Estimation Change"/>
+            <separator string="Asset Useful Life Estimation Change" />
             <group name="asset_useful_life_config">
-                <label for="id" string="General"/>
+                <label for="id" string="General" />
                 <div>
                     <div>
-                        <label for="id" string="Sequence" class="oe_inline"/>
-                        <field name="asset_useful_life_sequence_id" class="oe_inline" domain="[('code','=','account.asset.useful_life')]"/>
+                        <label for="id" string="Sequence" class="oe_inline" />
+                        <field
+                                    name="asset_useful_life_sequence_id"
+                                    class="oe_inline"
+                                    domain="[('code','=','account.asset.useful_life')]"
+                                />
                     </div>
                 </div>
             </group>
             <group name="asset_useful_life_group_config">
-                <label for="id" string="Allowed Groups"/>
+                <label for="id" string="Allowed Groups" />
                 <div>
                     <div>
-                        <label for="id" string="To Confirm" class="oe_inline"/>
-                        <field name="asset_useful_life_confirm_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        <label for="id" string="To Confirm" class="oe_inline" />
+                        <field
+                                    name="asset_useful_life_confirm_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                     </div>
                     <div>
-                        <label for="id" string="To Open" class="oe_inline"/>
-                        <field name="asset_useful_life_open_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        <label for="id" string="To Open" class="oe_inline" />
+                        <field
+                                    name="asset_useful_life_open_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                     </div>
                     <div>
-                        <label for="id" string="To Validate" class="oe_inline"/>
-                        <field name="asset_useful_life_valid_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        <label for="id" string="To Validate" class="oe_inline" />
+                        <field
+                                    name="asset_useful_life_valid_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                     </div>
                     <div>
-                        <label for="id" string="To Cancel" class="oe_inline"/>
-                        <field name="asset_useful_life_cancel_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        <label for="id" string="To Cancel" class="oe_inline" />
+                        <field
+                                    name="asset_useful_life_cancel_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                     </div>
                     <div>
-                        <label for="id" string="To Restart" class="oe_inline"/>
-                        <field name="asset_useful_life_restart_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        <label for="id" string="To Restart" class="oe_inline" />
+                        <field
+                                    name="asset_useful_life_restart_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                     </div>
                 </div>
             </group>
-            <separator string="Asset Salvage Value Estimation Change"/>
+            <separator string="Asset Salvage Value Estimation Change" />
             <group name="asset_salvage_config">
-                <label for="id" string="General"/>
+                <label for="id" string="General" />
                 <div>
                     <div>
-                        <label for="id" string="Sequence" class="oe_inline"/>
-                        <field name="asset_salvage_sequence_id" class="oe_inline" domain="[('code','=','account.asset.salvage')]"/>
+                        <label for="id" string="Sequence" class="oe_inline" />
+                        <field
+                                    name="asset_salvage_sequence_id"
+                                    class="oe_inline"
+                                    domain="[('code','=','account.asset.salvage')]"
+                                />
                     </div>
                 </div>
             </group>
             <group name="asset_salvage_group_config">
-                <label for="id" string="Allowed Groups"/>
+                <label for="id" string="Allowed Groups" />
                 <div>
                     <div>
-                        <label for="id" string="To Confirm" class="oe_inline"/>
-                        <field name="asset_salvage_confirm_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        <label for="id" string="To Confirm" class="oe_inline" />
+                        <field
+                                    name="asset_salvage_confirm_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                     </div>
                     <div>
-                        <label for="id" string="To Open" class="oe_inline"/>
-                        <field name="asset_salvage_open_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        <label for="id" string="To Open" class="oe_inline" />
+                        <field
+                                    name="asset_salvage_open_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                     </div>
                     <div>
-                        <label for="id" string="To Validate" class="oe_inline"/>
-                        <field name="asset_salvage_valid_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        <label for="id" string="To Validate" class="oe_inline" />
+                        <field
+                                    name="asset_salvage_valid_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                     </div>
                     <div>
-                        <label for="id" string="To Cancel" class="oe_inline"/>
-                        <field name="asset_salvage_cancel_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        <label for="id" string="To Cancel" class="oe_inline" />
+                        <field
+                                    name="asset_salvage_cancel_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                     </div>
                     <div>
-                        <label for="id" string="To Restart" class="oe_inline"/>
-                        <field name="asset_salvage_restart_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        <label for="id" string="To Restart" class="oe_inline" />
+                        <field
+                                    name="asset_salvage_restart_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                     </div>
                 </div>
-            </group>            
+            </group>
         </xpath>
     </field>
 </record>

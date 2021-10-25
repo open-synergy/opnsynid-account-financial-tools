@@ -4,10 +4,13 @@
 
 import calendar
 from datetime import datetime
+
 from dateutil.relativedelta import relativedelta
-from openerp import models, api, _
-from openerp.addons.account_asset_management.\
-    account_asset import account_asset_asset, account_asset_depreciation_line
+from openerp import _, api, models
+from openerp.addons.account_asset_management.account_asset import (
+    account_asset_asset,
+    account_asset_depreciation_line,
+)
 from openerp.exceptions import Warning as UserError
 
 
@@ -18,27 +21,30 @@ class DummyFy(object):
 
 
 @api.multi
-@api.depends("asset_value",
-             "depreciation_line_ids",
-             "depreciation_line_ids.amount",
-             "depreciation_line_ids.previous_id",
-             "depreciation_line_ids.init_entry",
-             "depreciation_line_ids.move_id",
-             "child_ids",
-             "child_ids.value_residual",
-             "child_ids.value_depreciated",
-             "child_ids.parent_id",
-             )
+@api.depends(
+    "asset_value",
+    "depreciation_line_ids",
+    "depreciation_line_ids.amount",
+    "depreciation_line_ids.previous_id",
+    "depreciation_line_ids.init_entry",
+    "depreciation_line_ids.move_id",
+    "child_ids",
+    "child_ids.value_residual",
+    "child_ids.value_depreciated",
+    "child_ids.parent_id",
+)
 def _compute_depreciation(self):
     for asset in self:
         if asset.type == "normal":
             lines = asset.depreciation_line_ids.filtered(
-                lambda l: l.type in ("depreciate", "remove") and
-                (l.init_entry or l.move_check))
-            value_depreciated = sum([l.amount for l in lines]) + \
-                asset._get_additional_depreciated_value()
-            asset.value_residual = \
-                asset._get_asset_value() - value_depreciated
+                lambda l: l.type in ("depreciate", "remove")
+                and (l.init_entry or l.move_check)
+            )
+            value_depreciated = (
+                sum(rec.amount for rec in lines)
+                + asset._get_additional_depreciated_value()
+            )
+            asset.value_residual = asset._get_asset_value() - value_depreciated
             asset.value_depreciated = value_depreciated
         else:
             value_residual = value_depreciated = 0.0
@@ -52,9 +58,14 @@ def _compute_depreciation(self):
 
 @api.multi
 @api.depends(
-    "purchase_value", "salvage_value",
-    "type", "method",
-    "child_ids", "child_ids.asset_value", "child_ids.parent_id")
+    "purchase_value",
+    "salvage_value",
+    "type",
+    "method",
+    "child_ids",
+    "child_ids.asset_value",
+    "child_ids.parent_id",
+)
 def _asset_value(self):
     for asset in self:
         if asset.type == "view":
@@ -66,8 +77,7 @@ def _asset_value(self):
         elif asset.method in ["linear-limit", "degr-limit"]:
             asset.asset_value = asset._get_asset_value()
         else:
-            asset.asset_value = \
-                asset._get_asset_value()
+            asset.asset_value = asset._get_asset_value()
 
 
 @api.multi
@@ -109,18 +119,16 @@ def compute_depreciation_board(self):
 
         # check table with posted entries and
         # recompute in case of deviation
-        table_i_start, line_i_start = \
-            asset._compute_starting_depreciation_entry(table)
+        table_i_start, line_i_start = asset._compute_starting_depreciation_entry(table)
 
         # insert into account.asset.depreciation.line
-        asset._create_depreciation_lines(
-            table, table_i_start, line_i_start)
+        asset._create_depreciation_lines(table, table_i_start, line_i_start)
 
     return True
 
 
 @api.multi
-def _compute_depreciation_table(self):
+def _compute_depreciation_table(self):  # noqa: C901
     ctx = self._context.copy()
 
     table = []
@@ -146,24 +154,27 @@ def _compute_depreciation_table(self):
         # - The "undefined" fiscal years are assumed to be years
         #   with a duration equal to a calendar year
         first_fy = fy_obj.search(
-            [("company_id", "=", self.company_id.id)],
-            order="date_stop ASC", limit=1)
-        first_fy_date_start = datetime.strptime(
-            first_fy.date_start, "%Y-%m-%d")
+            [("company_id", "=", self.company_id.id)], order="date_stop ASC", limit=1
+        )
+        first_fy_date_start = datetime.strptime(first_fy.date_start, "%Y-%m-%d")
         # SPONGE
         asset_date_start = datetime.strptime(
-            self.last_posted_asset_line_id.line_date,
-            "%Y-%m-%d")
+            self.last_posted_asset_line_id.line_date, "%Y-%m-%d"
+        )
         # asset_date_start = datetime.strptime(self.date_start, "%Y-%m-%d")
         fy_date_start = first_fy_date_start
         if asset_date_start > fy_date_start:
-            asset_ref = self.code and "%s (ref: %s)" \
-                % (self.name, self.code) or self.name
+            asset_ref = (
+                self.code and "{} (ref: {})".format(self.name, self.code) or self.name
+            )
             raise UserError(
-                _("You cannot compute a depreciation table for an asset "
-                  "starting in an undefined future fiscal year."
-                  "\nPlease correct the start date for asset %s.")
-                % asset_ref)
+                _(
+                    "You cannot compute a depreciation table for an asset "
+                    "starting in an undefined future fiscal year."
+                    "\nPlease correct the start date for asset %s."
+                )
+                % asset_ref
+            )
         while asset_date_start < fy_date_start:
             fy_date_start = fy_date_start - relativedelta(years=1)
         fy_date_stop = fy_date_start + relativedelta(years=1, days=-1)
@@ -173,19 +184,22 @@ def _compute_depreciation_table(self):
             date_stop=fy_date_stop.strftime("%Y-%m-%d"),
             id=False,
             state="done",
-            dummy=True)
+            dummy=True,
+        )
         init_flag = True
 
     depreciation_start_date = self._get_depreciation_start_date(fy)
-    depreciation_stop_date = self._get_depreciation_stop_date(
-        depreciation_start_date)
+    depreciation_stop_date = self._get_depreciation_stop_date(depreciation_start_date)
 
     while fy_date_start <= depreciation_stop_date:
-        table.append({
-            "fy_id": fy_id,
-            "date_start": fy_date_start,
-            "date_stop": fy_date_stop,
-            "init": init_flag})
+        table.append(
+            {
+                "fy_id": fy_id,
+                "date_start": fy_date_start,
+                "date_stop": fy_date_stop,
+                "init": init_flag,
+            }
+        )
         fy_date_start = fy_date_stop + relativedelta(days=1)
         try:
             fy_id = fy_obj.find(fy_date_start)
@@ -210,12 +224,12 @@ def _compute_depreciation_table(self):
     asset_sign = self._get_asset_value() >= 0 and 1 or -1
 
     line_dates = self._compute_line_dates(
-        table, depreciation_start_date, depreciation_stop_date)
+        table, depreciation_start_date, depreciation_stop_date
+    )
 
     for i, entry in enumerate(table):
 
-        year_amount = self._compute_year_amount(
-            amount_to_depr, fy_residual_amount)
+        year_amount = self._compute_year_amount(amount_to_depr, fy_residual_amount)
 
         if i == i_max:
             if self.method == "degressive":
@@ -236,8 +250,7 @@ def _compute_depreciation_table(self):
                 fy_amount = fy_residual_amount - self.salvage_value
         else:
             firstyear = i == 0 and True or False
-            fy_factor = self._get_fy_duration_factor(
-                entry, self, firstyear)
+            fy_factor = self._get_fy_duration_factor(entry, self, firstyear)
 
             fy_amount = year_amount * fy_factor
 
@@ -247,24 +260,26 @@ def _compute_depreciation_table(self):
         period_amount = round(period_amount, digits)
         fy_amount = round(fy_amount, digits)
 
-        entry.update({
-            "period_amount": period_amount,
-            "fy_amount": fy_amount,
-        })
+        entry.update(
+            {
+                "period_amount": period_amount,
+                "fy_amount": fy_amount,
+            }
+        )
 
         fy_residual_amount -= fy_amount
         if round(fy_residual_amount, digits) == 0:
             break
 
     i_max = i
-    table = table[:i_max + 1]
+    table = table[: i_max + 1]
 
     # Step 2:
     # Spread depreciation amount per fiscal year
     # over the depreciation periods.
     self._compute_depreciation_table_lines(
-        table, depreciation_start_date, depreciation_stop_date,
-        line_dates)
+        table, depreciation_start_date, depreciation_stop_date, line_dates
+    )
 
     return table
 
@@ -277,13 +292,12 @@ def _get_depreciation_start_date(self, fy):
     """
     if self.prorata:
         depreciation_start_date = datetime.strptime(
-            self.last_posted_asset_line_id.line_date,
-            "%Y-%m-%d")
+            self.last_posted_asset_line_id.line_date, "%Y-%m-%d"
+        )
         depreciation_start_date += relativedelta(day=1)
     else:
         fy_date_start = datetime.strptime(fy.date_start, "%Y-%m-%d")
-        depreciation_start_date = datetime(
-            fy_date_start.year, fy_date_start.month, 1)
+        depreciation_start_date = datetime(fy_date_start.year, fy_date_start.month, 1)
     return depreciation_start_date
 
 
@@ -292,14 +306,16 @@ def _get_depreciation_stop_date(self, depreciation_start_date):
     self.ensure_one()
     asset_start_date = datetime.strptime(self.date_start, "%Y-%m-%d")
     asset_start_date += relativedelta(day=1)
-    depreciation_stop_date = asset_start_date + \
-        relativedelta(years=self.method_number, days=-1)
+    depreciation_stop_date = asset_start_date + relativedelta(
+        years=self.method_number, days=-1
+    )
     return depreciation_stop_date
 
 
 @api.multi
-def _compute_depreciation_table_lines(self, table, depreciation_start_date,
-                                      depreciation_stop_date, line_dates):
+def _compute_depreciation_table_lines(
+    self, table, depreciation_start_date, depreciation_stop_date, line_dates
+):
 
     digits = self.env["decimal.precision"].precision_get("Asset Depreciation")
     asset_sign = self._get_asset_value() >= 0 and 1 or -1
@@ -320,13 +336,15 @@ def _compute_depreciation_table_lines(self, table, depreciation_start_date,
             if round(remaining_value, digits) == 0.0:
                 break
 
-            if (line_date > min(entry["date_stop"],
-                                depreciation_stop_date) and not
-                    (i == i_max and li == li_max)):
+            if line_date > min(entry["date_stop"], depreciation_stop_date) and not (
+                i == i_max and li == li_max
+            ):
                 break
 
-            if self.method == "degr-linear" \
-                    and asset_sign * (fy_amount - fy_amount_check) < 0:
+            if (
+                self.method == "degr-linear"
+                and asset_sign * (fy_amount - fy_amount_check) < 0
+            ):
                 break
 
             amount = entry.get("period_amount")
@@ -362,10 +380,12 @@ def _compute_depreciation_table_lines(self, table, depreciation_start_date,
             diff = fy_amount_check - fy_amount
             amount = amount - diff
             remaining_value += diff
-            lines[-1].update({
-                "amount": amount,
-                "remaining_value": remaining_value,
-            })
+            lines[-1].update(
+                {
+                    "amount": amount,
+                    "remaining_value": remaining_value,
+                }
+            )
             depreciated_value -= diff
 
         if not lines:
@@ -374,15 +394,13 @@ def _compute_depreciation_table_lines(self, table, depreciation_start_date,
             entry["lines"] = lines
         line_dates = line_dates[li:]
 
-    for i, entry in enumerate(table):
+    for _i, entry in enumerate(table):
         if not entry["fy_amount"]:
-            entry["fy_amount"] = sum(
-                [l["amount"] for l in entry["lines"]])
+            entry["fy_amount"] = sum(rec["amount"] for rec in entry["lines"])
 
 
 @api.multi
-def _get_first_period_amount(self, table, entry, depreciation_start_date,
-                             line_dates):
+def _get_first_period_amount(self, table, entry, depreciation_start_date, line_dates):
     """
     Return prorata amount for Time Method "Year" in case of
     "Prorata Temporis"
@@ -404,18 +422,21 @@ def _compute_year_amount(self, amount_to_depr, residual_amount):
     if self.method_time != "year":
         raise UserError(
             _("Programming Error"),
-            _("The '_compute_year_amount' method is only intended for "
-              "Time Method 'Number of Years.''"))
+            _(
+                "The '_compute_year_amount' method is only intended for "
+                "Time Method 'Number of Years.''"
+            ),
+        )
 
-    year_amount_liner_divider = self.method_period_number - \
-        self.method_period_start_number
+    year_amount_liner_divider = (
+        self.method_period_number - self.method_period_start_number
+    )
     year_amount_linear = (amount_to_depr / year_amount_liner_divider) * 12
 
     if self.method == "linear":
         return year_amount_linear
 
-    year_amount_degressive = residual_amount * \
-        self.method_progress_factor
+    year_amount_degressive = residual_amount * self.method_progress_factor
 
     if self.method == "degressive":
         return year_amount_degressive
@@ -426,8 +447,7 @@ def _compute_year_amount(self, amount_to_depr, residual_amount):
         else:
             return min(year_amount_degressive, residual_amount)
 
-    raise UserError(
-        _("Illegal value %s in asset.method.") % self.method)
+    raise UserError(_("Illegal value %s in asset.method.") % self.method)
 
 
 @api.model
@@ -441,19 +461,16 @@ def _get_fy_duration_factor(self, entry, asset, firstyear):
     if asset.prorata:
         if firstyear:
             depreciation_date_start = datetime.strptime(
-                asset.last_posted_asset_line_id.line_date,
-                "%Y-%m-%d")
-            first_fy_asset_days = depreciation_date_start + \
-                relativedelta(day=1)
+                asset.last_posted_asset_line_id.line_date, "%Y-%m-%d"
+            )
+            first_fy_asset_days = depreciation_date_start + relativedelta(day=1)
 
             duration_factor = float(13 - first_fy_asset_days.month) / 12.0
 
         elif fy_id:
-            duration_factor = asset._get_fy_duration(
-                fy_id, option="years")
+            duration_factor = asset._get_fy_duration(fy_id, option="years")
     elif fy_id:
-        fy_months = asset._get_fy_duration(
-            fy_id, option="months")
+        fy_months = asset._get_fy_duration(fy_id, option="months")
         duration_factor = float(fy_months) / 12
     return duration_factor
 
@@ -472,8 +489,11 @@ def _get_fy_duration(self, fy_id, option="days"):
     fy_date_start = datetime.strptime(fy.date_start, "%Y-%m-%d")
     fy_date_stop = datetime.strptime(fy.date_stop, "%Y-%m-%d")
     days = (fy_date_stop - fy_date_start).days + 1
-    months = (fy_date_stop.year - fy_date_start.year) * 12  \
-        + (fy_date_stop.month - fy_date_start.month) + 1
+    months = (
+        (fy_date_stop.year - fy_date_start.year) * 12
+        + (fy_date_stop.month - fy_date_start.month)
+        + 1
+    )
     if option == "days":
         return days
     elif option == "months":
@@ -487,12 +507,10 @@ def _get_fy_duration(self, fy_id, option="days"):
                 if fy_date_stop.year == year:
                     duration = (fy_date_stop - fy_date_start).days + 1
                 else:
-                    duration = (
-                        datetime(year, 12, 31) - fy_date_start).days + 1
+                    duration = (datetime(year, 12, 31) - fy_date_start).days + 1
                 factor = float(duration) / cy_days
             elif i == cnt - 1:  # last year
-                duration = (
-                    fy_date_stop - datetime(year, 1, 1)).days + 1
+                duration = (fy_date_stop - datetime(year, 1, 1)).days + 1
                 factor += float(duration) / cy_days
             else:
                 factor += 1.0
@@ -530,7 +548,7 @@ def create(self, vals):
 
 @api.multi
 def _get_depreciation_entry_name(self, seq):
-    """ use this method to customise the name of the accounting entry """
+    """use this method to customise the name of the accounting entry"""
     return (self.code or str(self.id)) + "/" + str(seq)
 
 
@@ -567,31 +585,20 @@ class AccountAssetAssetMonkeypatch(models.TransientModel):
     _description = "Asset Monkeypatch"
 
     def _register_hook(self, cr):
-        account_asset_asset._compute_depreciation = \
-            _compute_depreciation
-        account_asset_asset._asset_value = \
-            _asset_value
-        account_asset_asset._compute_depreciation_table = \
-            _compute_depreciation_table
-        account_asset_asset.compute_depreciation_board = \
-            compute_depreciation_board
-        account_asset_asset._get_depreciation_start_date = \
-            _get_depreciation_start_date
-        account_asset_asset._get_depreciation_stop_date = \
-            _get_depreciation_stop_date
-        account_asset_asset._compute_depreciation_table_lines = \
+        account_asset_asset._compute_depreciation = _compute_depreciation
+        account_asset_asset._asset_value = _asset_value
+        account_asset_asset._compute_depreciation_table = _compute_depreciation_table
+        account_asset_asset.compute_depreciation_board = compute_depreciation_board
+        account_asset_asset._get_depreciation_start_date = _get_depreciation_start_date
+        account_asset_asset._get_depreciation_stop_date = _get_depreciation_stop_date
+        account_asset_asset._compute_depreciation_table_lines = (
             _compute_depreciation_table_lines
-        account_asset_asset._get_first_period_amount = \
-            _get_first_period_amount
-        account_asset_asset._compute_year_amount = \
-            _compute_year_amount
-        account_asset_asset._get_fy_duration_factor = \
-            _get_fy_duration_factor
-        account_asset_asset.create = \
-            create
-        account_asset_asset._get_depreciation_entry_name = \
-            _get_depreciation_entry_name
-        account_asset_depreciation_line._compute = \
-            _compute
+        )
+        account_asset_asset._get_first_period_amount = _get_first_period_amount
+        account_asset_asset._compute_year_amount = _compute_year_amount
+        account_asset_asset._get_fy_duration_factor = _get_fy_duration_factor
+        account_asset_asset.create = create
+        account_asset_asset._get_depreciation_entry_name = _get_depreciation_entry_name
+        account_asset_depreciation_line._compute = _compute
         _super = super(AccountAssetAssetMonkeypatch, self)
         return _super._register_hook(cr)

@@ -9,10 +9,10 @@ class AccountAssetDepreciationLine(models.Model):
     _inherit = "account.asset.depreciation.line"
 
     def _setup_move_data(
-            self, depreciation_line, depreciation_date,
-            period_id, context):
+        self, depreciation_line, depreciation_date, period_id, context
+    ):
         move_data = super(AccountAssetDepreciationLine, self)._setup_move_data(
-            depreciation_line, depreciation_date,
-            period_id, context)
+            depreciation_line, depreciation_date, period_id, context
+        )
         move_data["name"] = "/"
         return move_data

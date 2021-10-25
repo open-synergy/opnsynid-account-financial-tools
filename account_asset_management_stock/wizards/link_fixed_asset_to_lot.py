@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class LinkFixedAssetToLot(models.TransientModel):
@@ -68,12 +68,16 @@ class LinkFixedAssetToLotDetail(models.TransientModel):
     @api.multi
     def _link_fixed_asset_to_asset(self):
         self.ensure_one()
-        self.asset_id.write({
-            "lot_id": self.lot_id.id,
-        })
-        self.lot_id.write({
-            "asset_id": self.asset_id.id,
-        })
+        self.asset_id.write(
+            {
+                "lot_id": self.lot_id.id,
+            }
+        )
+        self.lot_id.write(
+            {
+                "asset_id": self.asset_id.id,
+            }
+        )
 
     @api.multi
     def _update_quant_value(self):
@@ -81,6 +85,8 @@ class LinkFixedAssetToLotDetail(models.TransientModel):
         for quant in self.lot_id.quant_ids:
             total_qty += quant.qty
         unit_price = self.asset_id.asset_value / total_qty
-        self.lot_id.quant_ids.write({
-            "cost": unit_price,
-        })
+        self.lot_id.quant_ids.write(
+            {
+                "cost": unit_price,
+            }
+        )

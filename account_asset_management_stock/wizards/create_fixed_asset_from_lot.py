@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class CreateFixedAssetFromLot(models.TransientModel):
@@ -40,12 +40,13 @@ class CreateFixedAssetFromLot(models.TransientModel):
     @api.multi
     def button_create_asset(self):
         self.ensure_one()
-        for detail in self.detail_ids.filtered(
-                lambda r: r.asset_category_id):
+        for detail in self.detail_ids.filtered(lambda r: r.asset_category_id):
             asset = detail._create_fixed_asset()
-            detail.lot_id.write({
-                "asset_id": asset.id,
-            })
+            detail.lot_id.write(
+                {
+                    "asset_id": asset.id,
+                }
+            )
 
 
 class CreateFixedAssetFromLotDetail(models.TransientModel):
@@ -120,8 +121,7 @@ class CreateFixedAssetFromLotDetail(models.TransientModel):
             "purchase_value": purchase_value,
             "salvage_value": salvage_value,
             "category_id": categ.id,
-            "parent_id": self.parent_id and
-            self.parent_id.id or False,
+            "parent_id": self.parent_id and self.parent_id.id or False,
             "partner_id": partner and partner.id or False,
             "date_start": move.date,
             "method": categ.method,

@@ -9,6 +9,4 @@ class AccountType(models.Model):
     _inherit = "account.account.type"
     _order = "sequence, id"
 
-    sequence = fields.Integer(
-        string="Sequence"
-    )
+    sequence = fields.Integer(string="Sequence")

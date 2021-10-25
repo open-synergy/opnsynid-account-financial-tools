@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
 
@@ -11,28 +11,36 @@
                     </group>
                     <field name="detail_ids" nolabel="1" colspan="4" mode="tree">
                         <tree create="false" edit="true" delete="false" editable="top">
-                            <field name="lot_id" readonly="1"/>
-                            <field name="stock_move_id" invisible="1"/>
-                            <field name="asset_category_id"/>
-                            <field name="parent_id" domain="[('type','=','view')]"/>
+                            <field name="lot_id" readonly="1" />
+                            <field name="stock_move_id" invisible="1" />
+                            <field name="asset_category_id" />
+                            <field name="parent_id" domain="[('type','=','view')]" />
                         </tree>
                     </field>
                     <footer>
-                        <button string="Create Fixed Assets" name="button_create_asset" type="object" class="oe_highlight"/>
+                        <button
+                            string="Create Fixed Assets"
+                            name="button_create_asset"
+                            type="object"
+                            class="oe_highlight"
+                        />
                         or
-                        <button string="Cancel" class="oe_link" special="cancel"/>
+                        <button string="Cancel" class="oe_link" special="cancel" />
                     </footer>
                 </form>
            </field>
         </record>
 
-        <record id="stock_create_fixed_asset_from_lot_action" model="ir.actions.act_window">
+        <record
+            id="stock_create_fixed_asset_from_lot_action"
+            model="ir.actions.act_window"
+        >
             <field name="name">Create Fixed Assets From Lot</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">stock.create_fixed_asset_from_lot</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
-            <field name="view_id" ref="stock_create_fixed_asset_from_lot_view_form"/>
+            <field name="view_id" ref="stock_create_fixed_asset_from_lot_view_form" />
             <field name="target">new</field>
         </record>
 
@@ -40,7 +48,10 @@
             <field name="key2">client_action_multi</field>
             <field name="model">stock.production.lot</field>
             <field name="name">Create Fixed Asset</field>
-            <field eval="'ir.actions.act_window,%d'%stock_create_fixed_asset_from_lot_action" name="value"/>
+            <field
+                eval="'ir.actions.act_window,%d'%stock_create_fixed_asset_from_lot_action"
+                name="value"
+            />
         </record>
 
     </data>

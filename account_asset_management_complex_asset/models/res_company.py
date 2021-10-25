@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
+from openerp import fields, models
 
 
 class ResCompany(models.Model):
@@ -15,8 +15,7 @@ class ResCompany(models.Model):
     complex_asset_installation_confirm_grp_ids = fields.Many2many(
         string="Allowed To Confirm Complex Asset Installation",
         comodel_name="res.groups",
-        relation="rel_company_complex_asset_installation_"
-                 "allowed_confirm_groups",
+        relation="rel_company_complex_asset_installation_" "allowed_confirm_groups",
         column1="company_id",
         column2="group_id",
     )
@@ -30,16 +29,14 @@ class ResCompany(models.Model):
     complex_asset_installation_cancel_grp_ids = fields.Many2many(
         string="Allowed To Cancel Complex Asset Installation",
         comodel_name="res.groups",
-        relation="rel_company_complex_asset_installation_"
-                 "allowed_cancel_groups",
+        relation="rel_company_complex_asset_installation_" "allowed_cancel_groups",
         column1="company_id",
         column2="group_id",
     )
     complex_asset_installation_restart_grp_ids = fields.Many2many(
         string="Allowed To Restart Complex Asset Installation",
         comodel_name="res.groups",
-        relation="rel_company_complex_asset_installation_"
-                 "allowed_restart_groups",
+        relation="rel_company_complex_asset_installation_" "allowed_restart_groups",
         column1="company_id",
         column2="group_id",
     )

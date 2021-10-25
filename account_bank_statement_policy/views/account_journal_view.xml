@@ -1,25 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
         <record id="account_journal_view_form" model="ir.ui.view">
             <field name="name">Inherit : Account Journal Form</field>
             <field name="model">account.journal</field>
-            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="inherit_id" ref="account.view_account_journal_form" />
             <field name="arch" type="xml">
                 <xpath expr="//notebook" position="inside">
-                    <page name="page_bank_policy" string="Bank Statement Policy" attrs="{'invisible': [('type','&lt;&gt;','bank')]}">
+                    <page
+                        name="page_bank_policy"
+                        string="Bank Statement Policy"
+                        attrs="{'invisible': [('type','&lt;&gt;','bank')]}"
+                    >
                         <group name="grp_bank_policy" colspan="4" col="2">
-                            <field name="bank_stmt_reconcile_group_ids" widget="many2many_tags"/>
-                            <field name="bank_stmt_close_group_ids" widget="many2many_tags"/>
-                            <field name="bank_stmt_cancel_group_ids" widget="many2many_tags"/>
+                            <field
+                                name="bank_stmt_reconcile_group_ids"
+                                widget="many2many_tags"
+                            />
+                            <field
+                                name="bank_stmt_close_group_ids"
+                                widget="many2many_tags"
+                            />
+                            <field
+                                name="bank_stmt_cancel_group_ids"
+                                widget="many2many_tags"
+                            />
                         </group>
                     </page>
-                    <page name="page_cash_policy" string="Cash Register Policy" attrs="{'invisible': [('type','&lt;&gt;','cash')]}">
+                    <page
+                        name="page_cash_policy"
+                        string="Cash Register Policy"
+                        attrs="{'invisible': [('type','&lt;&gt;','cash')]}"
+                    >
                         <group name="grp_cash_policy" colspan="4" col="2">
-                            <field name="cash_register_reconcile_group_ids" widget="many2many_tags"/>
-                            <field name="cash_register_open_group_ids" widget="many2many_tags"/>
-                            <field name="cash_register_close_group_ids" widget="many2many_tags"/>
-                            <field name="cash_register_cancel_group_ids" widget="many2many_tags"/>
+                            <field
+                                name="cash_register_reconcile_group_ids"
+                                widget="many2many_tags"
+                            />
+                            <field
+                                name="cash_register_open_group_ids"
+                                widget="many2many_tags"
+                            />
+                            <field
+                                name="cash_register_close_group_ids"
+                                widget="many2many_tags"
+                            />
+                            <field
+                                name="cash_register_cancel_group_ids"
+                                widget="many2many_tags"
+                            />
                         </group>
                     </page>
                 </xpath>

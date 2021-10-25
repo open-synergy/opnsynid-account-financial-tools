@@ -1,24 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <menuitem
-    id="account_late_payment_penalty_menu"
-    name="Late Payment Penalty"
-    parent="account.menu_finance"
-    sequence="10"
-    />
+            id="account_late_payment_penalty_menu"
+            name="Late Payment Penalty"
+            parent="account.menu_finance"
+            sequence="10"
+        />
 
 <menuitem
-    id="account_late_payment_penalty_configuration_menu"
-    name="Late Payment Penalty"
-    parent="account.menu_finance_configuration"
-    action=""
-    sequence="10"
-    />
+            id="account_late_payment_penalty_configuration_menu"
+            name="Late Payment Penalty"
+            parent="account.menu_finance_configuration"
+            action=""
+            sequence="10"
+        />
 
 
 

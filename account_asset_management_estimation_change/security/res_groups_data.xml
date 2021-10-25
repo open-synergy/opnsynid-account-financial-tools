@@ -1,18 +1,22 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
 <data>
     <record id="group_technical_useful_life_helper" model="res.groups">
-        <field name="name">Show Helper Information On Useful Life Estimation Change</field>
-        <field name="category_id" ref="base.module_category_hidden"/>
-        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field
+                name="name"
+            >Show Helper Information On Useful Life Estimation Change</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+        <field name="users" eval="[(4, ref('base.user_root'))]" />
     </record>
 
     <record id="group_technical_salvage_helper" model="res.groups">
-        <field name="name">Show Helper Information On Salvage Value Estimation Change</field>
-        <field name="category_id" ref="base.module_category_hidden"/>
-        <field name="users" eval="[(4, ref('base.user_root'))]"/>
+        <field
+                name="name"
+            >Show Helper Information On Salvage Value Estimation Change</field>
+        <field name="category_id" ref="base.module_category_hidden" />
+        <field name="users" eval="[(4, ref('base.user_root'))]" />
     </record>
 </data>
 </openerp>

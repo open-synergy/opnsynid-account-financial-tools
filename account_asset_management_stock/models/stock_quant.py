@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api
+from openerp import api, models
 
 
 class StockQuant(models.Model):
@@ -12,10 +12,12 @@ class StockQuant(models.Model):
     def create(self, values):
         _super = super(StockQuant, self)
         result = _super.create(values)
-        if result.lot_id and \
-                result.product_id.auto_capitalization and \
-                result.cost > result.company_id.auto_capitalization_limit and \
-                result.product_id.asset_category_id:
+        if (
+            result.lot_id
+            and result.product_id.auto_capitalization
+            and result.cost > result.company_id.auto_capitalization_limit
+            and result.product_id.asset_category_id
+        ):
             result._create_fixed_asset()
         return result
 

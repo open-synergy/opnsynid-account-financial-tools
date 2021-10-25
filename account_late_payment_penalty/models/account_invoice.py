@@ -2,7 +2,7 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class AccountInvoice(models.Model):
@@ -23,13 +23,17 @@ class AccountInvoice(models.Model):
         for document in self:
             if document.type in ["out_invoice", "out_refund"]:
                 aml = document.move_id.line_id.filtered(
-                    lambda r: r.account_id.id == document.account_id.id and
-                    r.debit > 0.0)[0]
+                    lambda r: r.account_id.id == document.account_id.id
+                    and r.debit > 0.0
+                )[0]
             else:
                 aml = document.move_id.line_id.filtered(
-                    lambda r: r.account_id.id == document.account_id.id and
-                    r.credit > 0.0)[0]
+                    lambda r: r.account_id.id == document.account_id.id
+                    and r.credit > 0.0
+                )[0]
             type_ids = document.late_payment_penalty_type_ids.ids
-            aml.write({
-                "late_payment_penalty_type_ids": [(6, 0, type_ids)],
-            })
+            aml.write(
+                {
+                    "late_payment_penalty_type_ids": [(6, 0, type_ids)],
+                }
+            )

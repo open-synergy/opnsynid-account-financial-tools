@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class ComplexAssetRemoval(models.Model):
@@ -28,13 +28,15 @@ class ComplexAssetRemoval(models.Model):
         _super = super(ComplexAssetRemoval, self)
         _super.action_valid()
         for rec in self:
-            rec.asset_id.write({
-                "parent_id": False,
-            })
+            rec.asset_id.write(
+                {
+                    "parent_id": False,
+                }
+            )
 
     @api.model
     def search(self, args, offset=0, limit=None, order=None, count=False):
         args.append(("movement_type", "=", "remove"))
         return super(ComplexAssetRemoval, self).search(
-            args=args, offset=offset, limit=limit,
-            order=order, count=count)
+            args=args, offset=offset, limit=limit, order=order, count=count
+        )

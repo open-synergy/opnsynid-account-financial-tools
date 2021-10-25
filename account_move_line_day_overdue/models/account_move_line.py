@@ -2,12 +2,14 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
 import logging
+
+from openerp import api, fields, models
+
 _logger = logging.getLogger(__name__)
 try:
-    import pandas as pd
     import numpy as np
+    import pandas as pd
 except (ImportError, IOError) as err:
     _logger.debug(err)
 
@@ -40,6 +42,5 @@ class AccountMoveLine(models.Model):
             if dt_date_today <= dt_date_due:
                 day_diff = 0
             else:
-                day_diff = int((dt_date_today - dt_date_due) /
-                               np.timedelta64(1, "D"))
+                day_diff = int((dt_date_today - dt_date_due) / np.timedelta64(1, "D"))
             self.write({"days_overdue": day_diff})

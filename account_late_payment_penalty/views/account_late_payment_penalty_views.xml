@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="account_common_late_payment_penalty_view_search" model="ir.ui.view">
@@ -9,24 +8,73 @@
     <field name="model">account.common_late_payment_penalty</field>
     <field name="arch" type="xml">
         <search>
-            <field name="name"/>
-            <field name="company_id" groups="base.group_multi_company"/>
-            <field name="partner_id"/>
-            <field name="type_id"/>
-            <field name="state"/>
+            <field name="name" />
+            <field name="company_id" groups="base.group_multi_company" />
+            <field name="partner_id" />
+            <field name="type_id" />
+            <field name="state" />
             <group name="main" string="Group By..">
-                <filter name="grp_company" string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
-                <filter name="grp_partner" string="Partner" context="{'group_by':'partner_id'}"/>
-                <filter name="grp_type" string="Type" context="{'group_by':'type_id'}"/>
-                <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
-                <filter name="grp_date_year" string="Date by Year" context="{'group_by':'date:year'}"/>
-                <filter name="grp_date_month" string="Date by Month" context="{'group_by':'date:month'}"/>
-                <filter name="grp_date_week" string="Date by Week" context="{'group_by':'date:week'}"/>
-                <filter name="grp_date_day" string="Date by Day" context="{'group_by':'date:day'}"/>
-                <filter name="grp_date_due_year" string="Date Due by Year" context="{'group_by':'date_due:year'}"/>
-                <filter name="grp_date_due_month" string="Date Due by Month" context="{'group_by':'date_due:month'}"/>
-                <filter name="grp_date_due_week" string="Date Due by Week" context="{'group_by':'date_due:week'}"/>
-                <filter name="grp_date_due_day" string="Date Due by Day" context="{'group_by':'date_due:day'}"/>                
+                <filter
+                            name="grp_company"
+                            string="Company"
+                            context="{'group_by':'company_id'}"
+                            groups="base.group_multi_company"
+                        />
+                <filter
+                            name="grp_partner"
+                            string="Partner"
+                            context="{'group_by':'partner_id'}"
+                        />
+                <filter
+                            name="grp_type"
+                            string="Type"
+                            context="{'group_by':'type_id'}"
+                        />
+                <filter
+                            name="grp_state"
+                            string="State"
+                            context="{'group_by':'state'}"
+                        />
+                <filter
+                            name="grp_date_year"
+                            string="Date by Year"
+                            context="{'group_by':'date:year'}"
+                        />
+                <filter
+                            name="grp_date_month"
+                            string="Date by Month"
+                            context="{'group_by':'date:month'}"
+                        />
+                <filter
+                            name="grp_date_week"
+                            string="Date by Week"
+                            context="{'group_by':'date:week'}"
+                        />
+                <filter
+                            name="grp_date_day"
+                            string="Date by Day"
+                            context="{'group_by':'date:day'}"
+                        />
+                <filter
+                            name="grp_date_due_year"
+                            string="Date Due by Year"
+                            context="{'group_by':'date_due:year'}"
+                        />
+                <filter
+                            name="grp_date_due_month"
+                            string="Date Due by Month"
+                            context="{'group_by':'date_due:month'}"
+                        />
+                <filter
+                            name="grp_date_due_week"
+                            string="Date Due by Week"
+                            context="{'group_by':'date_due:week'}"
+                        />
+                <filter
+                            name="grp_date_due_day"
+                            string="Date Due by Day"
+                            context="{'group_by':'date_due:day'}"
+                        />
             </group>
         </search>
     </field>
@@ -37,18 +85,18 @@
     <field name="model">account.common_late_payment_penalty</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="company_id" groups="base.group_multi_company"/>
-            <field name="partner_id"/>
-            <field name="date"/>
-            <field name="date_due"/>
-            <field name="day_diff"/>
-            <field name="move_line_id"/>
-            <field name="type_id"/>
-            <field name="amount_base"/>
-            <field name="amount_residual"/>
-            <field name="amount_penalty"/>
-            <field name="state"/>
+            <field name="name" />
+            <field name="company_id" groups="base.group_multi_company" />
+            <field name="partner_id" />
+            <field name="date" />
+            <field name="date_due" />
+            <field name="day_diff" />
+            <field name="move_line_id" />
+            <field name="type_id" />
+            <field name="amount_base" />
+            <field name="amount_residual" />
+            <field name="amount_penalty" />
+            <field name="state" />
         </tree>
     </field>
 </record>
@@ -59,80 +107,117 @@
     <field name="arch" type="xml">
         <form>
             <header>
-                <button name="action_post" string="Post" type="object" class="oe_highlight" attrs="{'invisible':['|',('state','!=','draft'),('post_ok','=',False)]}" confirm="Confirm late payment penalty. Are you sure?"/>
-                <button name="%(base_cancel_reason.base_cancel_reason_wizard_action)d" string="Cancel" type="action" attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}" confirm="Cancel late payment penalty. Are you sure?"/>
-                <button name="action_restart" string="Restart" type="object" attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}" confirm="Restart late payment penalty. Are you sure?"/>
-                <field name="state" widget="statusbar" statusbar_visible="draft"/>
+                <button
+                            name="action_post"
+                            string="Post"
+                            type="object"
+                            class="oe_highlight"
+                            attrs="{'invisible':['|',('state','!=','draft'),('post_ok','=',False)]}"
+                            confirm="Confirm late payment penalty. Are you sure?"
+                        />
+                <button
+                            name="%(base_cancel_reason.base_cancel_reason_wizard_action)d"
+                            string="Cancel"
+                            type="action"
+                            attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}"
+                            confirm="Cancel late payment penalty. Are you sure?"
+                        />
+                <button
+                            name="action_restart"
+                            string="Restart"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                            confirm="Restart late payment penalty. Are you sure?"
+                        />
+                <field name="state" widget="statusbar" statusbar_visible="draft" />
             </header>
             <sheet>
-                <div class="oe_right oe_button_box" style="width: 300px;" name="buttons">
+                <div
+                            class="oe_right oe_button_box"
+                            style="width: 300px;"
+                            name="buttons"
+                        >
                 </div>
                 <div class="oe_left" style="width: 500px;">
                     <div class="oe_title" style="width: 500px;">
-                        <label for="name"/>
+                        <label for="name" />
                         <h1>
-                            <field name="name"/>
+                            <field name="name" />
                         </h1>
                         <h2 attrs="{'invisible': [('state', '!=', 'cancel')]}">
-                            <label for="cancel_reason_id" string="Cancellation reason:"/>
-                            <field name="cancel_reason_id" class="oe_inline"/>
+                            <label
+                                        for="cancel_reason_id"
+                                        string="Cancellation reason:"
+                                    />
+                            <field name="cancel_reason_id" class="oe_inline" />
                         </h2>
                     </div>
                 </div>
                 <group name="group_1" colspan="4" col="2">
                     <group name="group_1_1" colspan="1" col="2">
-                        <field name="company_id" groups="base.group_multi_company"/>
-                        <field name="partner_id"/>
-                        <field name="type_id"/>
-                        <field name="allowed_move_line_ids" widget="many2many_tags" invisible="1"/>
-                        <field name="move_line_id" domain="[('id','=',allowed_move_line_ids[0][2])]"/>
+                        <field name="company_id" groups="base.group_multi_company" />
+                        <field name="partner_id" />
+                        <field name="type_id" />
+                        <field
+                                    name="allowed_move_line_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <field
+                                    name="move_line_id"
+                                    domain="[('id','=',allowed_move_line_ids[0][2])]"
+                                />
                     </group>
                     <group name="group_1_2" colspan="1" col="2">
-                        <field name="move_date_due" invisible="1"/>
-                        <field name="date_due"/>
-                        <field name="move_amount_base" invisible="1"/>
-                        <field name="amount_base"/>
-                        <field name="amount_residual"/>
-                        <field name="direction" invisible="1"/>
-                        <field name="date"/>
-                        <field name="day_diff"/>
-                        <field name="amount_penalty"/>
+                        <field name="move_date_due" invisible="1" />
+                        <field name="date_due" />
+                        <field name="move_amount_base" invisible="1" />
+                        <field name="amount_base" />
+                        <field name="amount_residual" />
+                        <field name="direction" invisible="1" />
+                        <field name="date" />
+                        <field name="day_diff" />
+                        <field name="amount_penalty" />
                     </group>
                 </group>
                 <notebook colspan="4">
                     <page name="accounting" string="Accounting">
                         <group name="accounting_1" colspan="4" col="2">
-                            <field name="journal_id"/>
-                            <field name="account_id"/>
-                            <field name="penalty_move_line_id"/>
-                            <field name="penalty_move_id"/>
+                            <field name="journal_id" />
+                            <field name="account_id" />
+                            <field name="penalty_move_line_id" />
+                            <field name="penalty_move_id" />
                         </group>
                     </page>
                     <page name="note" string="Note">
-                        <field name="note"/>
+                        <field name="note" />
                     </page>
-                    <page name="policy" string="Policies"  groups="base.group_system">
+                    <page name="policy" string="Policies" groups="base.group_system">
                         <group name="policy_1" colspan="4" col="2">
-                            <field name="post_ok"/>
-                            <field name="cancel_ok"/>
-                            <field name="restart_ok"/>
+                            <field name="post_ok" />
+                            <field name="cancel_ok" />
+                            <field name="restart_ok" />
                         </group>
                     </page>
-                    <page name="log" string="Logs"  groups="base.group_system">
+                    <page name="log" string="Logs" groups="base.group_system">
                         <group name="group_5" colspan="4" col="3">
                             <group name="group_log_1" colspan="4" col="3">
-                                <field name="post_date" string="Post"/>
-                                <field name="post_user_id" nolabel="1"/>
-                                <field name="cancel_date" string="Cancel"/>
-                                <field name="cancel_user_id" nolabel="1"/>
+                                <field name="post_date" string="Post" />
+                                <field name="post_user_id" nolabel="1" />
+                                <field name="cancel_date" string="Cancel" />
+                                <field name="cancel_user_id" nolabel="1" />
                             </group>
                         </group>
                     </page>
                 </notebook>
             </sheet>
             <div class="oe_chatter">
-                <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
-                <field name="message_ids" widget="mail_thread"/>
+                <field
+                            name="message_follower_ids"
+                            widget="mail_followers"
+                            groups="base.group_user"
+                        />
+                <field name="message_ids" widget="mail_thread" />
             </div>
         </form>
     </field>

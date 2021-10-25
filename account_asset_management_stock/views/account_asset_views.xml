@@ -1,20 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="account_asset_view_form" model="ir.ui.view">
     <field name="name">Stock Integration</field>
     <field name="model">account.asset.asset</field>
-    <field name="inherit_id" ref="account_asset_management.view_account_asset_asset_form"/>
+    <field
+                name="inherit_id"
+                ref="account_asset_management.view_account_asset_asset_form"
+            />
     <field name="arch" type="xml">
         <xpath expr="//notebook" position="inside">
             <page name="stock" string="Stock">
                 <group name="stock_1" colspan="4" col="2">
-                    <field name="product_id"/>
-                    <field name="lot_id" readonly="1"/>
+                    <field name="product_id" />
+                    <field name="lot_id" readonly="1" />
                 </group>
             </page>
         </xpath>
