@@ -527,8 +527,8 @@ msgid "Penalty Move Line"
 msgstr ""
 
 #. module: account_late_payment_penalty
-#: code:addons/account_late_payment_penalty/models/account_late_payment_penalty_common.py:552
-#: code:addons/account_late_payment_penalty/models/account_late_payment_penalty_common.py:562
+#: code:addons/account_late_payment_penalty/models/account_late_payment_penalty_common.py:551
+#: code:addons/account_late_payment_penalty/models/account_late_payment_penalty_common.py:561
 #, python-format
 msgid "Please delete late payment penaly first"
 msgstr ""
@@ -635,7 +635,7 @@ msgid "Workflow Policy"
 msgstr ""
 
 #. module: account_late_payment_penalty
-#: code:addons/account_late_payment_penalty/models/account_late_payment_penalty_common.py:567
+#: code:addons/account_late_payment_penalty/models/account_late_payment_penalty_common.py:566
 #, python-format
 msgid "You can only delete data on draft state"
 msgstr ""
