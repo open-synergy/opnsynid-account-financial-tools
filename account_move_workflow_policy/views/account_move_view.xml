@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2021 OpenSynergy Indonesia
+     Copyright 2021 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="account_move_view_form" model="ir.ui.view">
+        <field name="name">account.move.workflow.policy.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//button[@name='post']" position="attributes">
+                    <attribute name="states" />
+                    <attribute
+                        name="attrs"
+                    >{'invisible':[('post_ok', '=', False)]}</attribute>
+                </xpath>
+                <xpath
+                    expr="//button[@name='%(account.action_view_account_move_reversal)d']"
+                    position="attributes"
+                >
+                    <attribute name="states" />
+                    <attribute
+                        name="attrs"
+                    >{'invisible':[('reverse_ok', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_duplicate']" position="attributes">
+                    <attribute name="states" />
+                    <attribute
+                        name="attrs"
+                    >{'invisible':[('duplicate_ok', '=', False)]}</attribute>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page
+                        string="Polices"
+                        name="page_policies"
+                        groups="base.group_system"
+                    >
+                        <group name="group_1" colspan="4" col="2">
+                            <field name="policy_template_id" />
+                            <field name="post_ok" />
+                            <field name="duplicate_ok" />
+                            <field name="reverse_ok" />
+                        </group>
+                    </page>
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>
