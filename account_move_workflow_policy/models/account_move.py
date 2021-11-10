@@ -30,6 +30,10 @@ class AccountMove(models.Model):
         string="Can Reverse Entry",
         compute="_compute_policy",
     )
+    cancel_ok = fields.Boolean(
+        string="Can Cancel Entry",
+        compute="_compute_policy",
+    )
 
     @api.onchange(
         "journal_id",

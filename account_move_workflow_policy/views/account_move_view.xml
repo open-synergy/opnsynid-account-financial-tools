@@ -7,6 +7,7 @@
         <field name="name">account.move.workflow.policy.form</field>
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_form" />
+        <field name="priority" eval="30" />
         <field name="arch" type="xml">
             <data>
                 <xpath expr="//button[@name='post']" position="attributes">
@@ -30,6 +31,12 @@
                         name="attrs"
                     >{'invisible':[('duplicate_ok', '=', False)]}</attribute>
                 </xpath>
+                <xpath expr="//button[@name='button_cancel']" position="attributes">
+                    <attribute name="states" />
+                    <attribute
+                        name="attrs"
+                    >{'invisible':[('cancel_ok', '=', False)]}</attribute>
+                </xpath>
                 <xpath expr="//notebook" position="inside">
                     <page
                         string="Polices"
@@ -41,6 +48,7 @@
                             <field name="post_ok" />
                             <field name="duplicate_ok" />
                             <field name="reverse_ok" />
+                            <field name="cancel_ok" />
                         </group>
                     </page>
                 </xpath>
