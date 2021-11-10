@@ -11,7 +11,7 @@
     "license": "LGPL-3",
     "installable": True,
     "depends": [
-        "account",
+        "account_cancel",
         "ssi_policy_mixin",
     ],
     "data": [
