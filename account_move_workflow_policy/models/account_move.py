@@ -39,6 +39,6 @@ class AccountMove(models.Model):
         "journal_id",
     )
     def onchange_policy_template_id(self):
-        template_id = self._get_template_id()
+        template_id = self._get_template_policy()
         for document in self:
             document.policy_template_id = template_id
