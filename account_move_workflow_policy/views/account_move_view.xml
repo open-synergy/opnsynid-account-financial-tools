@@ -50,6 +50,26 @@
                             <field name="reverse_ok" />
                             <field name="cancel_ok" />
                         </group>
+                        <group name="grp_sale_subscription_policy">
+                            <field
+                                name="allowed_policy_template_ids"
+                                widget="many2many_tags"
+                                invisible="1"
+                            />
+                            <field
+                                name="policy_template_id"
+                                domain="[('id','in',allowed_policy_template_ids)]"
+                            />
+                            <button
+                                name="action_reload_policy_template"
+                                type="object"
+                                string="Reload Template Policy"
+                            />
+                            <field name="post_ok" />
+                            <field name="duplicate_ok" />
+                            <field name="reverse_ok" />
+                            <field name="cancel_ok" />
+                        </group>
                     </page>
                 </xpath>
             </data>

@@ -1,0 +1,68 @@
+<odoo>
+<data noupdate="1">
+<record id="account_move_policy_template" model="policy.template">
+    <field name="name">Standard Account Move</field>
+    <field name="model_id" ref="account.model_account_move" />
+    <field
+                name="state_field_id"
+                search="[('model_id.model','=','account.move'),('name','=','state')]"
+            />
+    <field name="sequence" eval="100" />
+    <field name="computation_method">use_python</field>
+    <field name="python_code">result=True</field>
+</record>
+<record id="account_move_policy_template_detail_post_ok" model="policy.template_detail">
+    <field name="template_id" ref="account_move_policy_template" />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','account.move'),('name','=','post_ok')]"
+            />
+    <field name="restrict_state" eval="1" />
+    <field name="states">draft</field>
+    <field name="restrict_user" eval="0" />
+    <field name="restrict_additional" eval="0" />
+</record>
+<record
+            id="account_move_policy_template_detail_duplicate_ok"
+            model="policy.template_detail"
+        >
+    <field name="template_id" ref="account_move_policy_template" />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','account.move'),('name','=','duplicate_ok')]"
+            />
+    <field name="restrict_state" eval="1" />
+    <field name="states">draft,post</field>
+    <field name="restrict_user" eval="0" />
+    <field name="restrict_additional" eval="0" />
+</record>
+<record
+            id="account_move_policy_template_detail_reverse_ok"
+            model="policy.template_detail"
+        >
+    <field name="template_id" ref="account_move_policy_template" />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','account.move'),('name','=','reverse_ok')]"
+            />
+    <field name="restrict_state" eval="1" />
+    <field name="states">post</field>
+    <field name="restrict_user" eval="0" />
+    <field name="restrict_additional" eval="0" />
+</record>
+<record
+            id="account_move_policy_template_detail_cancel_ok"
+            model="policy.template_detail"
+        >
+    <field name="template_id" ref="account_move_policy_template" />
+    <field
+                name="field_id"
+                search="[('model_id.model','=','account.move'),('name','=','cancel_ok')]"
+            />
+    <field name="restrict_state" eval="1" />
+    <field name="states">post</field>
+    <field name="restrict_user" eval="0" />
+    <field name="restrict_additional" eval="0" />
+</record>
+</data>
+</odoo>

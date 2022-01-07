@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Account Move - Workflow Policy",
-    "version": "11.0.1.0.1",
+    "version": "11.0.1.1.0",
     "category": "Administration",
     "website": "https://simetri-sinergi.id",
     "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
@@ -15,6 +15,7 @@
         "ssi_policy_mixin",
     ],
     "data": [
+        "data/policy_template_data.xml",
         "views/account_move_view.xml",
     ],
 }
