@@ -51,6 +51,8 @@ class AccountAssetAsset(models.Model):
                 "extra_move_id": False,
             }
         )
+        if move.state == "posted":
+            move.button_cancel()
         move.unlink()
 
     @api.multi
