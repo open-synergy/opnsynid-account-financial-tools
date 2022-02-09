@@ -87,15 +87,15 @@ class AccountAssetAsset(models.Model):
     def _prepare_extra_move_debit_move_line_detail(self):
         self.ensure_one()
         analytic = self._get_extra_move_analytic_account()
-        name = "Extra move for deferred revenue %s" % (self.name)
+        name = "Extra move for deferred revenue %s" % (self.invoice_id.display_name)
         return (
             0,
             0,
             {
                 "name": name,
                 "account_id": self.category_id.account_depreciation_id.id,
-                "debit": self.value,
-                "credit": 0.0,
+                "debit": self.value > 0.0 and self.value or 0.0,
+                "credit": self.value < 0.0 and self.value or 0.0,
                 "analytic_account_id": analytic and analytic.id or False,
             },
         )
@@ -104,15 +104,15 @@ class AccountAssetAsset(models.Model):
     def _prepare_extra_move_credit_move_line_detail(self):
         self.ensure_one()
         analytic = self._get_extra_move_analytic_account()
-        name = "Extra move for deferred revenue %s" % (self.name)
+        name = "Extra move for deferred revenue %s" % (self.invoice_id.display_name)
         return (
             0,
             0,
             {
                 "name": name,
                 "account_id": self.category_id.account_depreciation_expense_id.id,
-                "credit": self.value,
-                "debit": 0.0,
+                "credit": self.value > 0.0 and self.value or 0.0,
+                "debit": self.value < 0.0 and self.value or 0.0,
                 "analytic_account_id": analytic and analytic.id or False,
             },
         )
