@@ -75,7 +75,7 @@ class AccountAssetAsset(models.Model):
         lines = []
         lines.append(self._prepare_extra_move_debit_move_line_detail())
         lines.append(self._prepare_extra_move_credit_move_line_detail())
-        name = "Extra move for deferred revenue %s" % (self.name)
+        name = "Extra move for deferred revenue %s" % (self.invoice_id.display_name)
         return {
             "ref": name,
             "journal_id": journal.id,
@@ -94,8 +94,8 @@ class AccountAssetAsset(models.Model):
             {
                 "name": name,
                 "account_id": self.category_id.account_depreciation_id.id,
-                "debit": self.value > 0.0 and self.value or 0.0,
-                "credit": self.value < 0.0 and self.value or 0.0,
+                "debit": self.value > 0.0 and abs(self.value) or 0.0,
+                "credit": self.value < 0.0 and abs(self.value) or 0.0,
                 "analytic_account_id": analytic and analytic.id or False,
             },
         )
@@ -111,8 +111,8 @@ class AccountAssetAsset(models.Model):
             {
                 "name": name,
                 "account_id": self.category_id.account_depreciation_expense_id.id,
-                "credit": self.value > 0.0 and self.value or 0.0,
-                "debit": self.value < 0.0 and self.value or 0.0,
+                "credit": self.value > 0.0 and abs(self.value) or 0.0,
+                "debit": self.value < 0.0 and abs(self.value) or 0.0,
                 "analytic_account_id": analytic and analytic.id or False,
             },
         )
