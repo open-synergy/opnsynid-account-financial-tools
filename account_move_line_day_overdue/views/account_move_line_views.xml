@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+<record id="account_move_line_view_form" model="ir.ui.view">
+    <field name="name">account.move.line form</field>
+    <field name="model">account.move.line</field>
+    <field name="inherit_id" ref="account.view_move_line_form" />
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='date_maturity']" position="after">
+            <field name="days_overdue" />
+        </xpath>
+    </field>
+</record>
+</odoo>
