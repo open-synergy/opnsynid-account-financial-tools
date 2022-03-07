@@ -76,7 +76,11 @@ class AccountAsset(models.Model):
                     asset_value.line_date, np_date_unit
                 )
                 dt_diff = dt_posted_asset_value_date - dt_asset_start_date
-                method_period_start_number = int(dt_diff / coef_method_period)
+                method_period_start_number =\
+                    asset.get_method_period_start_number(
+                        dt_diff,
+                        coef_method_period
+                    )
 
             if depreciation and asset_value:
                 # TODO: Pretty sure numpy has method to change string into dt
@@ -96,6 +100,18 @@ class AccountAsset(models.Model):
             asset.method_period_start_number = method_period_start_number
             asset.method_period_depreciated_number = method_period_depreciated_number
             asset.method_period_remaining_number = method_period_remaining_number
+
+    @api.multi
+    def get_method_period_start_number(
+        self,
+        dt_diff,
+        coef_method_period
+    ):
+        self.ensure_one()
+        result = 0
+        if dt_diff and coef_method_period:
+            result = int(dt_diff / coef_method_period)
+        return result
 
     @api.multi
     @api.depends(
