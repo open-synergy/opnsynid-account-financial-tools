@@ -12,7 +12,7 @@ Installation
 
 To install this module, you need to:
 
-1.  Clone the branch 11.0 of the repository https://github.com/open-synergy/ssi-mixin
+1.  Clone the branch 11.0 of the repository https://github.com/open-synergy/opnsynid-account-financial-tools
 2.  Add the path to this repository in your configuration (addons-path)
 3.  Update the module list (Must be on developer mode)
 4.  Go to menu *Apps -> Apps*
@@ -23,7 +23,7 @@ Bug Tracker
 ===========
 
 Bugs are tracked on `GitHub Issues
-<https://github.com/open-synergy/ssi-mixin/issues>`_. In case of trouble, please
+<https://github.com/open-synergy/opnsynid-account-financial-tools/issues>`_. In case of trouble, please
 check there if your issue has already been reported. If you spotted it first,
 help us smash it by providing detailed and welcomed feedback.
 
@@ -36,6 +36,7 @@ Contributors
 
 * Michael Viriyananda <viriyananda.michael@gmail.com>
 * Andhitia Rama <andhitia.r@gmail.com>
+* Nur Azmi <azmimr67@gmail.com>
 
 Maintainer
 ----------

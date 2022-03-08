@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!-- Copyright 2021 OpenSynergy Indonesia
-     Copyright 2021 PT. Simetri Sinergi Indonesia
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 <odoo>
     <record id="account_move_view_form" model="ir.ui.view">
@@ -43,8 +43,21 @@
                         name="page_policies"
                         groups="base.group_system"
                     >
-                        <group name="group_1" colspan="4" col="2">
-                            <field name="policy_template_id" />
+                        <group name="grp_sale_subscription_policy">
+                            <field
+                                name="allowed_policy_template_ids"
+                                widget="many2many_tags"
+                                invisible="1"
+                            />
+                            <field
+                                name="policy_template_id"
+                                domain="[('id','in',allowed_policy_template_ids)]"
+                            />
+                            <button
+                                name="action_reload_policy_template"
+                                type="object"
+                                string="Reload Template Policy"
+                            />
                             <field name="post_ok" />
                             <field name="duplicate_ok" />
                             <field name="reverse_ok" />
