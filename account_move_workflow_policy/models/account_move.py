@@ -42,3 +42,11 @@ class AccountMove(models.Model):
         template_id = self._get_template_policy()
         for document in self:
             document.policy_template_id = template_id
+
+    @api.model
+    def create(self, values):
+        _super = super(AccountMove, self)
+        result = _super.create(values)
+        if not result.policy_template_id:
+            result.onchange_policy_template_id()
+        return result

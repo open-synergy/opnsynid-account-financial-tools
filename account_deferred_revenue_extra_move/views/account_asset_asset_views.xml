@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="account_asset_asset_view_form" model="ir.ui.view">
+        <field name="name">account.asset.asset form</field>
+        <field name="model">account.asset.asset</field>
+        <field
+            name="inherit_id"
+            ref="account_deferred_revenue.view_account_asset_revenue_form"
+        />
+        <field name="arch" type="xml">
+            <data>
+                <xpath expr="//field[@name='state']" position="before">
+                    <button
+                        name="action_create_extra_move"
+                        string="Create Extra Move"
+                        type="object"
+                        attrs="{'invisible':[('extra_move_id','!=',False)]}"
+                    />
+                    <button
+                        name="action_delete_extra_move"
+                        string="Delete Extra Move"
+                        type="object"
+                        attrs="{'invisible':[('extra_move_id','=',False)]}"
+                    />
+                </xpath>
+                <xpath expr="//field[@name='invoice_id']" position="after">
+                    <field name="extra_move_id" />
+                </xpath>
+            </data>
+        </field>
+    </record>
+</odoo>
