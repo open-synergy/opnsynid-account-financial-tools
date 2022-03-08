@@ -43,3 +43,8 @@ msgstr ""
 msgid "Polices"
 msgstr ""
 
+#. module: account_move_workflow_policy
+#: model:ir.ui.view,arch_db:account_move_workflow_policy.account_move_view_form
+msgid "Reload Template Policy"
+msgstr ""
+
