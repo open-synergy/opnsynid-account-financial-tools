@@ -31,9 +31,10 @@
                 name="field_id"
                 search="[('model_id.model','=','account.move'),('name','=','duplicate_ok')]"
             />
-    <field name="restrict_state" eval="1" />
-    <field name="states">draft,post</field>
-    <field name="restrict_user" eval="0" />
+    <field name="restrict_state" eval="0" />
+    <field name="restrict_user" eval="1" />
+    <field name="computation_method">use_group</field>
+    <field name="group_ids" eval="[(6,0,[ref('account.group_account_invoice')])]" />
     <field name="restrict_additional" eval="0" />
 </record>
 <record
@@ -46,7 +47,7 @@
                 search="[('model_id.model','=','account.move'),('name','=','reverse_ok')]"
             />
     <field name="restrict_state" eval="1" />
-    <field name="states">post</field>
+    <field name="states">posted</field>
     <field name="restrict_user" eval="0" />
     <field name="restrict_additional" eval="0" />
 </record>
@@ -60,7 +61,7 @@
                 search="[('model_id.model','=','account.move'),('name','=','cancel_ok')]"
             />
     <field name="restrict_state" eval="1" />
-    <field name="states">post</field>
+    <field name="states">posted</field>
     <field name="restrict_user" eval="0" />
     <field name="restrict_additional" eval="0" />
 </record>
