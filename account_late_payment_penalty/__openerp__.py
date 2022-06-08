@@ -3,7 +3,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Late Payment Penalty",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.0.1",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
