@@ -21,7 +21,7 @@ class AccountInvoice(models.Model):
         _super = super(AccountInvoice, self)
         _super.action_move_create()
         for document in self:
-            if document.type in ["out_invoice", "out_refund"]:
+            if document.type in ["out_invoice", "in_refund"]:
                 aml = document.move_id.line_id.filtered(
                     lambda r: r.account_id.id == document.account_id.id
                     and r.debit > 0.0
