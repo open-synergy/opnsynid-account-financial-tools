@@ -16,10 +16,16 @@ addons:
       - expect-dev # provides unbuffer utility
 
 stages:
+  - linting
   - test
 
 jobs:
   include:
+    - stage: linting
+      name: "linting"
+      env:
+        - LINT_CHECK="1"
+
     - stage: test
       env:
         - TESTS=1 ODOO_REPO="odoo/odoo" MAKEPOT="1"
@@ -28,12 +34,8 @@ env:
     - VERSION="11.0" TESTS="0" LINT_CHECK="0" MAKEPOT="0"
     - WKHTMLTOPDF_VERSION="0.12.5"
 
-before_install:
-  - echo -e "machine github.com\n  login $CI_USER_TOKEN" > ~/.netrc
-
 install:
-  - git clone --depth=1
-    https://github.com/simetri-sinergi-id/maintainer-quality-tools.git
+  - git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git
     ${HOME}/maintainer-quality-tools
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
