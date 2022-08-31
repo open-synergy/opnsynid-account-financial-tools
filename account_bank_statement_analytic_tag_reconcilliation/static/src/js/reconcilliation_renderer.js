@@ -202,22 +202,34 @@ odoo.define('account_bank_statement_analytic_tag_reconcilliation.ReconciliationR
                 self.fields.analytic_tag_ids = new relational_fields.FieldMany2ManyTags(self,
                     'analytic_tag_ids', record, { mode: 'edit' });
 
-                var $create = $(qweb.render("reconciliation.line.create", {'state': state}));
-                self.fields.account_id.appendTo($create.find('.create_account_id .o_td_field'))
-                    .then(addRequiredStyle.bind(self, self.fields.account_id));
-                self.fields.journal_id.appendTo($create.find('.create_journal_id .o_td_field'));
-                self.fields.tax_id.appendTo($create.find('.create_tax_id .o_td_field'));
-                self.fields.analytic_account_id.appendTo($create.find('.create_analytic_account_id .o_td_field'));
-                self.fields.analytic_tag_ids.appendTo($create.find('.create_analytic_tag_ids .o_td_field'));
-                self.fields.label.appendTo($create.find('.create_label .o_td_field'))
-                    .then(addRequiredStyle.bind(self, self.fields.label));
-                self.fields.amount.appendTo($create.find('.create_amount .o_td_field'))
-                    .then(addRequiredStyle.bind(self, self.fields.amount));
-                self.$('.create').append($create);
+                var domain = [['id', '=', state.st_line.journal_id]];
+                var fields = ['type'];
+                self._rpc({
+                    model: 'account.journal',
+                    method: 'search_read',
+                    args: [domain, fields],
+                }).then(function (result) {
+                    var journal_type = '';
+                    if (result[0]) {
+                        journal_type = result[0].type;
+                    }
+                    var $create = $(qweb.render("reconciliation.line.create", {'state': state, 'journal_type': journal_type}));
+                    self.fields.account_id.appendTo($create.find('.create_account_id .o_td_field'))
+                        .then(addRequiredStyle.bind(self, self.fields.account_id));
+                    self.fields.journal_id.appendTo($create.find('.create_journal_id .o_td_field'));
+                    self.fields.tax_id.appendTo($create.find('.create_tax_id .o_td_field'));
+                    self.fields.analytic_account_id.appendTo($create.find('.create_analytic_account_id .o_td_field'));
+                    self.fields.analytic_tag_ids.appendTo($create.find('.create_analytic_tag_ids .o_td_field'));
+                    self.fields.label.appendTo($create.find('.create_label .o_td_field'))
+                        .then(addRequiredStyle.bind(self, self.fields.label));
+                    self.fields.amount.appendTo($create.find('.create_amount .o_td_field'))
+                        .then(addRequiredStyle.bind(self, self.fields.amount));
+                    self.$('.create').append($create);
 
-                function addRequiredStyle(widget) {
-                    widget.$el.addClass('o_required_modifier');
-                }
+                    function addRequiredStyle(widget) {
+                        widget.$el.addClass('o_required_modifier');
+                    }
+                });
             });
         },
     });
