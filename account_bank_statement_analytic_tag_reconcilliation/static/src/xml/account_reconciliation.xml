@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <templates>
-
-	<t t-extend="reconciliation.line.create">
-		<t t-jquery="tr[class='create_amount']" t-operation="append">
-			<t t-log="journal_type"/>
-			<tr t-attf-class="create_analytic_tag_ids #{journal_type != 'bank' ? 'hidden' : ''}">
-				<td class="o_td_label">Analytic Tags</td>
-				<td class="o_td_field"></td>
-			</tr>
-		</t>
-	</t>
-
+    <t t-extend="reconciliation.line.create">
+    <t t-jquery="tr[class='create_amount']" t-operation="append">
+        <t t-log="journal_type" />
+            <tr
+                t-attf-class="create_analytic_tag_ids #{journal_type != 'bank' ? 'hidden' : ''}"
+            >
+                <td class="o_td_label">Analytic Tags</td>
+                <td class="o_td_field" />
+            </tr>
+        </t>
+    </t>
 </templates>
