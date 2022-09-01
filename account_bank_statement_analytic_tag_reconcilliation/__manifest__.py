@@ -4,22 +4,19 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Account Reconcilliation Analytic",
-    "version": "11.0.1.0.1",
+    "version": "11.0.1.0.0",
     "category": "Accounting & Finance",
     "website": "https://simetri-sinergi.id",
     "author": "OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
-    "depends": [
-        "account"
-    ],
+    "depends": ["account"],
     "data": [
-        'views/assets_backend.xml',
+        "views/assets_backend.xml",
     ],
-    'qweb': [
-        'static/src/xml/account_reconciliation.xml',
+    "qweb": [
+        "static/src/xml/account_reconciliation.xml",
     ],
     "demo": [],
-    "images": [
-    ],
+    "images": [],
 }
