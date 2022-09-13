@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+<t t-extend="reconciliation.line.create">
+    <t t-jquery=".create_journal_id" t-operation="replace">
+        <tr class="create_journal_id">
+            <td class="o_td_label">Journal</td>
+            <td class="o_td_field" />
+        </tr>
+    </t>
+</t>
+</templates>
