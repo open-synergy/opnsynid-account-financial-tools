@@ -13,3 +13,4 @@
 #
 # To provide both the URL and a branch, use:
 ssi-mixin https://github.com/open-synergy/ssi-mixin.git 11.0
+oca-account-financial-tools https://github.com/OCA/account-financial-tools.git 11.0
