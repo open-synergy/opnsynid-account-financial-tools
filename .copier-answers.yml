@@ -1,5 +1,5 @@
 # Do NOT update manually; changes here will be overwritten by Copier
-_commit: 9bee604
+_commit: c26a26c
 _src_path: gh:open-synergy/ssi-addons-repo-template
 dependency_installation_mode: OCA
 generate_requirements_txt: true
@@ -12,3 +12,4 @@ repo_name: opnsynid-account-financial-tools
 repo_slug: opnsynid-account-financial-tools
 travis_apt_packages: []
 travis_apt_sources: []
+
