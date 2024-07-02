@@ -57,7 +57,7 @@ class AccountAssetDepreciationLine(models.Model):
     @job
     def create_move(self, post_move=True):
         _super = super(AccountAssetDepreciationLine, self)
-        _super.create_move()
+        return _super.create_move()
 
     @api.multi
     def create_move_queue(self, post_move=True):
