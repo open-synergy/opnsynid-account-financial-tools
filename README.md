@@ -14,7 +14,20 @@ opnsynid-account-financial-tools
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[account_asset_queue](account_asset_queue/) | 11.0.1.0.1 |  | Account Asset + Queue Integration
+[account_bank_statement_analytic_tag_reconcilliation](account_bank_statement_analytic_tag_reconcilliation/) | 11.0.1.0.0 |  | Account Reconcilliation Analytic
+[account_bank_statement_reconcilliation_show_journal](account_bank_statement_reconcilliation_show_journal/) | 11.0.1.0.0 |  | Show Journal on Reconcilliation Widget
+[account_deferred_revenue_extra_move](account_deferred_revenue_extra_move/) | 11.0.1.0.3 |  | Deffered Revenue Extra Move
+[account_deferred_revenue_restrict_deletation](account_deferred_revenue_restrict_deletation/) | 11.0.1.0.0 |  | Deffered Revenue - Restrict Deletation
+[account_lock_date_group](account_lock_date_group/) | 11.0.1.0.0 |  | Account Lock Date Group
+[account_move_line_day_overdue](account_move_line_day_overdue/) | 11.0.1.0.0 |  | Account Move Line Days Overdue
+[account_move_line_latest_reconcilliation_date](account_move_line_latest_reconcilliation_date/) | 11.0.1.0.0 |  | Account Move Line Latest Date Realization
+[account_move_workflow_policy](account_move_workflow_policy/) | 11.0.1.1.0 |  | Account Move - Workflow Policy
+[ssi_analytic_account_mass_assign](ssi_analytic_account_mass_assign/) | 11.0.1.0.0 |  | Analytic Account Mass Assign
 
 [//]: # (end addons)
 
